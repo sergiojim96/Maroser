@@ -432,7 +432,6 @@ def remove_from_cart(request, slug):
         messages.info(request, "You do not have an active order")
         return redirect("core:product", slug=slug)
 
-@login_required
 def add_single_item_to_cart(request):
     if request.is_ajax() and request.method == "GET":
         slug = request.GET.get("slug")
@@ -463,7 +462,6 @@ def add_single_item_to_cart(request):
     else:
         return JsonResponse({}, status=400)
 
-@login_required
 def remove_single_item_from_cart(request):
     if request.is_ajax() and request.method == "GET":
         slug = request.GET.get("slug")
