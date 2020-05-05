@@ -4,6 +4,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib.sessions.models import Session
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http.response import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, View
 from django.shortcuts import redirect
@@ -431,36 +432,70 @@ def remove_from_cart(request, slug):
         messages.info(request, "You do not have an active order")
         return redirect("core:product", slug=slug)
 
-
-
-def remove_single_item_from_cart(request, slug):
-    item = get_object_or_404(Item, slug=slug)
-    order_qs = Order.objects.filter(
-        user=request.session.session_key,
-        ordered=False
-    )
-    if order_qs.exists():
-        order = order_qs[0]
-        # check if the order item is in the order
-        if order.items.filter(item__slug=item.slug).exists():
-            order_item = OrderItem.objects.filter(
-                item=item,
-                user=request.session.session_key,
-                ordered=False
-            )[0]
-            if order_item.quantity > 1:
-                order_item.quantity -= 1
+@login_required
+def add_single_item_to_cart(request):
+    if request.is_ajax() and request.method == "GET":
+        slug = request.GET.get("slug")
+        item = get_object_or_404(Item, slug=slug)
+        order_qs = Order.objects.filter(
+            user=request.session.session_key,
+            ordered=False
+        )
+        if order_qs.exists():
+            order = order_qs[0]
+            # check if the order item is in the order
+            if order.items.filter(item__slug=item.slug).exists():
+                order_item = OrderItem.objects.filter(
+                    item=item,
+                    user=request.session.session_key,
+                    ordered=False
+                )[0]
+                order_item.quantity += 1
                 order_item.save()
+                messages.info(request, "This item quantity was updated.")
+                return JsonResponse({"scc": "true"}, status=200)
             else:
-                order.items.remove(order_item)
-            messages.info(request, "This item quantity was updated.")
-            return redirect("core:order-summary")
+                messages.info(request, "This item was not in your cart")
+                return JsonResponse({"scc": "false"}, status=200)
         else:
-            messages.info(request, "This item was not in your cart")
-            return redirect("core:product", slug=slug)
+            messages.info(request, "You do not have an active order")
+            return JsonResponse({"scc": "false"}, status=200)
     else:
-        messages.info(request, "You do not have an active order")
-        return redirect("core:product", slug=slug)
+        return JsonResponse({}, status=400)
+
+@login_required
+def remove_single_item_from_cart(request):
+    if request.is_ajax() and request.method == "GET":
+        slug = request.GET.get("slug")
+        item = get_object_or_404(Item, slug=slug)
+        order_qs = Order.objects.filter(
+            user=request.session.session_key,
+            ordered=False
+        )
+        if order_qs.exists():
+            order = order_qs[0]
+            # check if the order item is in the order
+            if order.items.filter(item__slug=item.slug).exists():
+                order_item = OrderItem.objects.filter(
+                    item=item,
+                    user=request.session.session_key,
+                    ordered=False
+                )[0]
+                if order_item.quantity > 1:
+                    order_item.quantity -= 1
+                    order_item.save()
+                else:
+                    order.items.remove(order_item)
+                messages.info(request, "This item quantity was updated.")
+                return JsonResponse({"scc": "true"}, status=200)
+            else:
+                messages.info(request, "This item was not in your cart")
+                return JsonResponse({"scc": "false"}, status=200)
+        else:
+            messages.info(request, "You do not have an active order")
+            return JsonResponse({"scc": "false"}, status=200)
+    else:
+        return JsonResponse({}, status=400)
 
 
 def get_coupon(request, code):
