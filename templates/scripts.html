@@ -1,4 +1,6 @@
 {% load static %}
+
+
   
 <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 <!-- Bootstrap tooltips -->
@@ -12,4 +14,41 @@
   // Animations initialization
   new WOW().init();
 
+</script>
+
+<script>
+    function remove_single_item_from_cart_funtion(slug) {
+        $.ajax({
+            type: 'GET',
+            url: "{% url 'core:remove-single-item-from-cart' %}",
+            data: {"slug": slug},
+            success: function (response) {
+                // if not valid user, alert the user
+                if(response["scc"]){
+                    var oldQ = parseInt(document.getElementById(slug).innerHTML.trim());
+                    document.getElementById(slug).innerHTML = " " + (oldQ - 1) + " ";
+                }
+            },
+            error: function (response) {
+                console.log(response)
+            }
+        })
+    }
+    function add_single_item_to_cart_funtion(slug) {
+        $.ajax({
+            type: 'GET',
+            url: "{% url 'core:add-single-item-to-cart' %}",
+            data: {"slug": slug},
+            success: function (response) {
+                // if not valid user, alert the user
+                if(response["scc"]){
+                    var oldQ = parseInt(document.getElementById(slug).innerHTML.trim());
+                    document.getElementById(slug).innerHTML = " " + (oldQ + 1) + " ";
+                }
+            },
+            error: function (response) {
+                console.log(response)
+            }
+        })
+    }
 </script>
