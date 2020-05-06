@@ -1,9 +1,11 @@
 from django.conf import settings
 from django.db import models
 from .OrderItem import OrderItem
+from django.contrib.sessions.models import Session
 
 class Order(models.Model):
-    user = models.CharField(max_length=40)
+    user = models.ForeignKey(Session.session_key,
+                             on_delete=models.CASCADE)
     ref_code = models.CharField(max_length=20, blank=True, null=True)
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
