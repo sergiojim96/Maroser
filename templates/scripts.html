@@ -17,6 +17,26 @@
 </script>
 
 <script>
+    function async_remove_from_cart_funtion(slug) {
+        $.ajax({
+            type: 'GET',
+            url: "{% url 'core:async-remove-from-cart' %}",
+            data: {"slug": slug},
+            success: function (response) {
+                // if not valid user, alert the user
+                if(response["scc"]){
+                    RowToDelete = document.getElementById(slug + "CartRow");
+                    padre = RowToDelete.parentNode;
+		            padre.removeChild(RowToDelete);
+                    var oldQ = parseInt(document.getElementById("CartItemCount").innerHTML.trim());
+                    document.getElementById("CartItemCount").innerHTML = " " + (oldQ - 1) + " ";
+                }
+            },
+            error: function (response) {
+                console.log(response)
+            }
+        })
+    }
     function remove_single_item_from_cart_funtion(slug) {
         $.ajax({
             type: 'GET',

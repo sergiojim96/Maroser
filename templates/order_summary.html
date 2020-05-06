@@ -18,7 +18,7 @@
         </thead>
         <tbody>
         {% for order_item in object.items.all %}
-        <tr>
+        <tr id="{{ order_item.item.slug }}CartRow">
             <th scope="row">{{ forloop.counter }}</th>
             <td>{{ order_item.item.title }}</td>
             <td>{{ order_item.item.price }}</td>
@@ -34,7 +34,7 @@
             {% else %}
                 ${{ order_item.get_total_item_price }}
             {% endif %}
-            <a style='color: red;' href="{% url 'core:remove-from-cart' order_item.item.slug %}">
+            <a onclick="async_remove_from_cart_funtion( '{{order_item.item.slug}}' )" style='color: red;' >
                 <i class="fas fa-trash float-right"></i>
             </a>
             </td>
