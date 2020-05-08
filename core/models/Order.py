@@ -4,8 +4,7 @@ from .OrderItem import OrderItem
 from django.contrib.sessions.models import Session
 
 class Order(models.Model):
-    user = models.ForeignKey(Session.session_key,
-                             on_delete=models.CASCADE)
+    user = models.CharField(max_length=40)
     ref_code = models.CharField(max_length=20, blank=True, null=True)
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
@@ -36,7 +35,7 @@ class Order(models.Model):
     '''
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
     def get_total(self):
         total = 0

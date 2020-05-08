@@ -3,6 +3,8 @@ __pycache__/
 media_root
 static_root
 .env/
+env/
 .idea/
 db.sqlite3
 .vscode/
+core/migrations/
