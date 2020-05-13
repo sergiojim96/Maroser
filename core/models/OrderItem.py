@@ -1,3 +1,4 @@
+from django.contrib.sessions.models import Session
 from django.conf import settings
 from django.db import models
 from .Item import Item

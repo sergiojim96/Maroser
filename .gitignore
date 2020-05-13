@@ -3,9 +3,11 @@ __pycache__/
 media_root
 static_root
 .env\*
+env/
 .idea/
 db.sqlite3
 .vscode/
+core/migrations/
 env/Lib/site-packages/_virtualenv.pth
 env/Lib/site-packages/_virtualenv.py
 db.sqlite3
@@ -6991,6 +6993,3 @@ test/Scripts/wheel-3.8.exe
 test/Scripts/wheel.exe
 test/Scripts/wheel3.exe
 test/Scripts/winsound.pyd
-db.sqlite3
-db.sqlite3
-db.sqlite3

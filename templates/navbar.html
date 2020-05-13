@@ -33,14 +33,10 @@
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
           <a href="{% url 'core:order-summary' %}" class="nav-link waves-effect">
-            <span id="CartItemCount" class="badge red z-depth-1 mr-1">{{ request.session.session_key|cart_item_count }}</span>
+            <span id="CartItemCount"
+              class="badge red z-depth-1 mr-1">{{ request.session.session_key|cart_item_count }}</span>
             <i class="fas fa-shopping-cart"></i>
             <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link waves-effect" href="{% url 'account_logout' %}">
-            <span class="clearfix d-none d-sm-inline-block"> Logout </span>
           </a>
         </li>
       </ul>

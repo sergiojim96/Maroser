@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from .OrderItem import OrderItem
+from django.contrib.sessions.models import Session
 
 class Order(models.Model):
     user = models.CharField(max_length=40)
@@ -34,7 +35,7 @@ class Order(models.Model):
     '''
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
     def get_total(self):
         total = 0
