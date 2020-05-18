@@ -6,6 +6,7 @@ from ..models import Order
 from ..models import Payment
 from ..forms import PaymentForm
 from ..models import UserProfile
+import stripe
 
 
 class PaymentView(View):
@@ -25,6 +26,7 @@ class PaymentView(View):
                     object='card'
                 )
                 card_list = cards['data']
+
                 if len(card_list) > 0:
                     # update the context with the default card
                     context.update({
