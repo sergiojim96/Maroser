@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from django.views.generic import View
 from django.contrib import messages
 from ..models import Order
+from django.core.exceptions import ObjectDoesNotExist
 
 class OrderSummaryView(View):
     def get(self, *args, **kwargs):

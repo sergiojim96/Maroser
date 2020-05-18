@@ -11,6 +11,7 @@ from ..models import OrderItem
 from ..models import Address
 from ..models import Order
 from ..models import Item
+from ..forms import CouponForm
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -80,7 +81,7 @@ class CheckoutView(View):
                         'shipping_country')
                     shipping_zip = form.cleaned_data.get('shipping_zip')
 
-                    if is_valid_form([shipping_address1, shipping_country, shipping_zip]):
+                    if self.is_valid_form([shipping_address1, shipping_country, shipping_zip]):
                         shipping_address = Address(
                             user=self.request.session.session_key,
                             street_address=shipping_address1,
@@ -143,7 +144,7 @@ class CheckoutView(View):
                         'billing_country')
                     billing_zip = form.cleaned_data.get('billing_zip')
 
-                    if is_valid_form([billing_address1, billing_country, billing_zip]):
+                    if self.is_valid_form([billing_address1, billing_country, billing_zip]):
                         billing_address = Address(
                             user=self.request.session.session_key,
                             street_address=billing_address1,
@@ -326,7 +327,7 @@ class CheckoutView(View):
         else:
             return JsonResponse({}, status=400)
     
-    def is_valid_form(values):
+    def is_valid_form(self, values):
         valid = True
         for field in values:
             if field == '':
