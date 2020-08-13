@@ -15,9 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'crispy_forms',
     'django_countries',
 
@@ -73,9 +70,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 # Auth
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend'
+    'django.contrib.auth.backends.ModelBackend'
 )
+
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
