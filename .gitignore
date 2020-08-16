@@ -6,11 +6,11 @@ static_root
 env/
 .idea/
 db.sqlite3
+*.sqlite3
 .vscode/
 core/migrations/
 env/Lib/site-packages/_virtualenv.pth
 env/Lib/site-packages/_virtualenv.py
-db.sqlite3
 env/Lib/site-packages/easy_install.py
 env/Lib/site-packages/pip-20.1.dist-info/entry_points.txt
 env/Lib/site-packages/pip-20.1.dist-info/INSTALLER
