@@ -16,13 +16,10 @@
     <link rel="stylesheet" href="{% static 'css/products/cuerposeccion.css' %}">
     <link rel="stylesheet" href="{% static 'css/products/infoservicios.css' %}">
     <link rel="stylesheet" href="{% static 'css/products/footer.css' %}">
-    
-    
-    
-
     <!-- Codigo de bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
+
+    <script type="text/javascript" src="{% static 'js/products/catalog.js' %}"></script>
     
     
 
@@ -88,7 +85,7 @@
                             </div>
                             
                         </header>
-            
+
                     <section>
                                     <img class="logoicon" src="{% static 'img/LogoIcon.png' %}">
                                     <div class="menu-mobile">
@@ -139,162 +136,166 @@
                 
                 <section>
             
-                        <div class="container-fluid">
-                                <div class="row">
-                                            <div class="col-md-1 col-0">
+                    <div class="container-fluid">
+                        <div class="row">
+                                    <div class="col-md-1 col-0">
 
-                                            </div>
+                                    </div>
 
-                                            <div class="col-md-3 col-8 selector">
-                                                <select class="custom-select" style="background-color: #d1a2a3; color: white; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">
-                                                  <option selected>Juguetes para Ella</option>
-                                                  <option value="1">Juguetes para El</option>
-                                                  <option value="2">Juguetes Inteligentes</option>
-                                                </select>
-                                            </div>
+                                    <div class="col-md-3 col-8 selector">
+                                        <select id= "categoriesSelect" class="custom-select" onchange="filterProducts()" style="background-color: #d1a2a3; color: white; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">
+                                            <option selected value="0">Todos los Juguetes</option>
+                                            <option value="1">Juguetes para Ella</option>
+                                            <option value="2">Juguetes para El</option>
+                                            <option value="3">Juguetes Inteligentes</option>
+                                        </select>
+                                    </div>
 
-                                            <div class="col-4">
+                                    <div class="col-4">
 
-                                            </div>
-                                            <div class="col-4">
+                                    </div>
+                                    <div class="col-4">
 
-                                            </div>
-
-
-                                </div>
-
-                            </div>
-
-                            <div class="container">
-                                <div class="row">
-
-                                            <div class="col-md-3 col-6">
-                                                <div class="productobg">
-
-                                                    <img class="fotoproducto" src="{% static 'img/producto1.jpg'%}">
+                                    </div>
 
 
-                                                    <div class="row">
-                                                        <div class="col-md-8 col-10">
-                                                            <h2 class="titupro">Masturbador masculino</h2>
-                                                            <h4 class="descpro">Succionador de clitoris</h4>
-                                                        </div>
+                        </div>
 
-                                                        <div class="col-md-4 col-1">
-                                                            <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                        </div>
-                                                    </div> 
+                    </div>
 
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-12">
-                                                            <h2 class="pricepro">$135</h2>
-                                                        </div>
+                    <div class="container">
+                        <div class="row">
+                            {% for item in object_list %}
+                            <div class="col-md-3 col-6"
+                                {% if item.get_category_display == 'Mujer' %} name="PWoman"
+                                {% elif item.get_category_display == 'Hombre' %} name="PMan"
+                                {% else %} name="PSmart" {% endif %}>
+                                <div class="productobg"
+                                    {% if item.get_category_display == 'Mujer' %} style="background-color:#d1a2a3;"
+                                    {% elif item.get_category_display == 'Hombre' %} style="background-color:#2f4555;"
+                                    {% else %} style="background-color:#474c4f;" {% endif %}>
+                                    <img class="fotoproducto" src="{{ item.image.url }}">
+                                    <div class="row">
+                                        <div class="col-md-8 col-10">
+                                            <h2 class="titupro">{{ item.title }}</h2>
+                                            <h4 class="descpro">{{ item.description}}</h4>
+                                        </div>
 
-                                                        <div class="col-md-6 col-12 bemb">
-                                                            <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                        </div>
-                                                    </div> 
+                                        <div class="col-md-4 col-1">
+                                            <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                        </div>
+                                    </div>
 
-                                                </div>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <h2 class="pricepro"
+                                                    {% if item.get_category_display == 'Inteligente' or item.get_category_display == 'Hombre' %} style="color:#ffffff;"
+                                                    {% endif %}>
+                                                ${{ item.price }}</h2>
+                                        </div>
 
-                                            <div class="col-md-3 col-6">
-                                                <div class="productobg">
-
-                                                    <img class="fotoproducto" src="{% static 'img/producto2.jpg'%}">
-
-
-                                                    <div class="row">
-                                                        <div class="col-md-8 col-10">
-                                                            <h2 class="titupro">Clit sucker recargable</h2>
-                                                            <h4 class="descpro">Succionador de clitoris</h4>
-                                                        </div>
-
-                                                        <div class="col-md-4 col-1">
-                                                            <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                        </div>
-                                                    </div> 
-
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-12">
-                                                            <h2 class="pricepro">$135</h2>
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 bemb">
-                                                            <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                        </div>
-                                                    </div> 
-
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 col-6">
-                                                <div class="productobg">
-
-                                                    <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
-
-
-                                                    <div class="row">
-                                                        <div class="col-md-8 col-10">
-                                                            <h2 class="titupro">Rabbit vibrador</h2>
-                                                            <h4 class="descpro">Succionador de clitoris</h4>
-                                                        </div>
-
-                                                        <div class="col-md-4 col-1">
-                                                            <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                        </div>
-                                                    </div> 
-
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-12">
-                                                            <h2 class="pricepro">$135</h2>
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 bemb">
-                                                            <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                        </div>
-                                                    </div> 
-
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-3 col-6">
-                                                <div class="productobg">
-
-                                                    <img class="fotoproducto" src="{% static 'img/producto4.jpg'%}">
-
-
-                                                    <div class="row">
-                                                        <div class="col-md-8 col-10">
-                                                            <h2 class="titupro">Bala vibradora</h2>
-                                                            <h4 class="descpro">Succionador de clitoris</h4>
-                                                        </div>
-
-                                                        <div class="col-md-4 col-1">
-                                                            <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                        </div>
-                                                    </div> 
-
-                                                    <div class="row">
-                                                        <div class="col-md-6 col-12">
-                                                            <h2 class="pricepro">$135</h2>
-                                                        </div>
-
-                                                        <div class="col-md-6 col-12 bemb">
-                                                            <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                        </div>
-                                                    </div> 
-
-                                                </div>
-                                            </div>
-
-
+                                        <div class="col-md-6 col-12 bemb">
+                                            <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                        </div>
+                                    </div>
 
                                 </div>
-
                             </div>
+                            {% endfor %}
+{% comment %}                                            <div class="col-md-3 col-6">
+                                        <div class="productobg">
 
-                    </section>
+                                            <img class="fotoproducto" src="{% static 'img/producto2.jpg'%}">
+
+
+                                            <div class="row">
+                                                <div class="col-md-8 col-10">
+                                                    <h2 class="titupro">Clit sucker recargable</h2>
+                                                    <h4 class="descpro">Succionador de clitoris</h4>
+                                                </div>
+
+                                                <div class="col-md-4 col-1">
+                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <h2 class="pricepro">$135</h2>
+                                                </div>
+
+                                                <div class="col-md-6 col-12 bemb">
+                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-6">
+                                        <div class="productobg">
+
+                                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+
+
+                                            <div class="row">
+                                                <div class="col-md-8 col-10">
+                                                    <h2 class="titupro">Rabbit vibrador</h2>
+                                                    <h4 class="descpro">Succionador de clitoris</h4>
+                                                </div>
+
+                                                <div class="col-md-4 col-1">
+                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <h2 class="pricepro">$135</h2>
+                                                </div>
+
+                                                <div class="col-md-6 col-12 bemb">
+                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-6">
+                                        <div class="productobg">
+
+                                            <img class="fotoproducto" src="{% static 'img/producto4.jpg'%}">
+
+
+                                            <div class="row">
+                                                <div class="col-md-8 col-10">
+                                                    <h2 class="titupro">Bala vibradora</h2>
+                                                    <h4 class="descpro">Succionador de clitoris</h4>
+                                                </div>
+
+                                                <div class="col-md-4 col-1">
+                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <h2 class="pricepro">$135</h2>
+                                                </div>
+
+                                                <div class="col-md-6 col-12 bemb">
+                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>{% endcomment %}
+                        </div>
+
+                    </div>
+
+                </section>
                 
                 <div class="lineaazul"></div>
                 <div class="linearosa"></div>
