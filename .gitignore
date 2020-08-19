@@ -4,6 +4,7 @@ media_root
 static_root
 .env\*
 env/
+venv/
 .idea/
 db.sqlite3
 .vscode/
