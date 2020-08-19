@@ -1,0 +1,438 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html LANG="en">
+
+<head>
+    <meta charset="UFT-8">
+    <title>Juguetes Sexuales</title>  
+    <meta name="description" content="----------"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/LogoIcon.png' %}"/>
+    
+<!-- Links para CSS -->
+    <link rel="stylesheet" href="{% static 'css/products/cssgenerales.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/Menu.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/banner.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/cuerposeccion.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/infoservicios.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/footer.css' %}">
+    <!-- Codigo de bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script type="text/javascript" src="{% static 'js/products/catalog.js' %}"></script>
+    
+    
+
+        
+    
+    <!-- Fuentes usadas en todos los textos
+
+        https://fonts.google.com/specimen/Roboto+Condensed?category=Serif,Sans+Serif&query=roboto
+        https://fonts.google.com/specimen/Volkhov?category=Serif 
+
+
+       ** Nuevos anchos de Bootstrap **
+        col-: Anchos bajo 576px
+        col-sm-: Anchos entre 576px y 767px
+        col-md-: Anchos entre 768px y 991px
+        col-lg-: Anchos entre 992px y 1199px
+        col-xl-: Anchos de 1200px en adelante
+
+-->
+    
+    
+</head>
+
+        <body>
+            
+         
+               
+               
+                        <header class="banner">
+                            <div>
+                                <div class="menu_section">
+                                   <nav>
+                                        <img src="{% static 'img/Logo.png' %}" id="Logo">
+                                        <ul class="MenuNave">
+                                            <li><a class="Btm" href="#inicio">Inicio</a></li>
+                                            <li><a class="Btm" href="#productos">Categorias</a></li>
+                                            <li><a class="Btm" href="#qs">Favoritos</a></li> 
+                                            <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                                <img class="logo-mobile" src="{% static 'img/Logo.png' %}">
+                            </div>
+                            
+                            
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4 col-3">
+                                        
+                                    </div>
+                                    
+                                    <div class="col-md-4 col-3">
+                                    </div>
+                                    
+                                    <div class="col-md-4 col-6">
+                                        <h4 class="tjuguetes">Juguetes para</h4>
+                                        <h1 class="pellas">Ellas</h1>
+                                    </div>
+                                    
+                                </div>
+                            
+                            </div>
+                            
+                        </header>
+
+                    <section>
+                                    <img class="logoicon" src="{% static 'img/LogoIcon.png' %}">
+                                    <div class="menu-mobile">
+
+                                         <div class="container-fluid barramenu">
+                                            <div class="row">
+
+
+                                                <div class="col-3">
+                                                    <svg id="svgH" class="bi bi-house-fill" onclick="window.scrollTo({top:0, behavior: 'smooth'})"  viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                                                    </svg>
+                                                    <h5 id="tituloH" class="textmbH">Inicio</h5>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <svg id="svgC" class="bi bi-layers-fill" onclick="window.scrollTo({top:739, behavior: 'smooth'})" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                      <path fill-rule="evenodd" d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z"/>
+                                                      <path fill-rule="evenodd" d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z"/>
+                                                    </svg>
+                                                    <h5 id="tituloC" class="textmb">Categorias</h5>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <svg id="svgL" class="bi bi-trophy" onclick="window.scrollTo({top:1611, behavior: 'smooth'})" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
+                                                      <path fill-rule="evenodd" d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
+                                                      <path d="M7 10h2v4H7v-4z"/>
+                                                      <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
+                                                    </svg>
+                                                    <h5 id="tituloL" class="textmb">Favoritos</h5>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <svg class="bi bi-cart-fill" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                      <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                                                    </svg>
+                                                    <h5 class="textmb">Carrito</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </section>
+            
+            
+            <section class="todo">
+                
+                <section>
+            
+                    <div class="container-fluid">
+                        <div class="row">
+                                    <div class="col-md-1 col-0">
+
+                                    </div>
+
+                                    <div class="col-md-3 col-8 selector">
+                                        <select id= "categoriesSelect" class="custom-select" onchange="filterProducts()" style="background-color: #d1a2a3; color: white; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">
+                                            <option selected value="0">Todos los Juguetes</option>
+                                            <option value="1">Juguetes para Ella</option>
+                                            <option value="2">Juguetes para El</option>
+                                            <option value="3">Juguetes Inteligentes</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-4">
+
+                                    </div>
+                                    <div class="col-4">
+
+                                    </div>
+
+
+                        </div>
+
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            {% for item in object_list %}
+                            <div class="col-md-3 col-6"
+                                {% if item.get_category_display == 'Mujer' %} name="PWoman"
+                                {% elif item.get_category_display == 'Hombre' %} name="PMan"
+                                {% else %} name="PSmart" {% endif %}>
+                                <div class="productobg"
+                                    {% if item.get_category_display == 'Mujer' %} style="background-color:#d1a2a3;"
+                                    {% elif item.get_category_display == 'Hombre' %} style="background-color:#2f4555;"
+                                    {% else %} style="background-color:#474c4f;" {% endif %}>
+                                    <img class="fotoproducto" src="{{ item.image.url }}">
+                                    <div class="row">
+                                        <div class="col-md-8 col-10">
+                                            <h2 class="titupro">{{ item.title }}</h2>
+                                            <h4 class="descpro">{{ item.description}}</h4>
+                                        </div>
+
+                                        <div class="col-md-4 col-1">
+                                            <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <h2 class="pricepro"
+                                                    {% if item.get_category_display == 'Inteligente' or item.get_category_display == 'Hombre' %} style="color:#ffffff;"
+                                                    {% endif %}>
+                                                ${{ item.price }}</h2>
+                                        </div>
+
+                                        <div class="col-md-6 col-12 bemb">
+                                            <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            {% endfor %}
+{% comment %}                                            <div class="col-md-3 col-6">
+                                        <div class="productobg">
+
+                                            <img class="fotoproducto" src="{% static 'img/producto2.jpg'%}">
+
+
+                                            <div class="row">
+                                                <div class="col-md-8 col-10">
+                                                    <h2 class="titupro">Clit sucker recargable</h2>
+                                                    <h4 class="descpro">Succionador de clitoris</h4>
+                                                </div>
+
+                                                <div class="col-md-4 col-1">
+                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <h2 class="pricepro">$135</h2>
+                                                </div>
+
+                                                <div class="col-md-6 col-12 bemb">
+                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-6">
+                                        <div class="productobg">
+
+                                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+
+
+                                            <div class="row">
+                                                <div class="col-md-8 col-10">
+                                                    <h2 class="titupro">Rabbit vibrador</h2>
+                                                    <h4 class="descpro">Succionador de clitoris</h4>
+                                                </div>
+
+                                                <div class="col-md-4 col-1">
+                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <h2 class="pricepro">$135</h2>
+                                                </div>
+
+                                                <div class="col-md-6 col-12 bemb">
+                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3 col-6">
+                                        <div class="productobg">
+
+                                            <img class="fotoproducto" src="{% static 'img/producto4.jpg'%}">
+
+
+                                            <div class="row">
+                                                <div class="col-md-8 col-10">
+                                                    <h2 class="titupro">Bala vibradora</h2>
+                                                    <h4 class="descpro">Succionador de clitoris</h4>
+                                                </div>
+
+                                                <div class="col-md-4 col-1">
+                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 col-12">
+                                                    <h2 class="pricepro">$135</h2>
+                                                </div>
+
+                                                <div class="col-md-6 col-12 bemb">
+                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>{% endcomment %}
+                        </div>
+
+                    </div>
+
+                </section>
+                
+                <div class="lineaazul"></div>
+                <div class="linearosa"></div>
+                
+                
+                <section class="servicioinf">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-md-2 col-3">
+                                        <img class="iconsr" src="{% static 'img/calidad.png'%}">
+                                        <h2 class="titulosr">Garantia</h2>
+                                    </div>
+
+                                    <div class="col-md-2 col-3">
+                                        <img class="iconsr" src="{% static 'img/envios.png'%}">
+                                        <h2 class="titulosr">Rapidez</h2>
+                                    </div>
+
+                                    <div class="col-md-2 col-3">
+                                        <img class="iconsr" src="{% static 'img/empaque.png'%}">
+                                        <h2 class="titulosr">Discreto</h2>
+                                    </div>
+
+                                    <div class="col-md-2 col-3">
+                                        <img class="iconsr" src="{% static 'img/placer.png'%}">
+                                        <h2 class="titulosr">Placer</h2>
+                                    </div>
+                                    
+                                    <div class="col-md-2 col-6">
+                                        <img class="ftdestacado" src="{% static 'img/seleccion_1.png'%}">
+                                        <h3 class="tdestacado">Juguetes Selecionados</h3>
+                                    </div>
+                                    
+                                    <div class="col-md-2 col-6">
+                                        <img class="ftdestacado" src="{% static 'img/tiempo_1.png'%}">
+                                        <h3 class="tdestacado">Ahorra en tiempo</h3>
+                                    </div>
+              
+                                </div>        
+
+                            </div>
+            
+                </section>
+            
+            
+            </section>
+            
+            
+            
+            
+            
+            <footer>
+                
+                    <div  class="bgfooter">
+                        <div class="container"> 
+
+                                <div class="row">
+
+                                    <div class="col-md-3 col-6">
+                                        <img class="logomf" src="{% static 'img/logowhite.png'%}">
+                                        <h5 class="Contactomf">info@elnombre.com</h5>
+                                    </div>
+
+                                     <div class="col-md-2 col-6 menufl">
+                                         <nav>
+                                            <ul>
+                                                <li class="menufooter">Inicio</li>
+                                                <li class="menufooter">Categoria</li> 
+                                                <li class="menufooter">Mas vendido</li>
+                                                <li class="menufooter">Contacto</li>
+                                            </ul>
+                                         </nav>
+                                    </div>
+
+                                     <div class="col-md-3 col-6 menufl2">
+                                         <nav>
+                                            <ul>
+                                                <li class="menufooter">For Her</li>
+                                                <li class="menufooter">For Him</li> 
+                                                <li class="menufooter">Smart Toys</li>
+                                            </ul>
+                                         </nav>
+                                         <img class="instaimf" src="{% static 'img/instagram.png'%}">
+                                         <img class="faceimf" src="{% static 'img/facebook.png'%}">
+                                    </div>
+
+                                     <div class="col-md-4 col-12 menufl3">
+                                         <form class="formfooter">
+                                              <div class="form-row">
+                                                <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y te contactamos</small>
+                                                <div class="col-12 form-group">
+                                                     <input type="text" class="form-control textinfc" placeholder="E-mail">
+                                                </div>
+                                              </div>
+                                            </form>
+                                         <button type="button" class="btn btn-outline-light">Enviar</button>
+                                    </div>
+
+                                </div>
+                            </div> 
+
+                        </div>    
+
+                
+                
+                        <div class="bffooter">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4 col-1"></div>
+                                    <div class="col-md-4 col-10"><h6 class="derechosr">&copy; Derechos Reservados</h6></div>
+                                    <div class="col-md-4 col-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+               
+
+            </footer> 
+            
+            
+
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+            <script type="text/javascript" src="{% static 'js/home/top3juguetes.js'%}"></script>
+            <script type="text/javascript" src="{% static 'js/home/universal-parallax.js'%}"></script>
+            <script>
+                new universalParallax().init({
+                    speed: 4
+                });
+            </script>
+            
+
+   <!-- Codigo JS de bootstrap -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        </body>
+    
+    

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+.primerac {
+    margin-top: 8%;
+}
+
+
+.iconcorreoblue {
+    width: 20%;
+    margin-top: 30%;
+}
+
+
+.correoc{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 140%;
+    margin-bottom: 1%;
+}
+
+.instc {
+   width:20%;
+    margin-top: 10%;
+}
+
+.facec {
+    width:20%;
+    margin-top: 10%;
+}
+
+
+
+.mensajec {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 90%;
+    margin-bottom: 1%;
+}
+
+.textinfc {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.btncenviar {
+    width: 20%;
+    float: right;
+    margin-bottom: 10%;
+}
+
+@media (min-width: 1px) and (max-width: 576px) {
+    
+    .instc {
+        width:8%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+}
+
+    .facec {
+        width:8%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+}
+    
+    
+    
+    
+}
+
