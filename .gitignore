@@ -8,6 +8,7 @@ venv/
 .idea/
 db.sqlite3
 *.sqlite3
+*.sqlite
 .vscode/
 core/migrations/
 env/Lib/site-packages/_virtualenv.pth
