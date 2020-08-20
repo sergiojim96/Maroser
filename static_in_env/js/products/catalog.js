@@ -39,3 +39,33 @@ function hideDisplay(tagsList) {
         tagsList[i].style.display = "none";
     }
 }
+
+function checkCategory(){
+	var category = GetCategory(); 
+	if(category != "all" || category != undefined){
+		var PWomen = document.getElementsByName('PWoman');
+		var PMen = document.getElementsByName('PMan');
+		var PSmart = document.getElementsByName('PSmart');
+		if( category === "men")
+		{
+			document.getElementById("categoriesSelect").value = 2;
+			hideDisplay(PWomen);
+			blockDisplay(PMen);
+			hideDisplay(PSmart);
+		}
+		else if( category === "women")
+		{
+			document.getElementById("categoriesSelect").value = 1;
+			blockDisplay(PWomen);
+			hideDisplay(PMen);
+			hideDisplay(PSmart);
+		}
+		else if( category === "smart")
+		{
+			document.getElementById("categoriesSelect").value = 3;
+			hideDisplay(PWomen);
+			hideDisplay(PMen);
+			blockDisplay(PSmart);
+		}
+	}
+}
