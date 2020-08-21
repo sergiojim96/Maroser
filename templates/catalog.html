@@ -158,7 +158,7 @@
 
                     <div class="col-md-3 col-8 selector">
                         <select id="categoriesSelect" class="custom-select" onchange="filterProducts()"
-                            style="background-color: #d1a2a3; color: white; font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">
+                            style=" font-family: 'Roboto Condensed', sans-serif; letter-spacing: 1px;">
                             <option selected value="0">Todos los Juguetes</option>
                             <option value="1">Juguetes para Ella</option>
                             <option value="2">Juguetes para El</option>
@@ -187,24 +187,29 @@
                         <div class="productobg" {% if item.get_category_display == 'Mujer' %}
                             style="background-color:#d1a2a3;" {% elif item.get_category_display == 'Hombre' %}
                             style="background-color:#2f4555;" {% else %} style="background-color:#474c4f;" {% endif %}>
-                            <img class="fotoproducto" src="{{ item.image.url }}">
+                            <a href="{{ item.get_absolute_url }}">
+                                <img class="fotoproducto" src="{{ item.image.url }}">
+                            </a>
                             <div class="row">
                                 <div class="col-md-8 col-10">
-                                    <h2 class="titupro">{{ item.title }}</h2>
-                                    <h4 class="descpro">{{ item.description}}</h4>
+                                    <a href="{{ item.get_absolute_url }}">
+                                        <h2 class="titupro">{{ item.title }}</h2>
+                                        <h4 class="descpro">{{ item.description}}</h4>
+                                    </a>
                                 </div>
-
                                 <div class="col-md-4 col-1">
                                     <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
                                 </div>
                             </div>
-
                             <div class="row">
                                 <div class="col-md-6 col-12">
-                                    <h2 class="pricepro"
-                                        {% if item.get_category_display == 'Inteligente' or item.get_category_display == 'Hombre' %}
-                                        style="color:#ffffff;" {% endif %}>
-                                        ${{ item.price }}</h2>
+                                    <a href="{{ item.get_absolute_url }}">
+                                        <h2 class="pricepro"
+                                            {% if item.get_category_display == 'Inteligente' or item.get_category_display == 'Hombre' %}
+                                            style="color:#ffffff;" {% endif %}>
+                                            ${{ item.price }}
+                                        </h2>
+                                    </a>
                                 </div>
 
                                 <div class="col-md-6 col-12 bemb">
