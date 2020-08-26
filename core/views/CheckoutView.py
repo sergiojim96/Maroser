@@ -184,13 +184,9 @@ class CheckoutView(View):
             
     def add_to_cart(request, slug):
         item = get_object_or_404(Item, slug=slug)
-        print('printing')
-        print(request.session.session_key)
         if request.session.session_key == None:
             request.session.create()
             request.session.set_expiry(100)
-            print('created')
-        print(request.session.session_key)
         order_item, created = OrderItem.objects.get_or_create(
             item=item,
             user=request.session.session_key,
