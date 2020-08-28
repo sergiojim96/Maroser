@@ -186,7 +186,7 @@ class CheckoutView(View):
         item = get_object_or_404(Item, slug=slug)
         if request.session.session_key == None:
             request.session.create()
-            request.session.set_expiry(100)
+            request.session.set_expiry(10000)
         order_item, created = OrderItem.objects.get_or_create(
             item=item,
             user=request.session.session_key,
