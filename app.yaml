@@ -1,13 +1,12 @@
 # [START django_app]
 runtime: python38
-resources:
-  memory_gb: 4
+
 entrypoint: gunicorn -b :$PORT djecommerce.wsgi
 
 handlers:
 # This configures Google App Engine to serve the files in the app's static
 # directory.
-- url: /static
+- url: /static_root
   static_dir: static/
 
 # This handler routes all requests not caught above to your main app. It is
