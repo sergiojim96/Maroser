@@ -182,36 +182,40 @@ class CheckoutView(View):
             messages.warning(self.request, "You do not have an active order")
             return redirect("core:order-summary")
             
-    def add_to_cart(request, slug):
-        item = get_object_or_404(Item, slug=slug)
-        if request.session.session_key == None:
-            request.session.create()
-            request.session.set_expiry(10000)
-        order_item, created = OrderItem.objects.get_or_create(
-            item=item,
-            user=request.session.session_key,
-            ordered=False
-        )
-        order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
-        if order_qs.exists():
-            order = order_qs[0]
-            # check if the order item is in the order
-            if order.items.filter(item__slug=item.slug).exists():
-                order_item.quantity += 1
-                order_item.save()
-                messages.info(request, "This item quantity was updated.")
-                return redirect("core:order-summary")
+    def add_to_cart(request, slug, quantity):
+        if request.is_ajax() and request.method == "GET":
+            item = get_object_or_404(Item, slug=slug)
+            if request.session.session_key == None:
+                request.session.create()
+                request.session.set_expiry(1000)
+            order_item, created = OrderItem.objects.get_or_create(
+                item=item,
+                user=request.session.session_key,
+                ordered=False
+            )
+            order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
+            if order_qs.exists():
+                order = order_qs[0]
+                # check if the order item is in the order
+                if order.items.filter(item__slug=item.slug).exists():
+                    order_item.quantity += quantity
+                    order_item.save()
+                    return JsonResponse({"scc": "true"}, status=200)
+                else:
+                    order_item.quantity = quantity
+                    order_item.save()
+                    order.items.add(order_item)
+                    return JsonResponse({"scc": "true"}, status=200)
             else:
+                print(quantity)
+                order_item.quantity = quantity
+                ordered_date = timezone.now()
+                order = Order.objects.create(
+                    user=request.session.session_key, ordered_date=ordered_date)
+                order_item.save()
                 order.items.add(order_item)
-                messages.info(request, "This item was added to your cart.")
-                return redirect("core:order-summary")
-        else:
-            ordered_date = timezone.now()
-            order = Order.objects.create(
-                user=request.session.session_key, ordered_date=ordered_date)
-            order.items.add(order_item)
-            messages.info(request, "This item was added to your cart.")
-            return redirect("core:order-summary")
+                return JsonResponse({"scc": "false"}, status=200)
+
 
     def async_Remove_from_cart(request):
         if request.is_ajax() and request.method == "GET":
@@ -293,9 +297,9 @@ class CheckoutView(View):
         else:
             return JsonResponse({}, status=400)
 
-    def remove_single_item_from_cart(request):
+    def remove_single_item_from_cart(request, slug):
         if request.is_ajax() and request.method == "GET":
-            slug = request.GET.get("slug")
+            print(slug)
             item = get_object_or_404(Item, slug=slug)
             order_qs = Order.objects.filter(
                 user=request.session.session_key,
