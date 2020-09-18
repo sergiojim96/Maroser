@@ -6,3 +6,4 @@ from .OrderItem import OrderItem
 from .Payment import Payment
 from .Refund import Refund
 from .UserProfile import UserProfile
+from .Image import Image

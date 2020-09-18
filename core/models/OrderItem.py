@@ -1,4 +1,5 @@
 from django.contrib.sessions.models import Session
+from django.shortcuts import reverse
 from django.conf import settings
 from django.db import models
 from .Item import Item
@@ -25,3 +26,8 @@ class OrderItem(models.Model):
         if self.item.discount_price:
             return self.get_total_discount_item_price()
         return self.get_total_item_price()
+    
+    def get_remove_single_item_from_cart_url(self):
+        return reverse("core:remove-single-item-from-cart", kwargs={
+            'slug' : self.item.slug
+            })
