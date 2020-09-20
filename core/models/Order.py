@@ -45,7 +45,7 @@ class Order(models.Model):
             total += order_item.get_final_price()
         if self.coupon:
             total -= self.coupon.amount
-        tax = total * iva
+        tax = round(total * iva, 2)
         total += tax
         print(f"total: {total} iva: {tax}")
         return total, tax

@@ -22,8 +22,17 @@ function remove_single_item_from_cart_funtion(url) {
         success: function (response) {
             // if not valid user, alert the user
             if (response["scc"]) {
-                var oldQ = parseInt(document.getElementById(slug).innerHTML.trim());
-                document.getElementById(slug).innerHTML = " " + (oldQ - 1) + " ";
+                var dataBundle = response["dataBundle"];
+                var quantityField = document.getElementById("quantityField");
+                if (quantityField != 0) {
+                    quantityField.value = quantityField.value - 1;
+                    document.getElementById("finalPrice").innerHTML = "$" + dataBundle["total"];
+                    document.getElementById(dataBundle["slug"]).innerHTML = "$" + dataBundle["itemPrice"];
+                    document.getElementById("tax").innerHTML = "$" + dataBundle["tax"];
+                }
+                else {
+                    location.reload();
+                }
             }
         },
         error: function (response) {
@@ -32,16 +41,19 @@ function remove_single_item_from_cart_funtion(url) {
     })
 }
 
-function add_single_item_to_cart_funtion(slug) {
+function add_single_item_to_cart_funtion(url) {
     $.ajax({
         type: 'GET',
-        url: "{% url 'core:add-single-item-to-cart' %}",
-        data: { "slug": slug },
+        url: url,
         success: function (response) {
             // if not valid user, alert the user
             if (response["scc"]) {
-                var oldQ = parseInt(document.getElementById(slug).innerHTML.trim());
-                document.getElementById(slug).innerHTML = " " + (oldQ + 1) + " ";
+                var dataBundle = response["dataBundle"];
+                var quantityField = document.getElementById("quantityField");
+                quantityField.value = quantityField.value + 1;
+                document.getElementById("finalPrice").innerHTML = "$" + dataBundle["total"];
+                document.getElementById(dataBundle["slug"]).innerHTML = "$" + dataBundle["itemPrice"];
+                document.getElementById("tax").innerHTML = "$" + dataBundle["tax"];
             }
         },
         error: function (response) {

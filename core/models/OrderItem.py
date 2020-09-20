@@ -28,6 +28,11 @@ class OrderItem(models.Model):
         return self.get_total_item_price()
     
     def get_remove_single_item_from_cart_url(self):
-        return reverse("core:remove-single-item-from-cart", kwargs={
+        return reverse("core:remove-item-from-cart-summary", kwargs={
+            'slug' : self.item.slug
+            })
+
+    def get_add_single_item_from_cart_url(self):
+        return reverse("core:add-single-item-to-cart", kwargs={
             'slug' : self.item.slug
             })

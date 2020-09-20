@@ -189,7 +189,7 @@
                             </div>
 
                             <div class="col-md-7 col-lg-7 col-8">
-                                <h3 class="tituloitemcart"><strong>{{ orderItem.quantity }}</strong></h3>
+                                <h3 class="tituloitemcart"><strong>{{ orderItem.title }}</strong></h3>
                                 <p class="descitemcart">{{ orderItem.item.description }}</p>
                                 <h2 class="precioitemcart">{{ orderItem.item.price }}</h2>
 
@@ -202,7 +202,7 @@
                                             <input type="number" step="1" max="" value="{{ orderItem.quantity }}"
                                                 id="quantityField" name="quantity" class="quantity-field">
                                             <input type="button" value="+" class="button-plus" data-field="quantity"
-                                                onclick="add_single_item_to_cart_funtion('{{ orderItem.item.slug }}')">
+                                                onclick="add_single_item_to_cart_funtion('{{ orderItem.get_add_single_item_from_cart_url }}')">
                                         </div>
                                     </div>
 
@@ -277,7 +277,8 @@
 
                             <div class="col-md-2 col-2">
                                 <ul class="listasubtotal">
-                                    <li class="precios">${{orderItem.get_total_item_price}}</li>
+                                    <li class="precios" id="{{orderItem.item.slug}}">${{orderItem.get_total_item_price}}
+                                    </li>
                                 </ul>
                             </div>
                             {% endfor %}
@@ -303,7 +304,7 @@
 
                             <div class="col-md-2 col-2">
                                 <ul class="listasubtotal">
-                                    <li class="precios">${{ tax }}</li>
+                                    <li class="precios" id="tax">${{ tax }}</li>
                                     <li class="precios">$8</li>
                                 </ul>
                             </div>
@@ -324,7 +325,7 @@
                             </div>
 
                             <div class="col-md-2 col-2">
-                                <h4>${{ total }}</h4>
+                                <h4 id="finalPrice">${{ total }}</h4>
                             </div>
                             <!-- Fin Linea TOTAL     -->
 
