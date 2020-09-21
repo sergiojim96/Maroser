@@ -4,26 +4,29 @@
 
 <head>
     <meta charset="UFT-8">
-    <title>Juguetes Sexuales</title>  
-    <meta name="description" content="----------"/>
+    <title>Juguetes Sexuales</title>
+    <meta name="description" content="----------" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{% static 'img/LogoIcon.png'%}"/>
-    
-<!-- Links para CSS -->
+    <link rel="shortcut icon" href="{% static 'img/LogoIcon.png'%}" />
+
+    <!-- Links para CSS -->
     <link rel="stylesheet" href="{% static 'css/cart/cssgenerales.css'%}">
     <link rel="stylesheet" href="{% static 'css/cart/Menu.css'%}">
     <link rel="stylesheet" href="{% static 'css/cart/cuerpocart.css'%}">
     <link rel="stylesheet" href="{% static 'css/cart/plusminus.css'%}">
     <link rel="stylesheet" href="{% static 'css/cart/quizasteint.css'%}">
     <link rel="stylesheet" href="{% static 'css/cart/footer.css'%}">
-    
-    
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'js/products/cart_functions.js' %}"></script>
+
+
 
     <!-- Codigo de bootstrap -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  
-    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
     <!-- Fuentes usadas en todos los textos
 
         https://fonts.google.com/specimen/Roboto+Condensed?category=Serif,Sans+Serif&query=roboto
@@ -38,605 +41,602 @@
         col-xl-: Anchos de 1200px en adelante
 
 -->
-    
-    
+
+
 </head>
 
-        <body>
-            
-         
-               
-               
-                        <header class="banner">
-                            <div>
-                                <div class="menu_section">
-                                   <nav>
-                                        <img src="{% static 'img/Logo.png'%}" id="Logo">
-                                        <ul class="MenuNave">
-                                            <li><a class="Btm" href="#inicio">Inicio</a></li>
-                                            <li><a class="Btm" href="#productos">Categorias</a></li>
-                                            <li><a class="Btm" href="#qs">Favoritos</a></li> 
-                                            <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-
-                                <img class="logo-mobile" src="{% static 'img/logofullcolor.png'%}">
-                            </div>
-                            
-                            
-                        </header>
-            
-                    <section>
-                                    <img class="logoicon" src="{% static 'img/LogoIcon.png'%}">
-                                    <div class="menu-mobile">
-
-                                         <div class="container-fluid barramenu">
-                                            <div class="row">
+<body>
 
 
-                                                <div class="col-3">
-                                                    <svg id="svgH" class="bi bi-house-fill" onclick="window.scrollTo({top:0, behavior: 'smooth'})"  viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                                                        <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                                                    </svg>
-                                                    <h5 id="tituloH" class="textmbH">Inicio</h5>
-                                                </div>
 
-                                                <div class="col-3">
-                                                    <svg id="svgC" class="bi bi-layers-fill" onclick="window.scrollTo({top:739, behavior: 'smooth'})" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                      <path fill-rule="evenodd" d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z"/>
-                                                      <path fill-rule="evenodd" d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z"/>
-                                                    </svg>
-                                                    <h5 id="tituloC" class="textmb">Categorias</h5>
-                                                </div>
 
-                                                <div class="col-3">
-                                                    <svg id="svgL" class="bi bi-trophy" onclick="window.scrollTo({top:1611, behavior: 'smooth'})" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                      <path d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
-                                                      <path fill-rule="evenodd" d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
-                                                      <path d="M7 10h2v4H7v-4z"/>
-                                                      <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
-                                                    </svg>
-                                                    <h5 id="tituloL" class="textmb">Favoritos</h5>
-                                                </div>
+    <header class="banner">
+        <div>
+            <div class="menu_section">
+                <nav>
+                    <img src="{% static 'img/Logo.png'%}" id="Logo">
+                    <ul class="MenuNave">
+                        <li><a class="Btm" href="/">Inicio</a></li>
+                        <li><a class="Btm" href="#productos">Categorias</a></li>
+                        <li><a class="Btm" href="#qs">Favoritos</a></li>
+                        <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-                                                <div class="col-3">
-                                                    <svg class="bi bi-cart-fill" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                      <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                                                    </svg>
-                                                    <h5 class="textmb">Carrito</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </section>
-            
-            
-            <section class="todo">
-                
-                <div class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-2 col-lg-2 col-3">
-                            
-                            <div class="row">
-                                
-                                
-                                <div class="col-md-4 col-lg-4 col-4">
-                                    <svg viewBox="0 0 16 16" class="bi bi-cart-fill iconcarrito" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                      <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                                    </svg>                              
-                                </div>
-                                
-                                <div class="col-md-8 col-lg-8 col-8">
-                                    <h1 class="titulocarrito">Carrito</h1>                              
-                                </div>
-                                
-                            </div>
-                            
-                        </div> 
-                        
-                        <div class="col-md-10 col-lg-10 col-9">
-                            <div class="linecarrito"></div>                            
-                        </div>
-                        
+            <img class="logo-mobile" src="{% static 'img/logofullcolor.png'%}">
+        </div>
+
+
+    </header>
+
+    <section>
+        <img class="logoicon" src="{% static 'img/LogoIcon.png'%}">
+        <div class="menu-mobile">
+
+            <div class="container-fluid barramenu">
+                <div class="row">
+
+
+                    <div class="col-3">
+                        <svg id="svgH" class="bi bi-house-fill" onclick="window.scrollTo({top:0, behavior: 'smooth'})"
+                            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                            <path fill-rule="evenodd"
+                                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                        </svg>
+                        <h5 id="tituloH" class="textmbH">Inicio</h5>
+                    </div>
+
+                    <div class="col-3">
+                        <svg id="svgC" class="bi bi-layers-fill"
+                            onclick="window.scrollTo({top:739, behavior: 'smooth'})" viewBox="0 0 16 16"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z" />
+                            <path fill-rule="evenodd"
+                                d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z" />
+                        </svg>
+                        <h5 id="tituloC" class="textmb">Categorias</h5>
+                    </div>
+
+                    <div class="col-3">
+                        <svg id="svgL" class="bi bi-trophy" onclick="window.scrollTo({top:1611, behavior: 'smooth'})"
+                            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z" />
+                            <path fill-rule="evenodd"
+                                d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z" />
+                            <path d="M7 10h2v4H7v-4z" />
+                            <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z" />
+                        </svg>
+                        <h5 id="tituloL" class="textmb">Favoritos</h5>
+                    </div>
+
+                    <div class="col-3">
+                        <svg class="bi bi-cart-fill" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                        </svg>
+                        <h5 class="textmb">Carrito</h5>
                     </div>
                 </div>
-                
-                
-                <section>
-                
-                    <div class="container">
-                        <div class="row">
-                            
-                            <!-- Lado izquierdo del cuerpo CART -->
-                            <div class="col-md-6 col-lg-6 col-12">
-                                
-                                <div class="row borderizq">
-                                            <div class="col-md-5 col-lg- col-4">
-                                                <img class="fotocarrito" src="{% static 'img/producto1.jpg'%}">
-                                            </div>
-                                            
-                                            <div class="col-md-7 col-lg-7 col-8">
-                                                <h3 class="tituloitemcart"><strong>Masturbador Masculino</strong></h3>
-                                                <p class="descitemcart">masturbador para hombre, hecho de silicon quirurjico especial. Water proof 100%.</p>
-                                                <h2 class="precioitemcart">$185</h2>
-                                                
-                                                <div class="row">
-                                                    
-                                                    <div class="col-md-7 col-lg-7 col-6">
-                                                        <div class="input-group">
-                                                          <input type="button" value="-" class="button-minus" data-field="quantity">
-                                                          <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                                                          <input type="button" value="+" class="button-plus" data-field="quantity">
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="col-md-5 col-lg-5 col-6">
-                                                        <button type="button" class="btn btn-dark btneliminar">
-                                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                                            </svg>
-                                                            Eliminar
-                                                        </button>
-                                                    </div>
-                                                    
-                                                
-                                                </div>
-                                            </div>
-                                
-                                </div>
-                                
-                                <div class="row borderizq">
-                                            <div class="col-md-5 col-lg- col-4">
-                                                <img class="fotocarrito" src="{% static 'img/producto1.jpg'%}">
-                                            </div>
-                                            
-                                            <div class="col-md-7 col-lg-7 col-8">
-                                                <h3 class="tituloitemcart"><strong>Masturbador Masculino</strong></h3>
-                                                <p class="descitemcart">masturbador para hombre, hecho de silicon quirurjico especial. Water proof 100%.</p>
-                                                <h2 class="precioitemcart">$185</h2>
-                                                
-                                                <div class="row">
-                                                    
-                                                    <div class="col-md-7 col-lg-7 col-6">
-                                                        <div class="input-group">
-                                                          <input type="button" value="-" class="button-minus" data-field="quantity">
-                                                          <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                                                          <input type="button" value="+" class="button-plus" data-field="quantity">
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="col-md-5 col-lg-5 col-6">
-                                                        <button type="button" class="btn btn-dark btneliminar">
-                                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                                              <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                                            </svg>
-                                                            Eliminar
-                                                        </button>
-                                                    </div>
-                                                    
-                                                
-                                                </div>
-                                            </div>
-                                
-                                </div>
-                            
-                            
-                            </div>
-                            
-                            <div class="col-md-1 col-0 bordeizqcart">
-                            
-                            </div>
-                            
-                            
-                            <div class="col-md-5 col-12">
-                                <div class="row">
-                                    
-                                    
-                                  <!-- Linea 1  TITULO   -->
-                                    <div class="col-md-1 col-0">
-                                    
-                                    </div>
-                                    
-                                    <div class="col-md-9 col-9 ">
-                                        <h2 class="subtotal"><strong>Subtotal</strong></h2>
-                                    </div>
-                                    
-                                    <div class="col-2">
-                                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-tags" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                          <path fill-rule="evenodd" d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z"/>
-                                          <path fill-rule="evenodd" d="M5.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                                          <path d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z"/>
-                                        </svg>
-                                    </div>
-                                
-                                   <!--FIN de Linea 1     --> 
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    <!-- Lineas de Productos y Precios  -->
-                                    
-                                    <div class="col-md-1 col-1"></div>
-                                    
-                                    <div class="col-md-9 col-9">
-                                         <ul class="listasubtotal">
-                                            <li class="listas">Masturbador Masculino</li>
-                                            <li class="listas">Clit Sucker</li>
-                                            <li class="listas">Rabbit vibrator</li>
-                                        </ul>                                        
-                                    </div>
-                                    
-                                    <div class="col-md-2 col-2">
-                                        <ul class="listasubtotal">
-                                            <li class="precios">$552</li>
-                                            <li class="precios">$663</li>
-                                            <li class="precios">$896</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    
-                                    <div class="col-md-12 col-12">
-                                        <div class="lineaitems"></div>
-                                    </div>
-                                    
-                                  <!-- FIN lineas de Productos y Precios    -->  
-                                    
-                                    
-                                    
-                                  <!-- Lineas de IVA y Shipping  -->
-                                   
-                                    <div class="col-md-1 col-0"></div>
-                                    
-                                    <div class="col-md-9 col-9">
-                                         <ul class="listasubtotal">
-                                            <li class="listas">I.V.A</li>
-                                            <li class="listas">Shipping</li>
-                                        </ul>                                        
-                                    </div>
-                                    
-                                    <div class="col-md-2 col-2">
-                                        <ul class="listasubtotal">
-                                            <li class="precios">$52</li>
-                                            <li class="precios">$8</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="col-md-12 col-12">
-                                        <div class="lineaitems"></div>
-                                    </div>
-                                    
-                                <!-- FIN lineas de IVA y Shipping     -->  
-                                 
-                                <!-- Linea TOTAL     -->
-                                    <div class="col-md-1 col-0">
-                                    
-                                    </div>
-                                    
-                                    <div class="col-md-9 col-9">
-                                        <h3>TOTAL</h3>
-                                    </div>
-                                    
-                                    <div class="col-md-2 col-2">
-                                        <h4>$198</h4>
-                                    </div>
-                                <!-- Fin Linea TOTAL     --> 
-                                    
-                                    
-                                    
-                                <!-- Boton de PAGO     -->
-                                    
-                                    <div class="col-md-1 col-0">
-                                    
-                                    </div>
-                                    
-                                    <div class="col-md-11 col-12">
-                                        <button type="button" class="btn btn-dark btnpagar">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-credit-card-2-back-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                              <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2z"/>
-                                              <path d="M0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z"/>
-                                            </svg>
-                                             Pagar Ahora
-                                        </button>
-                                    </div>
-                                    
-                                    <!-- Fin Boton de PAGO     --> 
-                                    
-                                    
-                                </div>
-                            
-                            </div>
-                            
-                            
-                        </div>
-                    
-                    </div>
-                
-                
-                
-                </section>
-                
-                
-                
-                <section class="quizasteint">
-                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-8 col-8">
-                                <h2 class="tituloqt">Quizas tambien te interese</h2>
-                            </div>
-                        
-                        </div>                
-                    
-                    </div>
-                
-                    <div class="container">
-                                <div class="row">
-
-                                    <div class="col-md-1 col-6">
-                                    
-                                        <img class="controlerleft" src="{% static 'img/left.png'%}">
-                                    </div>
-                                            
-                                        <div class="col-md-2 col-6">
-                                                        <div class="productobg">
-
-                                                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+            </div>
+        </div>
+    </section>
 
 
-                                                            <div class="row">
-                                                                <div class="col-md-8 col-10">
-                                                                    <h2 class="titupro">Masturbador Masculino</h2>
-                                                                </div>
+    <section class="todo">
 
-                                                                <div class="col-md-4 col-1">
-                                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                                </div>
-                                                            </div> 
+        <div class="container">
+            <div class="row">
 
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-12">
-                                                                    <h2 class="pricepro">$135</h2>
-                                                                </div>
+                <div class="col-md-2 col-lg-2 col-3">
 
-                                                                <div class="col-md-8 col-12 bemb">
-                                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                                </div>
-                                                            </div> 
-
-                                                        </div>
-                                            </div>
-
-                                            <div class="col-md-2 col-6">
-                                                        <div class="productobg">
-
-                                                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+                    <div class="row">
 
 
-                                                            <div class="row">
-                                                                <div class="col-md-8 col-10">
-                                                                    <h2 class="titupro">Rabbit vibrador</h2>
-                                                                </div>
-
-                                                                <div class="col-md-4 col-1">
-                                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                                </div>
-                                                            </div> 
-
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-12">
-                                                                    <h2 class="pricepro">$135</h2>
-                                                                </div>
-
-                                                                <div class="col-md-8 col-12 bemb">
-                                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                                </div>
-                                                            </div> 
-
-                                                        </div>
-                                            </div>
-
-                                            <div class="col-md-2 col-6">
-                                                        <div class="productobg">
-
-                                                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
-
-
-                                                            <div class="row">
-                                                                <div class="col-md-8 col-10">
-                                                                    <h2 class="titupro">Clit sucker</h2>
-                                                                </div>
-
-                                                                <div class="col-md-4 col-1">
-                                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                                </div>
-                                                            </div> 
-
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-12">
-                                                                    <h2 class="pricepro">$135</h2>
-                                                                </div>
-
-                                                                <div class="col-md-8 col-12 bemb">
-                                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                                </div>
-                                                            </div> 
-
-                                                        </div>
-                                            </div>
-                                            
-                                            <div class="col-md-2 col-6">
-                                                        <div class="productobg">
-
-                                                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
-
-
-                                                            <div class="row">
-                                                                <div class="col-md-8 col-10">
-                                                                    <h2 class="titupro">Vibrator simple</h2>
-                                                                </div>
-
-                                                                <div class="col-md-4 col-1">
-                                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                                </div>
-                                                            </div> 
-
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-12">
-                                                                    <h2 class="pricepro">$135</h2>
-                                                                </div>
-
-                                                                <div class="col-md-8 col-12 bemb">
-                                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                                </div>
-                                                            </div> 
-
-                                                        </div>
-                                            </div>
-
-                                             <div class="col-md-2 col-6">
-                                                        <div class="productobg">
-
-                                                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
-
-
-                                                            <div class="row">
-                                                                <div class="col-md-8 col-10">
-                                                                    <h2 class="titupro">Rabbit vibrador</h2>
-                                                                </div>
-
-                                                                <div class="col-md-4 col-1">
-                                                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                                                </div>
-                                                            </div> 
-
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-12">
-                                                                    <h2 class="pricepro">$135</h2>
-                                                                </div>
-
-                                                                <div class="col-md-8 col-12 bemb">
-                                                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                                                </div>
-                                                            </div> 
-
-                                                        </div>
-                                            </div>
-                                    
-                                            <div class="col-md-1 col-6">
-                                    
-                                                <img class="controlerright" src="{% static 'img/right.png'%}">
-                                            </div>
-
-                                          
-
-                                </div>
-
-                            </div>
-                
-                
-                </section>
-                
-                
-                
-                
-                
-            </section>
-            
-            
-            
-            
-            
-            <footer>
-                
-                    <div  class="bgfooter">
-                        <div class="container"> 
-
-                                <div class="row">
-
-                                    <div class="col-md-3 col-6">
-                                        <img class="logomf" src="{% static 'img/logowhite.png'%}">
-                                        <h5 class="Contactomf">info@elnombre.com</h5>
-                                    </div>
-
-                                     <div class="col-md-2 col-6 menufl">
-                                         <nav>
-                                            <ul>
-                                                <li class="menufooter">Inicio</li>
-                                                <li class="menufooter">Categoria</li> 
-                                                <li class="menufooter">Mas vendido</li>
-                                                <li class="menufooter">Contacto</li>
-                                            </ul>
-                                         </nav>
-                                    </div>
-
-                                     <div class="col-md-3 col-6 menufl2">
-                                         <nav>
-                                            <ul>
-                                                <li class="menufooter">For Her</li>
-                                                <li class="menufooter">For Him</li> 
-                                                <li class="menufooter">Smart Toys</li>
-                                            </ul>
-                                         </nav>
-                                         <img class="instaimf" src="{% static 'img/instagram.png'%}">
-                                         <img class="faceimf" src="{% static 'img/facebook.png'%}">
-                                    </div>
-
-                                     <div class="col-md-4 col-12 menufl3">
-                                         <form class="formfooter">
-                                              <div class="form-row">
-                                                <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y te contactamos</small>
-                                                <div class="col-12 form-group">
-                                                     <input type="text" class="form-control textinfc" placeholder="E-mail">
-                                                </div>
-                                              </div>
-                                            </form>
-                                         <button type="button" class="btn btn-outline-light">Enviar</button>
-                                    </div>
-
-                                </div>
-                            </div> 
-
-                        </div>    
-
-                
-                
-                        <div class="bffooter">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-4 col-1"></div>
-                                    <div class="col-md-4 col-10"><h6 class="derechosr">&copy; Derechos Reservados</h6></div>
-                                    <div class="col-md-4 col-1"></div>
-                                </div>
-                            </div>
+                        <div class="col-md-4 col-lg-4 col-4">
+                            <svg viewBox="0 0 16 16" class="bi bi-cart-fill iconcarrito" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                            </svg>
                         </div>
 
-               
+                        <div class="col-md-8 col-lg-8 col-8">
+                            <h1 class="titulocarrito">Carrito</h1>
+                        </div>
 
-            </footer> 
-            
-            
+                    </div>
 
-            <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-            <script type="text/javascript" src="{% static 'js/home/top3juguetes.js'%}"></script>
-            <script type="text/javascript" src="{% static 'js/home/universal-parallax.js'%}"></script>
-            <script>
-                new universalParallax().init({
-                    speed: 4
-                });
-            </script>
-            
+                </div>
 
-   <!-- Codigo JS de bootstrap -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>   
-            
-        </body>
-    
-    
+                <div class="col-md-10 col-lg-10 col-9">
+                    <div class="linecarrito"></div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <section>
+
+            <div class="container">
+                <div class="row">
+
+                    <!-- Lado izquierdo del cuerpo CART -->
+                    {% if not object.items.all %}
+                    <div class="col-md-4 col-lg-5 col-6">
+                        <div class="alert alert-info" role="alert">
+                            No hay elementos en el carrito de compras
+                        </div>
+                        <div class="goback">
+                            <a href="{% url 'core:catalog'%}">
+                                <button type="button" onclick="SaveCategory('all')"
+                                    class="btn btn-secondary btnproductos">Regresar al catalogo</button>
+                            </a>
+                        </div>
+                    </div>
+                    {% else %}
+                    {% for orderItem in object.items.all %}
+                    <div class="col-md-6 col-lg-6 col-12">
+                        <div class="row borderizq" id="{{ orderItem.item.slug }}CartRow">
+                            <div class="col-md-5 col-lg- col-4">
+                                <img class="fotocarrito" src="{{ orderItem.item.image.url }}">
+                            </div>
+
+                            <div class="col-md-7 col-lg-7 col-8">
+                                <h3 class="tituloitemcart"><strong>{{ orderItem.title }}</strong></h3>
+                                <p class="descitemcart">{{ orderItem.item.description }}</p>
+                                <h2 class="precioitemcart">{{ orderItem.item.price }}</h2>
+
+                                <div class="row">
+
+                                    <div class="col-md-7 col-lg-7 col-6">
+                                        <div class="input-group">
+                                            <input type="button" value="-" class="button-minus" data-field="quantity"
+                                                onclick="remove_single_item_from_cart_funtion('{{ orderItem.get_remove_single_item_from_cart_url }}')">
+                                            <input type="number" step="1" max="" value="{{ orderItem.quantity }}"
+                                                id="quantityField" name="quantity" class="quantity-field">
+                                            <input type="button" value="+" class="button-plus" data-field="quantity"
+                                                onclick="add_single_item_to_cart_funtion('{{ orderItem.get_add_single_item_from_cart_url }}')">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 col-lg-5 col-6">
+                                        <a onclick="async_remove_from_cart_funtion( '{{orderItem.item.slug}}' )"
+                                            style='color: red;'>
+                                            <button type="button" class="btn btn-dark btneliminar">
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash"
+                                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                </svg>
+                                                Eliminar
+                                            </button>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <div class="col-md-1 col-0 bordeizqcart">
+
+                    </div>
+
+
+                    <div class="col-md-5 col-12">
+                        <div class="row">
+
+
+                            <!-- Linea 1  TITULO   -->
+                            <div class="col-md-1 col-0">
+
+                            </div>
+
+                            <div class="col-md-9 col-9 ">
+                                <h2 class="subtotal"><strong>Subtotal</strong></h2>
+                            </div>
+
+                            <div class="col-2">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-tags" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M3 2v4.586l7 7L14.586 9l-7-7H3zM2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586V2z" />
+                                    <path fill-rule="evenodd"
+                                        d="M5.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm0 1a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                                    <path
+                                        d="M1 7.086a1 1 0 0 0 .293.707L8.75 15.25l-.043.043a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 0 7.586V3a1 1 0 0 1 1-1v5.086z" />
+                                </svg>
+                            </div>
+
+                            <!--FIN de Linea 1     -->
+
+
+                            <!-- Lineas de Productos y Precios  -->
+
+                            <div class="col-md-1 col-1"></div>
+                            {% for orderItem in object.items.all %}
+
+                            <div class="col-md-9 col-9">
+                                <ul class="listasubtotal">
+                                    <l1 class="listas">{{orderItem.item.title}}</l1>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-2 col-2">
+                                <ul class="listasubtotal">
+                                    <li class="precios" id="{{orderItem.item.slug}}">${{orderItem.get_total_item_price}}
+                                    </li>
+                                </ul>
+                            </div>
+                            {% endfor %}
+
+                            <div class="col-md-12 col-12">
+                                <div class="lineaitems"></div>
+                            </div>
+
+                            <!-- FIN lineas de Productos y Precios    -->
+
+
+
+                            <!-- Lineas de IVA y Shipping  -->
+
+                            <div class="col-md-1 col-0"></div>
+
+                            <div class="col-md-9 col-9">
+                                <ul class="listasubtotal">
+                                    <li class="listas">I.V.A</li>
+                                    <li class="listas">Shipping</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-2 col-2">
+                                <ul class="listasubtotal">
+                                    <li class="precios" id="tax">${{ tax }}</li>
+                                    <li class="precios">$8</li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-12 col-12">
+                                <div class="lineaitems"></div>
+                            </div>
+
+                            <!-- FIN lineas de IVA y Shipping     -->
+
+                            <!-- Linea TOTAL     -->
+                            <div class="col-md-1 col-0">
+
+                            </div>
+
+                            <div class="col-md-9 col-9">
+                                <h3>Total</h3>
+                            </div>
+
+                            <div class="col-md-2 col-2">
+                                <h4 id="finalPrice">${{ total }}</h4>
+                            </div>
+                            <!-- Fin Linea TOTAL     -->
+
+
+
+                            <!-- Boton de PAGO     -->
+
+                            <div class="col-md-1 col-0">
+
+                            </div>
+
+                            <div class="col-md-11 col-12">
+                                <button type="button" class="btn btn-dark btnpagar">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16"
+                                        class="bi bi-credit-card-2-back-fill" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2z" />
+                                        <path d="M0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z" />
+                                    </svg>
+                                    Pagar Ahora
+                                </button>
+                            </div>
+
+                            <!-- Fin Boton de PAGO     -->
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </section>
+
+
+
+        <section class="quizasteint">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-8">
+                        <h2 class="tituloqt">Quizas tambien te interese</h2>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-1 col-6">
+
+                        <img class="controlerleft" src="{% static 'img/left.png'%}">
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <div class="productobg">
+
+                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+
+
+                            <div class="row">
+                                <div class="col-md-8 col-10">
+                                    <h2 class="titupro">Masturbador Masculino</h2>
+                                </div>
+
+                                <div class="col-md-4 col-1">
+                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <h2 class="pricepro">$135</h2>
+                                </div>
+
+                                <div class="col-md-8 col-12 bemb">
+                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <div class="productobg">
+
+                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+
+
+                            <div class="row">
+                                <div class="col-md-8 col-10">
+                                    <h2 class="titupro">Rabbit vibrador</h2>
+                                </div>
+
+                                <div class="col-md-4 col-1">
+                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <h2 class="pricepro">$135</h2>
+                                </div>
+
+                                <div class="col-md-8 col-12 bemb">
+                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <div class="productobg">
+
+                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+
+
+                            <div class="row">
+                                <div class="col-md-8 col-10">
+                                    <h2 class="titupro">Clit sucker</h2>
+                                </div>
+
+                                <div class="col-md-4 col-1">
+                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <h2 class="pricepro">$135</h2>
+                                </div>
+
+                                <div class="col-md-8 col-12 bemb">
+                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <div class="productobg">
+
+                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+
+
+                            <div class="row">
+                                <div class="col-md-8 col-10">
+                                    <h2 class="titupro">Vibrator simple</h2>
+                                </div>
+
+                                <div class="col-md-4 col-1">
+                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <h2 class="pricepro">$135</h2>
+                                </div>
+
+                                <div class="col-md-8 col-12 bemb">
+                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <div class="productobg">
+
+                            <img class="fotoproducto" src="{% static 'img/producto3.jpg'%}">
+
+
+                            <div class="row">
+                                <div class="col-md-8 col-10">
+                                    <h2 class="titupro">Rabbit vibrador</h2>
+                                </div>
+
+                                <div class="col-md-4 col-1">
+                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <h2 class="pricepro">$135</h2>
+                                </div>
+
+                                <div class="col-md-8 col-12 bemb">
+                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-1 col-6">
+
+                        <img class="controlerright" src="{% static 'img/right.png'%}">
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+    </section>
+
+
+
+
+
+    <footer>
+
+        <div class="bgfooter">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-3 col-6">
+                        <img class="logomf" src="{% static 'img/logowhite.png'%}">
+                        <h5 class="Contactomf">info@elnombre.com</h5>
+                    </div>
+
+                    <div class="col-md-2 col-6 menufl">
+                        <nav>
+                            <ul>
+                                <li class="menufooter">Inicio</li>
+                                <li class="menufooter">Categoria</li>
+                                <li class="menufooter">Mas vendido</li>
+                                <li class="menufooter">Contacto</li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="col-md-3 col-6 menufl2">
+                        <nav>
+                            <ul>
+                                <li class="menufooter">For Her</li>
+                                <li class="menufooter">For Him</li>
+                                <li class="menufooter">Smart Toys</li>
+                            </ul>
+                        </nav>
+                        <img class="instaimf" src="{% static 'img/instagram.png'%}">
+                        <img class="faceimf" src="{% static 'img/facebook.png'%}">
+                    </div>
+
+                    <div class="col-md-4 col-12 menufl3">
+                        <form class="formfooter">
+                            <div class="form-row">
+                                <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
+                                    te contactamos</small>
+                                <div class="col-12 form-group">
+                                    <input type="text" class="form-control textinfc" placeholder="E-mail">
+                                </div>
+                            </div>
+                        </form>
+                        <button type="button" class="btn btn-outline-light">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="bffooter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-1"></div>
+                    <div class="col-md-4 col-10">
+                        <h6 class="derechosr">&copy; Derechos Reservados</h6>
+                    </div>
+                    <div class="col-md-4 col-1"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </footer>
+
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script type="text/javascript" src="{% static 'js/home/top3juguetes.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/home/universal-parallax.js'%}"></script>
+    <script>
+        new universalParallax().init({
+            speed: 4
+        });
+    </script>
+
+</body>

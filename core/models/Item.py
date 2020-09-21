@@ -1,5 +1,6 @@
-from django.db import models
 from django.shortcuts import reverse
+from django.db import models
+from core.models.Image import Image
 
 CATEGORY_CHOICES = (
     ('M', 'Mujer'),
@@ -28,7 +29,6 @@ class Item(models.Model):
     image5 = models.ImageField(blank=True, null=True)
     stockQuantity = models.IntegerField(default=1)
 
-
     def __str__(self):
         return self.title
 
@@ -38,11 +38,14 @@ class Item(models.Model):
         })
 
     def get_add_to_cart_url(self):
-        return reverse("core:add-to-cart", kwargs={
+        return reverse("core:add-to-cart-slug", kwargs={
             'slug': self.slug
         })
 
     def get_remove_from_cart_url(self):
-        return reverse("core:remove-from-cart", kwargs={
+        return reverse("core:async-remove-from-cart", kwargs={
             'slug': self.slug
         })
+
+    def image_generator(self):
+        pass
