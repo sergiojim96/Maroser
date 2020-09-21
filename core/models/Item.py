@@ -22,6 +22,12 @@ class Item(models.Model):
     slug = models.SlugField()
     description = models.TextField()
     image = models.ImageField()
+    image2 = models.ImageField(blank=True, null=True)
+    image3 = models.ImageField(blank=True, null=True)
+    image4 = models.ImageField(blank=True, null=True)
+    image5 = models.ImageField(blank=True, null=True)
+    stockQuantity = models.IntegerField(default=1)
+
 
     def __str__(self):
         return self.title
