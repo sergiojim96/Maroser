@@ -10,7 +10,7 @@ from djecommerce.wsgi import application
 # App Engine without additional configuration.
 # Alternatively, you can add a custom entrypoint field in your app.yaml:
 # entrypoint: gunicorn -b :$PORT mysite.wsgi
-breakpoint_enable_canary = False
+#breakpoint_enable_canary = False
 
 # Enable cloud debugger
 #try:
@@ -20,7 +20,7 @@ breakpoint_enable_canary = False
  #   pass
 
 #import logging
-l#ogging.basicConfig(level=logging.INFO)
+#logging.basicConfig(level=logging.INFO)
 
 
 if __name__ == '__main__':
