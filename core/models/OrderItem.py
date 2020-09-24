@@ -10,6 +10,7 @@ class OrderItem(models.Model):
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     quantity = models.IntegerField(default=1)
 
+
     def __str__(self):
         return f"{self.quantity} of {self.item.title}"
 
@@ -34,5 +35,11 @@ class OrderItem(models.Model):
 
     def get_add_single_item_from_cart_url(self):
         return reverse("core:add-single-item-to-cart", kwargs={
-            'slug' : self.item.slug
-            })
+            'slug': self.item.slug
+        })
+
+    def get_slug(self):
+        return self.item.slug
+
+    def get_stock(self):
+        return self.item.stockQuantity

@@ -1,3 +1,4 @@
+{% load cart_template_tags %}
 {% load static %}
 
 <!DOCTYPE HTML>
@@ -112,7 +113,7 @@
 
 </head>
 
-<body>
+<body onload="document.getElementById('bSItemLink').setAttribute('href', document.getElementsByClassName('slide active')[0].getAttribute('data-url'));">
 
 
 
@@ -305,7 +306,7 @@
                                     <h2 class="titulocatgsmart">Juguetes Inteligentes para</h2>
                                     <h3 class="toysmart">Vos</h3>
                                     <a href="{% url 'core:catalog'%}">
-                                        <button type="button" onclick="SaveCategory('smart')" class=" btn
+                                        <button type="button" onclick="SaveCategory('category', 'smart')" class=" btn
                                             btn-outline-secondary btnsmart">Ver
                                             Juguetes</button>
                                     </a>
@@ -329,7 +330,7 @@
                                             <!-- Se sale del hancho en el mobile-->
                                             <h3 class="her">Ellas</h3>
                                             <a href="{% url 'core:catalog'%}">
-                                                <button type="button" onclick="SaveCategory('women')"
+                                                <button type="button" onclick="SaveCategory('category', 'women')"
                                                     class="btn btn-outline-secondary btnher">Ver
                                                     Juguetes</button>
                                             </a>
@@ -344,7 +345,7 @@
                                             <h2 class="titulocatghim">Juguetes para</h2>
                                             <h3 class="him">Ellos</h3>
                                             <a href="{% url 'core:catalog'%}">
-                                                <button type="button" onclick="SaveCategory('men')"
+                                                <button type="button" onclick="SaveCategory('category', 'men')"
                                                     class="btn btn-outline-secondary">Ver Juguete</button>
                                             </a>
                                         </div>
@@ -367,7 +368,7 @@
 
                     <div class="col-md-12 col-12">
                         <a href="{% url 'core:catalog'%}">
-                            <button type="button" onclick="SaveCategory('all')"
+                            <button type="button" onclick="SaveCategory('category','all')"
                                 class="btn btn-secondary btnproductos">Ver todos</button>
                         </a>
                     </div>
@@ -405,7 +406,8 @@
                                     <span>Siguiente posicion</span>
                                     <span class="color">N. 2</span>
                                 </div>
-                                <div class="next-button">
+                                <div class="next-button"
+                                     onclick="">
                                     <svg>
                                         <use xlink:href="#arrow"></use>
                                     </svg>
@@ -414,60 +416,33 @@
                         </div>
 
 
-                        <div class="slide active" data-order="1" data-color="#ff384b" data-name="N. 1">
-                            <div class="slide-content ">
-                                <div class="clip-svg">
-                                    <img class="top1" src="{% static 'img/foto3.jpg' %}" alt="" />
-                                    <div class="title-wrapper">
-
-                                        <h1 class="frase1tj">Clit Sucker</h1>
-                                        <h2 class="frase2tj">Placer garantizado</h2>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="slide " data-order="2" data-color="#f59600" data-name="N. 2">
-                            <div class="slide-content ">
-                                <div class="clip-svg">
-                                    <img class="top2" src="{% static 'img/foto2.jpg' %}" alt="" />
-                                    <div class="title-wrapper bigger">
-                                        <h1 class="frase1tj">Masturbador </h1>
-                                        <h2 class="frase2tj">Placer masculino</h2>
+                        {% for item in  best_seller_c  %}
+                            <div {% if forloop.counter == 1  %} class="slide active" {% else %} class="slide" {% endif %}
+                                 data-order="{{ forloop.counter }}"
+                                 data-color="#{% if forloop.counter == 1  %}ff384b{% elif forloop.counter == 2%}f59600{% else %}0028f2{% endif %}"
+                                 data-name="N. {{ forloop.counter }}"
+                                 data-url="{{ item.get_absolute_url }}">
+                                <div class="slide-content ">
+                                    <div class="clip-svg">
+                                        <img class="top{{ forloop.counter }}" src="{{ item.largeImage.url }}" alt="" />
+                                        <div class="title-wrapper {% if forloop.counter != 1  %}bigger{% endif %}">
+                                            <h1 class="frase1tj">{{ item.title }}</h1>
+                                            <h2 class="frase2tj">{{ item.description }} </h2>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <div class="slide " data-order="3" data-color="#0028f2" data-name="N. 3">
-                            <div class="slide-content ">
-                                <div class="clip-svg">
-                                    <img class="top3" src="{% static 'img/foto4.jpg' %}" alt="" />
-                                    <div class="title-wrapper bigger">
-                                        <h1 class="frase1tj">Max 2 + Nora </h1>
-                                        <h2 class="frase2tj">Diversion en pareja</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
+                        {% endfor %}
                     </div>
-
                 </div>
-
 
                 <div class="footer-wrapper">
                     <ul class="tjrs">
-                        <li class="rstj"><button type="button" class="btn btn-light">Ver Juguete</button></li>
+                        <a id="bSItemLink" ><li class="rstj"><button type="button" class="btn btn-light" >Ver Juguete</button></li></a>
                         <li class="rstj"><button type="button" class="btn btn-warning">Comprarlo YA</button></li>
                     </ul>
                 </div>
             </div>
-
 
         </section>
 

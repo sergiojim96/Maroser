@@ -40,12 +40,16 @@ class Order(models.Model):
     def get_total(self):
         total = 0
         tax = 1
-        iva = 0.15
+        iva = 0.13
         for order_item in self.items.all():
             total += order_item.get_final_price()
         if self.coupon:
             total -= self.coupon.amount
         tax = round(total * iva, 2)
+        shipping = self.get_shipping()
         total += tax
-        print(f"total: {total} iva: {tax}")
-        return total, tax
+        total += shipping
+        return total, tax, shipping
+
+    def get_shipping(self):
+        return 8;

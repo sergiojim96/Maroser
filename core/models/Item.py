@@ -1,18 +1,16 @@
 from django.shortcuts import reverse
 from django.db import models
-from core.models.Image import Image
 
 CATEGORY_CHOICES = (
     ('M', 'Mujer'),
     ('H', 'Hombre'),
-    ('I', 'Inteligente')
 )
 
 LABEL_CHOICES = (
     ('P', 'primary'),
-    ('S', 'secondary'),
-    ('D', 'danger')
-)
+    ('M', 'maybe'),  # juguetes que pueden interesar
+    ('B', 'bSeller')  # juguetes bestSeller cambiar apenas pueda
+ )
 
 class Item(models.Model):
     title = models.CharField(max_length=100)
@@ -27,10 +25,20 @@ class Item(models.Model):
     image3 = models.ImageField(blank=True, null=True)
     image4 = models.ImageField(blank=True, null=True)
     image5 = models.ImageField(blank=True, null=True)
+    largeImage = models.ImageField(blank=True, null=True)
     stockQuantity = models.IntegerField(default=1)
+    sales = models.IntegerField(default=0)
+    smart = models.BooleanField(default=False)
+
+
 
     def __str__(self):
         return self.title
+
+
+    def get_smart(self):
+        return self.smart
+
 
     def get_absolute_url(self):
         return reverse("core:product", kwargs={

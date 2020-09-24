@@ -8,22 +8,32 @@ from ..models import Order
 from ..models import Item
 from ..forms import CouponForm
 from django.core.exceptions import ObjectDoesNotExist
+import operator
 
 class OrderSummaryView(View):
     def get(self, *args, **kwargs):
         try:
             total = 0
             order = Order.objects.get(user=self.request.session.session_key, ordered=False)
-            total, tax = order.get_total()
+            total, tax, shipping = order.get_total()
+            maybeObjects = filter(self.is_maybe_object, Item.objects.all())
             context = {
                 'object': order,
                 'total': total,
-                'tax' : tax
+                'tax': tax,
+                'maybeObjects': maybeObjects,
+                'shipping': shipping
             }
             return render(self.request, 'order_summary.html', context)
         except ObjectDoesNotExist:
             messages.warning(self.request, "You do not have an active order")
             return redirect("/")
+
+    def is_maybe_object(self, item):
+        if item.label == 'M':
+            return True
+        else:
+            return False
 
     
     def add_single_item_to_cart(request, slug):
