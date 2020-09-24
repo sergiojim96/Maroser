@@ -7,4 +7,6 @@ from djecommerce.wsgi import application
 # App Engine without additional configuration.
 # Alternatively, you can add a custom entrypoint field in your app.yaml:
 # entrypoint: gunicorn -b :$PORT mysite.wsgi
+breakpoint_enable_canary = False
 app = application
+
