@@ -54,9 +54,9 @@ class OrderSummaryView(View):
                     )[0]
                     order_item.quantity += 1
                     order_item.save()
-                    total, tax = order.get_total()
+                    total, tax, shipping = order.get_total()
                     itemPrice = order_item.get_total_item_price()
-                    dataBundle = {"total" : total, "tax" : tax, "itemPrice" : itemPrice, "slug" : slug}
+                    dataBundle = {"total" : total, "tax" : tax, "itemPrice" : itemPrice, "slug" : slug, "shipping" : shipping}
                     print(dataBundle)
                     return JsonResponse({"scc": "true", "dataBundle" : dataBundle}, status=200)
                 else:
@@ -116,9 +116,9 @@ class OrderSummaryView(View):
                         order_item.save()
                     else:
                         order.items.remove(order_item)
-                    total, tax = order.get_total()
+                    total, tax, shipping = order.get_total()
                     itemPrice = order_item.get_total_item_price()
-                    dataBundle = {"total" : total, "tax" : tax, "itemPrice" : itemPrice, "slug" : slug}
+                    dataBundle = {"total" : total, "tax" : tax, "itemPrice" : itemPrice, "slug" : slug,"shipping" : shipping}
                     print(dataBundle)
                     return JsonResponse({"scc": "true", "dataBundle" : dataBundle}, status=200)
                 else:
