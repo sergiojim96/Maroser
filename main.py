@@ -13,14 +13,14 @@ from djecommerce.wsgi import application
 breakpoint_enable_canary = False
 
 # Enable cloud debugger
-try:
-    import googleclouddebugger
-    googleclouddebugger.enable()
-except ImportError:
-    pass
+#try:
+ #   import googleclouddebugger
+  #  googleclouddebugger.enable()
+#except ImportError:
+ #   pass
 
-import logging
-logging.basicConfig(level=logging.INFO)
+#import logging
+l#ogging.basicConfig(level=logging.INFO)
 
 
 if __name__ == '__main__':
