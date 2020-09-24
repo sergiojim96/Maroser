@@ -11,9 +11,18 @@ from djecommerce.wsgi import application
 # Alternatively, you can add a custom entrypoint field in your app.yaml:
 # entrypoint: gunicorn -b :$PORT mysite.wsgi
 breakpoint_enable_canary = False
-app = application
 
-breakpoint_enable_canary = False
+# Enable cloud debugger
+try:
+    import googleclouddebugger
+    googleclouddebugger.enable()
+except ImportError:
+    pass
+
+import logging
+logging.basicConfig(level=logging.INFO)
+
+
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djecommerce.settings.development')
     try:
@@ -25,12 +34,9 @@ if __name__ == '__main__':
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+
+app = application
     
-# Enable cloud debugger
-try:
-    import googleclouddebugger
-    googleclouddebugger.enable()
-except ImportError:
-    pass
+
 
 
