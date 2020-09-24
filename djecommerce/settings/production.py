@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['test3363.uc.r.appspot.com']
 
 AUTH_PASSWORD_VALIDATORS = [
