@@ -1,7 +1,7 @@
 from .base import *
 
-DEBUG = False
-ALLOWED_HOSTS = ['test3363.uc.r.appspot.com']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},

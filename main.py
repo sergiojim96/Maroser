@@ -24,7 +24,7 @@ from djecommerce.wsgi import application
 
 
 if __name__ == '__main__':
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djecommerce.settings.development')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djecommerce.settings.production')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

@@ -57,7 +57,6 @@ class OrderSummaryView(View):
                     total, tax, shipping = order.get_total()
                     itemPrice = order_item.get_total_item_price()
                     dataBundle = {"total" : total, "tax" : tax, "itemPrice" : itemPrice, "slug" : slug, "shipping" : shipping}
-                    print(dataBundle)
                     return JsonResponse({"scc": "true", "dataBundle" : dataBundle}, status=200)
                 else:
                     return JsonResponse({"scc": "false"}, status=200)
@@ -70,7 +69,6 @@ class OrderSummaryView(View):
         if request.is_ajax() and request.method == "GET":
             slug = request.GET.get("slug")
             item = get_object_or_404(Item, slug=slug)
-            print(item.slug)
             order_qs = Order.objects.filter(
                 user=request.session.session_key,
                 ordered=False
@@ -96,7 +94,6 @@ class OrderSummaryView(View):
 
     def remove_single_item_from_cart(request, slug):
         if request.is_ajax() and request.method == "GET":
-            print(slug)
             item = get_object_or_404(Item, slug=slug)
             order_qs = Order.objects.filter(
                 user=request.session.session_key,
@@ -119,7 +116,6 @@ class OrderSummaryView(View):
                     total, tax, shipping = order.get_total()
                     itemPrice = order_item.get_total_item_price()
                     dataBundle = {"total" : total, "tax" : tax, "itemPrice" : itemPrice, "slug" : slug,"shipping" : shipping}
-                    print(dataBundle)
                     return JsonResponse({"scc": "true", "dataBundle" : dataBundle}, status=200)
                 else:
                     return JsonResponse({"scc": "false"}, status=400)
