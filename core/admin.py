@@ -1,7 +1,7 @@
 from django.utils.html import format_html
 from django.contrib import admin
 
-from .models import Item, OrderItem, Order, Payment, Coupon, Refund, Address, UserProfile, Image
+from .models import Item, OrderItem, Order, Payment, Coupon, Refund, Address, UserProfile
 
 
 def make_refund_accepted(modeladmin, request, queryset):

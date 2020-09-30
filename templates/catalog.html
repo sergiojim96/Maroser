@@ -181,12 +181,13 @@
             <div class="container">
                 <div class="row">
                     {% for item in object_list %}
-                    <div class="col-md-3 col-6" {% if item.get_category_display == 'Mujer' %} name="PWoman"
-                        {% elif item.get_category_display == 'Hombre' %} name="PMan" {% else %} name="PSmart"
-                        {% endif %}>
+                    <div class="col-md-3 col-6"
+                            {% if item.get_smart == True %} name="PSmart"
+                            {% elif item.get_category_display == 'Mujer' %} name="PWoman"
+                            {% else %} name="PMan"
+                            {% endif %}>
                         <div class="productobg" {% if item.get_category_display == 'Mujer' %}
-                            style="background-color:#d1a2a3;" {% elif item.get_category_display == 'Hombre' %}
-                            style="background-color:#2f4555;" {% else %} style="background-color:#474c4f;" {% endif %}>
+                             style="background-color:#d1a2a3;"  {% else %} style="background-color:#2f4555;" {% endif %}>
                             <a href="{{ item.get_absolute_url }}">
                                 <img class="fotoproducto" src="{{ item.image.url }}">
                             </a>

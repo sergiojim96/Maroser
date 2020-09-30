@@ -1,8 +1,24 @@
-function increaseAmount() {
-    document.getElementById("productAmount").stepUp(1);
-}
 function decreaseAmount() {
-    document.getElementById("productAmount").stepDown(1);
+    if (document.getElementById("productAmount").value != 1) {
+        document.getElementById("productAmount").stepDown(1);
+        document.getElementById("toCart").setAttribute('href',
+            getNewUrl(document.getElementById("toCart").getAttribute('href'),
+                document.getElementById("productAmount").value));
+    }
+}
+
+function increaseAmount(max) {
+    if (document.getElementById("productAmount").value != max) {
+        document.getElementById("productAmount").stepUp(1);
+        document.getElementById("toCart").setAttribute('href',
+            getNewUrl(document.getElementById("toCart").getAttribute('href'),
+                document.getElementById("productAmount").value));
+    }
+}
+
+function getNewUrl(str, char) {
+    var xStr = str.substring(0, str.length - 1);
+    return xStr + char;
 }
 
 function AddToCart(itemUrl) {

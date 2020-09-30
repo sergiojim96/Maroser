@@ -1,7 +1,9 @@
-function SaveCategory(cat){
-	localStorage.setItem("category", cat);
+function SaveCategory(cat, value){
+	localStorage.setItem(cat, value);
 }
 	
-function GetCategory(){
-	return localStorage["category"];
+function GetCategory(cat){
+	return localStorage[cat];
 }
+
+

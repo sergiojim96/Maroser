@@ -19,8 +19,8 @@ var mySlider = {
     button: '.next-button',
     transition: 500,
     delay: function() {return this.transition;},
-    navigation : '.control-nav'
-    
+    navigation : '.control-nav',
+    currentActiveUrl : ''
   },
   
   init : function(config) {
@@ -29,6 +29,7 @@ var mySlider = {
         $(mySlider.config.button).
             click(function() {
                 mySlider.animateSlide($(this));
+                document.getElementById('bSItemLink').setAttribute('href', mySlider.config.currentActiveUrl);
             });
     },
   
@@ -117,7 +118,8 @@ var mySlider = {
     nextSlide.css('z-index',10);
     button.css('background', mySlider.getNextSlideColorAndName().color);
     button.prev().find('.color').html(mySlider.getNextSlideColorAndName().name);
-    nextSlide.addClass('active').css('opacity', 1); 
+    nextSlide.addClass('active').css('opacity', 1);
+    mySlider.config.currentActiveUrl = nextSlide.data('url');
     
     setTimeout(function() {
       activeSlide.removeClass('active').css('opacity', 0);

@@ -204,11 +204,11 @@
                                     <input type="number" readonly="readonly" id="productAmount" step="1" min="1"
                                         max="{{ item.stockQuantity }}" value="1" name="quantity" class="quantity-field">
                                     <input type="button" value="+" class="button-plus" data-field="quantity"
-                                        onclick="increaseAmount()">
+                                        onclick="increaseAmount({{ item.stockQuantity }})">
                                 </div>
                             </div>
                             <div class="col-md-4 col-lg-5 col-5">
-                                <a href="#" onclick="AddToCart( '{{ object.get_add_to_cart_url }}' );">
+                                <a id="toCart" href="{{ object.get_add_to_cart_url }}1">
                                     <button type="button" class="btn btn-primary">
 
                                         <svg class="bi bi-cart-fill cbec" viewBox="0 0 16 16" fill="currentColor"

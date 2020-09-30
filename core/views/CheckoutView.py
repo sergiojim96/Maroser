@@ -183,38 +183,37 @@ class CheckoutView(View):
             return redirect("core:order-summary")
             
     def add_to_cart(request, slug, quantity):
-        if request.is_ajax() and request.method == "GET":
-            item = get_object_or_404(Item, slug=slug)
-            if request.session.session_key == None:
-                request.session.create()
-                request.session.set_expiry(1000)
-            order_item, created = OrderItem.objects.get_or_create(
-                item=item,
-                user=request.session.session_key,
-                ordered=False
-            )
-            order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
-            if order_qs.exists():
-                order = order_qs[0]
-                # check if the order item is in the order
-                if order.items.filter(item__slug=item.slug).exists():
-                    order_item.quantity += quantity
-                    order_item.save()
-                    return JsonResponse({"scc": "true"}, status=200)
-                else:
-                    order_item.quantity = quantity
-                    order_item.save()
-                    order.items.add(order_item)
-                    return JsonResponse({"scc": "true"}, status=200)
+        item = get_object_or_404(Item, slug=slug)
+        if request.session.session_key == None:
+            request.session.create()
+            request.session.set_expiry(1000)
+        order_item, created = OrderItem.objects.get_or_create(
+            item=item,
+            user=request.session.session_key,
+            ordered=False
+        )
+        order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
+        if order_qs.exists():
+            order = order_qs[0]
+            # check if the order item is in the order
+            if order.items.filter(item__slug=item.slug).exists():
+                order_item.quantity += quantity
+                order_item.save()
+                return redirect("core:order-summary")
             else:
-                print(quantity)
                 order_item.quantity = quantity
-                ordered_date = timezone.now()
-                order = Order.objects.create(
-                    user=request.session.session_key, ordered_date=ordered_date)
                 order_item.save()
                 order.items.add(order_item)
-                return JsonResponse({"scc": "false"}, status=200)
+                return redirect("core:order-summary")
+        else:
+            print(quantity)
+            order_item.quantity = quantity
+            ordered_date = timezone.now()
+            order = Order.objects.create(
+                user=request.session.session_key, ordered_date=ordered_date)
+            order_item.save()
+            order.items.add(order_item)
+            return redirect("core:order-summary")
 
     def remove_single_item_from_cart(request, slug):
         if request.is_ajax() and request.method == "GET":
