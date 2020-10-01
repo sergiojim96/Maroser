@@ -5,32 +5,24 @@ function filterProducts() {
     var select = document.getElementById("categoriesSelect");
     var selected = select.options[select.selectedIndex].value;
     if (selected == "0") {
-        select.style.backgroundColor = '#ffffff';
-        select.style.color = 'black';
         blockDisplay(PWomen);
         blockDisplay(PMen);
         blockDisplay(PSmart);
     }
     if (selected == "1") {
-        select.style.backgroundColor = '#d1a2a3';
         blockDisplay(PWomen);
         hideDisplay(PMen);
         hideDisplay(PSmart);
-        select.style.color = 'white';
     }
     if (selected == "2") {
-        var selected = select.style.backgroundColor = '#2f4555';
         hideDisplay(PWomen);
         blockDisplay(PMen);
         hideDisplay(PSmart);
-        select.style.color = 'white';
     }
     if (selected == "3") {
-        var selected = select.style.backgroundColor = '#2f4555';
         hideDisplay(PWomen);
         hideDisplay(PMen);
         blockDisplay(PSmart);
-        select.style.color = 'white';
     }
 }
 
@@ -49,7 +41,7 @@ function hideDisplay(tagsList) {
 }
 
 function checkCategory(){
-	var category = GetCategory(); 
+	var category = GetCategory("category");
 	if(category != "all" || category != undefined){
 		if( category === "men")
 		{
