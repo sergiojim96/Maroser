@@ -57,3 +57,18 @@ class Item(models.Model):
 
     def image_generator(self):
         pass
+
+    def is_available(self, quantity):
+        if(self.stockQuantity >= quantity):
+            self.decreaseStock(quantity)
+            return True
+        return False
+
+    # when byuing
+    def decreaseStock(self, quantity):
+        self.stockQuantity -= quantity
+        self.save(update_fields=['stockQuantity'])
+
+    #def increaseUnreserved(self, quantity):
+     #   self.unreservedQuantity += quantity
+     #   self.save(update_fields=['unreservedQuantity'])
