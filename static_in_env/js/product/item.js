@@ -14,6 +14,12 @@ function increaseAmount(max) {
             getNewUrl(document.getElementById("toCart").getAttribute('href'),
                 document.getElementById("productAmount").value));
     }
+    else {
+
+        $('increase').on('click', function () {
+            $(this).tooltip('enable').tooltip('open');
+        });
+    }
 }
 
 function getNewUrl(str, char) {

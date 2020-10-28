@@ -37,8 +37,8 @@ class OrderSummaryView(View):
 
     
     def add_single_item_to_cart(request, slug):
+        item = get_object_or_404(Item, slug=slug)
         if request.is_ajax() and request.method == "GET":
-            item = get_object_or_404(Item, slug=slug)
             order_qs = Order.objects.filter(
                 user=request.session.session_key,
                 ordered=False
