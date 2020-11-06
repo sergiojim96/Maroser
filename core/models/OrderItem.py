@@ -30,7 +30,7 @@ class OrderItem(models.Model):
     
     def get_remove_single_item_from_cart_url(self):
         return reverse("core:remove-item-from-cart-summary", kwargs={
-            'slug' : self.item.slug
+            'slug': self.item.slug
             })
 
     def get_add_single_item_from_cart_url(self):

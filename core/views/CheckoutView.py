@@ -12,6 +12,7 @@ from ..models import Address
 from ..models import Order
 from ..models import Item
 from ..forms import CouponForm
+from .PayPalClient import PayPalClient
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -214,6 +215,9 @@ class CheckoutView(View):
             order_item.save()
             order.items.add(order_item)
             return redirect("core:order-summary")
+
+
+
 
     def remove_single_item_from_cart(request, slug):
         if request.is_ajax() and request.method == "GET":

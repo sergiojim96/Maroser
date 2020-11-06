@@ -7,6 +7,7 @@
     <title>Juguetes Sexuales</title>
     <meta name="description" content="----------" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="shortcut icon" href="{% static 'img/LogoIcon.png'%}" />
 
     <!-- Links para CSS -->
@@ -16,6 +17,10 @@
     <link rel="stylesheet" href="{% static 'css/cart/plusminus.css'%}">
     <link rel="stylesheet" href="{% static 'css/cart/quizasteint.css'%}">
     <link rel="stylesheet" href="{% static 'css/cart/footer.css'%}">
+
+    <script
+    src="https://www.paypal.com/sdk/js?client-id=AT9MrrKnz-Ap6nKtesw7UWKFk5DgBNrytIa0Ea2_cjBAaKgU2g3_a-vUNZ-KArTt4CWf6fVsj8D2HBpP&intent=authorize"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+    </script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{% static 'js/products/cart_functions.js' %}"></script>
@@ -25,6 +30,8 @@
     <!-- Codigo de bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
 
 
     <!-- Fuentes usadas en todos los textos
@@ -341,17 +348,9 @@
                             </div>
 
                             <div class="col-md-11 col-12">
-                                <button type="button" class="btn btn-dark btnpagar">
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16"
-                                        class="bi bi-credit-card-2-back-fill" fill="currentColor"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0V4zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-2z" />
-                                        <path d="M0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1H0z" />
-                                    </svg>
-                                    Pagar Ahora
-                                </button>
+                                <div id="paypal-button-container"></div>
                             </div>
+                            <div id="paypal-button-container"></div>
 
                             <!-- Fin Boton de PAGO     -->
 
@@ -636,6 +635,45 @@
         new universalParallax().init({
             speed: 4
         });
+    </script>
+    <script type="text/javascript">
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+              // This function sets up the details of the transaction, including the amount and line item details.
+              return actions.order.create({
+                  purchase_units: [{
+                    amount: {
+                        value: {{ total }}
+                    }
+                }]
+              });
+            },
+           onApprove: function(data, actions) {
+
+              // Authorize the transaction
+              actions.order.authorize().then(function(authorization) {
+
+                // Get the authorization id
+                var authorizationID = authorization.purchase_units[0]
+                  .payments.authorizations[0].id;
+
+                // Call your server to validate and capture the transaction
+                $.ajax({
+                    type: 'GET',
+                    url: "/order-summary/pay/" + data.orderID + "/" + authorizationID,
+                    success: function (response) {
+                        // if not valid user, alert the user
+                        if(response["scc"]){
+                            window.location = "/order-summary/resume"
+                        }
+                    },
+                    error: function (response) {
+                        var oldQ = "h"
+                    }
+                });
+              });
+            }
+          }).render('#paypal-button-container');
     </script>
 
 </body>
