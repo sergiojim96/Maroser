@@ -54,17 +54,14 @@
 
 <body>
 
-
-
-
     <header class="banner">
         <div>
             <div class="menu_section">
                 <nav>
                     <img src="{% static 'img/Logo.png'%}" id="Logo">
                     <ul class="MenuNave">
-                        <li><a class="Btm" href="#inicio">Inicio</a></li>
-                        <li><a class="Btm" href="#productos">Categorias</a></li>
+                        <li><a class="Btm" href="/">Inicio</a></li>
+                        <li><a class="Btm" href="{% url 'core:catalog'%}">Productos</a></li>
                         <li><a class="Btm" href="#qs">Favoritos</a></li>
                         <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
                     </ul>
@@ -136,6 +133,19 @@
 
 
     <section class="todo">
+        <div class="mt-5 pt-4">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" style="width: 35%; margin: auto"
+                role="alert">
+                {{ message }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
 
         <section>
 
@@ -162,12 +172,12 @@
                                 {% endif %}
                                 {% if item.image3.url != None %}
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="{{ item.image3.url }}" alt="Tecond slide">
+                                    <img class="d-block w-100" src="{{ item.image3.url }}" alt="Third slide">
                                 </div>
                                 {% endif %}
                                 {% if item.image4.url != None %}
                                 <div class="carousel-item">
-                                    <img class="d-block w-100" src="{{ item.image4.url }}" alt="Fhird slide">
+                                    <img class="d-block w-100" src="{{ item.image4.url }}" alt="Fourth slide">
                                 </div>
                                 {% endif %}
                                 <h1>{{item.image5}}</h1>
@@ -204,7 +214,7 @@
                                     <input type="number" readonly="readonly" id="productAmount" step="1" min="1"
                                         max="{{ item.stockQuantity }}" value="1" name="quantity" class="quantity-field">
                                     <input type="button" value="+" class="button-plus" data-field="quantity"
-                                        onclick="increaseAmount({{ item.stockQuantity }})">
+                                        id="increase" onclick="increaseAmount('{{ item.stockQuantity }}')">
                                 </div>
                             </div>
                             <div class="col-md-4 col-lg-5 col-5">
@@ -522,7 +532,13 @@
             speed: 4
         });
     </script>
+    <script>
+        $('#increase').tooltip({
 
+            disabled: true,
+            close: function (event, ui) { $(this).tooltip('disable'); }
+        });
+    </script>
 
     <!-- Codigo JS de bootstrap -->
     <script type="text/javascript" src="{% static 'js/product/js.bt/bootstrap.js'%}"></script>

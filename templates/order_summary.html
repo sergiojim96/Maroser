@@ -64,7 +64,7 @@
                     <img src="{% static 'img/Logo.png'%}" id="Logo">
                     <ul class="MenuNave">
                         <li><a class="Btm" href="/">Inicio</a></li>
-                        <li><a class="Btm" href="#productos">Categorias</a></li>
+                        <li><a class="Btm" href="{% url 'core:catalog'%}">Productos</a></li>
                         <li><a class="Btm" href="#qs">Favoritos</a></li>
                         <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
                     </ul>
@@ -188,56 +188,57 @@
                         </div>
                     </div>
                     {% else %}
-                        <div class="col-md-6 col-lg-6 col-12">
-                            {% for orderItem in object.items.all %}
-                                <div class="row borderizq" id="{{ orderItem.item.slug }}CartRow">
-                                    <div class="col-md-5 col-lg- col-4">
-                                        <img class="fotocarrito" src="{{ orderItem.item.image.url }}">
-                                    </div>
+                    <div class="col-md-6 col-lg-6 col-12">
+                        {% for orderItem in object.items.all %}
+                        <div class="row borderizq" id="{{ orderItem.item.slug }}CartRow">
+                            <div class="col-md-5 col-lg- col-4">
+                                <img class="fotocarrito" src="{{ orderItem.item.image.url }}">
+                            </div>
 
-                                    <div class="col-md-7 col-lg-7 col-8">
-                                        <h3 class="tituloitemcart"><strong>{{ orderItem.title }}</strong></h3>
-                                        <p class="descitemcart">{{ orderItem.item.description }}</p>
-                                        <h2 class="precioitemcart">{{ orderItem.item.price }}</h2>
+                            <div class="col-md-7 col-lg-7 col-8">
+                                <h3 class="tituloitemcart"><strong>{{ orderItem.title }}</strong></h3>
+                                <p class="descitemcart">{{ orderItem.item.description }}</p>
+                                <h2 class="precioitemcart">{{ orderItem.item.price }}</h2>
 
-                                        <div class="row">
+                                <div class="row">
 
-                                            <div class="col-md-7 col-lg-7 col-6">
-                                                <div class="input-group">
-                                                    <input type="button" value="-" class="button-minus" data-field="quantity"
-                                                        onclick="remove_single_item_from_cart_funtion('{{ orderItem.get_remove_single_item_from_cart_url }}', '{{ orderItem.get_slug }}')">
-                                                    <input type="number" step="1" max="" value="{{ orderItem.quantity }}"
-                                                        id="quantityField{{ orderItem.get_slug }}" name="quantity" class="quantity-field">
-                                                    <input type="button" value="+" class="button-plus" data-field="quantity"
-                                                        onclick="add_single_item_to_cart_funtion(
+                                    <div class="col-md-7 col-lg-7 col-6">
+                                        <div class="input-group">
+                                            <input type="button" value="-" class="button-minus" data-field="quantity"
+                                                onclick="remove_single_item_from_cart_funtion('{{ orderItem.get_remove_single_item_from_cart_url }}', '{{ orderItem.get_slug }}')">
+                                            <input type="number" step="1" max="" value="{{ orderItem.quantity }}"
+                                                id="quantityField{{ orderItem.get_slug }}" name="quantity"
+                                                class="quantity-field">
+                                            <input type="button" value="+" class="button-plus" data-field="quantity"
+                                                onclick="add_single_item_to_cart_funtion(
                                                             '{{ orderItem.get_add_single_item_from_cart_url }}',
                                                                 '{{ orderItem.get_slug }}', '{{ orderItem.get_stock }}')">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-5 col-lg-5 col-6">
-                                                <a onclick="async_remove_from_cart_funtion( '{{orderItem.item.slug}}' )"
-                                                    style='color: red;'>
-                                                    <button type="button" class="btn btn-dark btneliminar">
-                                                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash"
-                                                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                                            <path fill-rule="evenodd"
-                                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                                                        </svg>
-                                                        Eliminar
-                                                    </button>
-                                                </a>
-                                            </div>
-
-
                                         </div>
                                     </div>
 
+                                    <div class="col-md-5 col-lg-5 col-6">
+                                        <a onclick="async_remove_from_cart_funtion( '{{orderItem.item.slug}}' )"
+                                            style='color: red;'>
+                                            <button type="button" class="btn btn-dark btneliminar">
+                                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash"
+                                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                </svg>
+                                                Eliminar
+                                            </button>
+                                        </a>
+                                    </div>
+
+
                                 </div>
-                            {% endfor %}
+                            </div>
+
                         </div>
+                        {% endfor %}
+                    </div>
                     {% endif %}
 
 
@@ -385,34 +386,34 @@
             <div class="container">
                 <div class="row">
 
-{% comment %}                    <div class="col-md-1 col-6">
+                    {% comment %} <div class="col-md-1 col-6">
 
                         <img class="controlerleft" src="{% static 'img/left.png'%}">
                     </div>{% endcomment %}
                     {% for item in maybeObjects %}
-                        <div class="col-md-2 col-6">
-                            <div class="productobg">
-                                <img class="fotoproducto" src="{{ item.image.url }}">
-                                <div class="row">
-                                    <div class="col-md-8 col-10">
-                                        <h2 class="titupro">{{ item.title }}</h2>
-                                    </div>
-                                    <div class="col-md-4 col-1">
-                                        <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
-                                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="productobg">
+                            <img class="fotoproducto" src="{{ item.image.url }}">
+                            <div class="row">
+                                <div class="col-md-8 col-10">
+                                    <h2 class="titupro">{{ item.title }}</h2>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4 col-12">
-                                        <h2 class="pricepro">{{ item.price }}</h2>
-                                    </div>
-
-                                    <div class="col-md-8 col-12 bemb">
-                                        <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                    </div>
+                                <div class="col-md-4 col-1">
+                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
                                 </div>
-
                             </div>
+                            <div class="row">
+                                <div class="col-md-4 col-12">
+                                    <h2 class="pricepro">{{ item.price }}</h2>
+                                </div>
+
+                                <div class="col-md-8 col-12 bemb">
+                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
+                                </div>
+                            </div>
+
                         </div>
+                    </div>
                     {% endfor %}
 
                     {% comment %}<div class="col-md-2 col-6">

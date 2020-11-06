@@ -50,7 +50,8 @@ class Order(models.Model):
         tax = round(total * iva, 2)
         shipping = self.get_shipping()
         total += tax
-        total = round(total + shipping, 2)
+        total += shipping
+        total = round(total, 2)
         return total, tax, shipping
 
     def get_shipping(self):

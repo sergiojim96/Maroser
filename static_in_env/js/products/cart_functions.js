@@ -25,7 +25,6 @@ function remove_single_item_from_cart_funtion(url, slug) {
                 // if not valid user, alert the user
                 if (response["scc"]) {
                     var dataBundle = response["dataBundle"];
-                    var quantityField = Number(document.getElementById("quantityField" + slug).value);
                     document.getElementById("quantityField" + slug).stepDown(1);
                     document.getElementById("finalPrice").innerHTML = "$" + dataBundle["total"];
                     document.getElementById(dataBundle["slug"]).innerHTML = "$" + dataBundle["itemPrice"];
