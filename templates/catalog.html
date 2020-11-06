@@ -22,6 +22,7 @@
 
     <script type="text/javascript" src="{% static 'js/variables/variables.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/products/catalog.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/products/item.js' %}"></script>
 
 
 
@@ -56,8 +57,8 @@
                 <nav>
                     <img src="{% static 'img/Logo.png' %}" id="Logo">
                     <ul class="MenuNave">
-                        <li><a class="Btm" href="#inicio">Inicio</a></li>
-                        <li><a class="Btm" href="#productos">Categorias</a></li>
+                        <li><a class="Btm" href="/">Inicio</a></li>
+                        <li><a class="Btm" href="{% url 'core:catalog'%}">Productos</a></li>
                         <li><a class="Btm" href="#qs">Favoritos</a></li>
                         <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
                     </ul>
@@ -181,13 +182,11 @@
             <div class="container">
                 <div class="row">
                     {% for item in object_list %}
-                    <div class="col-md-3 col-6"
-                            {% if item.get_smart == True %} name="PSmart"
-                            {% elif item.get_category_display == 'Mujer' %} name="PWoman"
-                            {% else %} name="PMan"
-                            {% endif %}>
+                    <div class="col-md-3 col-6" {% if item.get_smart == True %} name="PSmart"
+                        {% elif item.get_category_display == 'Mujer' %} name="PWoman" {% else %} name="PMan"
+                        {% endif %}>
                         <div class="productobg" {% if item.get_category_display == 'Mujer' %}
-                             style="background-color:#d1a2a3;"  {% else %} style="background-color:#2f4555;" {% endif %}>
+                            style="background-color:#d1a2a3;" {% else %} style="background-color:#2f4555;" {% endif %}>
                             <a href="{{ item.get_absolute_url }}">
                                 <img class="fotoproducto" src="{{ item.image.url }}">
                             </a>
@@ -199,7 +198,10 @@
                                     </a>
                                 </div>
                                 <div class="col-md-4 col-1">
-                                    <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+                                    <a href="{{ item.get_add_to_cart_url }}1">
+                                        <img class="carritobtn" src="{% static 'img/carritobtn.png'%}">
+
+                                    </a>
                                 </div>
                             </div>
                             <div class="row">

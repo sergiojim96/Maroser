@@ -113,7 +113,8 @@
 
 </head>
 
-<body onload="document.getElementById('bSItemLink').setAttribute('href', document.getElementsByClassName('slide active')[0].getAttribute('data-url'));">
+<body
+    onload="document.getElementById('bSItemLink').setAttribute('href', document.getElementsByClassName('slide active')[0].getAttribute('data-url'));">
 
 
 
@@ -123,8 +124,8 @@
             <nav>
                 <img src="{% static 'img/Logo.png' %}" id="Logo">
                 <ul class="MenuNave">
-                    <li><a class="Btm" href="#Inicio">Inicio</a></li>
-                    <li><a class="Btm" href="#Productos">Categorias</a></li>
+                    <li><a class="Btm" href="/">Inicio</a></li>
+                    <li><a class="Btm" href="{% url 'core:catalog'%}">Productos</a></li>
                     <li><a class="Btm" href="#Qs">Favoritos</a></li>
                     <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
                 </ul>
@@ -406,8 +407,7 @@
                                     <span>Siguiente posicion</span>
                                     <span class="color">N. 2</span>
                                 </div>
-                                <div class="next-button"
-                                     onclick="">
+                                <div class="next-button" onclick="">
                                     <svg>
                                         <use xlink:href="#arrow"></use>
                                     </svg>
@@ -417,28 +417,29 @@
 
 
                         {% for item in  best_seller_c  %}
-                            <div {% if forloop.counter == 1  %} class="slide active" {% else %} class="slide" {% endif %}
-                                 data-order="{{ forloop.counter }}"
-                                 data-color="#{% if forloop.counter == 1  %}ff384b{% elif forloop.counter == 2%}f59600{% else %}0028f2{% endif %}"
-                                 data-name="N. {{ forloop.counter }}"
-                                 data-url="{{ item.get_absolute_url }}">
-                                <div class="slide-content ">
-                                    <div class="clip-svg">
-                                        <img class="top{{ forloop.counter }}" src="{{ item.largeImage.url }}" alt="" />
-                                        <div class="title-wrapper {% if forloop.counter != 1  %}bigger{% endif %}">
-                                            <h1 class="frase1tj">{{ item.title }}</h1>
-                                            <h2 class="frase2tj">{{ item.description }} </h2>
-                                        </div>
+                        <div {% if forloop.counter == 1  %} class="slide active" {% else %} class="slide" {% endif %}
+                            data-order="{{ forloop.counter }}"
+                            data-color="#{% if forloop.counter == 1  %}ff384b{% elif forloop.counter == 2%}f59600{% else %}0028f2{% endif %}"
+                            data-name="N. {{ forloop.counter }}" data-url="{{ item.get_absolute_url }}">
+                            <div class="slide-content ">
+                                <div class="clip-svg">
+                                    <img class="top{{ forloop.counter }}" src="{{ item.largeImage.url }}" alt="" />
+                                    <div class="title-wrapper {% if forloop.counter != 1  %}bigger{% endif %}">
+                                        <h1 class="frase1tj">{{ item.title }}</h1>
+                                        <h2 class="frase2tj">{{ item.description }} </h2>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         {% endfor %}
                     </div>
                 </div>
 
                 <div class="footer-wrapper">
                     <ul class="tjrs">
-                        <a id="bSItemLink" ><li class="rstj"><button type="button" class="btn btn-light" >Ver Juguete</button></li></a>
+                        <a id="bSItemLink">
+                            <li class="rstj"><button type="button" class="btn btn-light">Ver Juguete</button></li>
+                        </a>
                         <li class="rstj"><button type="button" class="btn btn-warning">Comprarlo YA</button></li>
                     </ul>
                 </div>
