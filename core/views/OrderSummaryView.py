@@ -28,9 +28,8 @@ class Get_Order(PayPalClient):
         if ((responseOrderDetails.result.purchase_units[0].amount.value == str(orderTotal)) &
                 (responseOrderDetails.result.purchase_units[0].amount.currency_code == "USD")):
             payPalCaptureRequest = AuthorizationsCaptureRequest(authorizationID)
-            # responsePayPalCapture = self.client.execute(payPalCaptureRequest)
-            # status = responsePayPalCapture.status_code
-            status = 201
+            responsePayPalCapture = self.client.execute(payPalCaptureRequest)
+            status = responsePayPalCapture.status_code
             if (status == 200)|(status == 201):
                 dabaBundle = {'status': 'Nice'}
                 order.ordered = True
