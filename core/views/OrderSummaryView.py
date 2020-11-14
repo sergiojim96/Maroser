@@ -1,16 +1,17 @@
 from django.shortcuts import render, get_object_or_404
+from django.template.loader import render_to_string
 from django.http.response import JsonResponse
+from django.utils.html import strip_tags
 from django.core.mail import send_mail
 from django.shortcuts import redirect
 from django.views.generic import View
 from django.contrib import messages
 from django.conf import settings
+from ..models import UserProfile
 from ..forms import CouponForm
 from ..models import OrderItem
 from ..models import Order
 from ..models import Item
-from ..models import UserProfile
-from ..forms import CouponForm
 from django.core.exceptions import ObjectDoesNotExist
 from ..views.PayPalClient import PayPalClient
 from paypalcheckoutsdk.orders import OrdersGetRequest
@@ -91,8 +92,9 @@ class OrderSummaryView(View):
                 'distrito': order.user_profile.distrito,
                 'address': order.user_profile.address,
             }
+            OrderSummaryView.sendmail(context)
             return render(request, 'resume.html', context)
-        return render(request, 'resume.html')
+        return render(request, 'resume.html', context)
 
 
     def pay(request, orderID, authorizationID):
@@ -220,14 +222,10 @@ class OrderSummaryView(View):
         else:
             return JsonResponse({}, status=400)
 
-    def email(request):
-        if request.is_ajax() and request.method == "GET":
-            subject = 'Thank you for registering to our site'
-            msg_html = render_to_string('templates/email.html')
-            html_message=msg_html,
-            email_from = settings.EMAIL_HOST_USER
-            recipient_list = ['sergioajm2909@gmail.com',]
-            send_mail( subject, message, email_from, recipient_list )
-            return JsonResponse({"scc": "true"}, status=200)
-        else:
-            return JsonResponse({"scc": "false"}, status=400)
+    def sendmail(context):
+        subject = 'SashaCollections gracias por tu compra'
+        html_message=render_to_string('resume.html', context)
+        plain_message = strip_tags(html_message)
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = ['sergioajm2909@gmail.com',]
+        send_mail( subject, plain_message, email_from, recipient_list, html_message=html_message)
