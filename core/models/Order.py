@@ -6,7 +6,7 @@ from django.contrib.sessions.models import Session
 
 class Order(models.Model):
     user = models.CharField(max_length=40)
-    ref_code = models.CharField(max_length=20, blank=True, null=True)
+    ref_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
