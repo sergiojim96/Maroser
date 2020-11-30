@@ -18,7 +18,6 @@ urlpatterns = [
     path('catalog/', CatalogView.as_view(), name='catalog'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
-    path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
     path('product/<slug>/', ItemDetailView.as_view(), name='product'),
     path('add-to-cart/<slug>/<int:quantity>/', CheckoutView.add_to_cart, name='add-to-cart'),
     path('add-to-cart/<slug>/', CheckoutView.add_to_cart, name='add-to-cart-slug'),
@@ -30,5 +29,5 @@ urlpatterns = [
     path('remove-item-from-cart/<slug>/', CheckoutView.remove_single_item_from_cart, name='remove-item-from-cart'),
     path('remove-item-from-cart-summary/<slug>/', OrderSummaryView.remove_single_item_from_cart, name='remove-item-from-cart-summary'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
-    path('request-refund/', RequestRefundView.as_view(), name='request-refund')
+    path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
 ]
