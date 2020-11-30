@@ -1,17 +1,24 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.sessions.models import Session
+from django.http.response import JsonResponse
+from .PayPalClient import PayPalClient
+from django.views.generic import View
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.utils import timezone
 from ..forms import CheckoutForm
-from django.contrib.sessions.models import Session
-from django.http.response import JsonResponse
-from django.views.generic import View
 from ..models import OrderItem
+from ..forms import CouponForm
 from ..models import Address
 from ..models import Order
 from ..models import Item
-from ..forms import CouponForm
+import string 
+import random
+
+
+def create_ref_code():
+        return ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -179,45 +186,53 @@ class CheckoutView(View):
                         self.request, "Invalid payment option selected")
                     return redirect('core:checkout')
         except ObjectDoesNotExist:
-            messages.warning(self.request, "You do not have an active order")
+            messages.warning(self.request, "Aun no tienes una orden activa")
             return redirect("core:order-summary")
-            
+    
     def add_to_cart(request, slug, quantity):
         item = get_object_or_404(Item, slug=slug)
-        if request.session.session_key == None:
-            request.session.create()
-            request.session.set_expiry(1000)
-        order_item, created = OrderItem.objects.get_or_create(
-            item=item,
-            user=request.session.session_key,
-            ordered=False
-        )
-        order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
-        if order_qs.exists():
-            order = order_qs[0]
-            # check if the order item is in the order
-            if order.items.filter(item__slug=item.slug).exists():
-                order_item.quantity += quantity
-                order_item.save()
-                return redirect("core:order-summary")
+        stock = item.stockQuantity
+        if(quantity < stock):
+            if request.session.session_key == None:
+                print("created")
+                request.session.create()
+                request.session.set_expiry(200)
+            order_item, created = OrderItem.objects.get_or_create(
+                item=item,
+                user=request.session.session_key,
+                ordered=False
+            )
+            order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
+            if order_qs.exists():
+                order = order_qs[0]
+                # check if the order item is in the order
+                if order.items.filter(item__slug=item.slug).exists():
+                    order_item.quantity += quantity
+                    order_item.save()
+                    return redirect("core:order-summary")
+                else:
+                    order_item.quantity = quantity
+                    order_item.save()
+                    order.items.add(order_item)
+                    return redirect("core:order-summary")
             else:
                 order_item.quantity = quantity
+                ordered_date = timezone.now()
+                order = Order.objects.create(
+                    user=request.session.session_key, ref_code=create_ref_code(), ordered_date=ordered_date)
                 order_item.save()
                 order.items.add(order_item)
                 return redirect("core:order-summary")
+        elif (item.stockQuantity == 0):
+            messages.info(request, "Este producto se acaba de agotar")
+            return redirect("core:product", slug=slug)
         else:
-            print(quantity)
-            order_item.quantity = quantity
-            ordered_date = timezone.now()
-            order = Order.objects.create(
-                user=request.session.session_key, ordered_date=ordered_date)
-            order_item.save()
-            order.items.add(order_item)
-            return redirect("core:order-summary")
+            messages.info(request, "No hay en existencia la cantidad seleccionada")
+            return redirect("core:product", slug=slug)
+
 
     def remove_single_item_from_cart(request, slug):
         if request.is_ajax() and request.method == "GET":
-            print(slug)
             item = get_object_or_404(Item, slug=slug)
             order_qs = Order.objects.filter(
                 user=request.session.session_key,
@@ -244,37 +259,11 @@ class CheckoutView(View):
                 return JsonResponse({"scc": "false"}, status=400)
         else:
             return JsonResponse({}, status=400)
-    
+
+
     def is_valid_form(self, values):
         valid = True
         for field in values:
             if field == '':
                 valid = False
         return valid
-
-    #Not used for now
-    def remove_from_cart(request, slug):
-        item = get_object_or_404(Item, slug=slug)
-        order_qs = Order.objects.filter(
-            user=request.session.session_key,
-            ordered=False
-        )
-        if order_qs.exists():
-            order = order_qs[0]
-            # check if the order item is in the order
-            if order.items.filter(item__slug=item.slug).exists():
-                order_item = OrderItem.objects.filter(
-                    item=item,
-                    user=request.session.session_key,
-                    ordered=False
-                )[0]
-                order.items.remove(order_item)
-                order_item.delete()
-                messages.info(request, "This item was removed from your cart.")
-                return redirect("core:order-summary")
-            else:
-                messages.info(request, "This item was not in your cart")
-                return redirect("core:product", slug=slug)
-        else:
-            messages.info(request, "You do not have an active order")
-            return redirect("core:product", slug=slug)

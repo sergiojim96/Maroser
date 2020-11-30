@@ -1,0 +1,1 @@
+cloud_sql_proxy -instances="test3363:us-central1:instancia2"=tcp:3306
