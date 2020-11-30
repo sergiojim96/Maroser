@@ -25,9 +25,9 @@ class Get_Order(PayPalClient):
     def pay(self, orderID, authorizationID, order):
         orderTotal, tax, shipping = order.get_total()
         payPalOrder = OrdersGetRequest(orderID)
-        payPalAutorization = AuthorizationsGetRequest(authorizationID)
+
         responseOrderDetails = self.client.execute(payPalOrder)
-        responseAuthorizationsDetails = self.client.execute(payPalAutorization)
+
 
         if ((responseOrderDetails.result.purchase_units[0].amount.value == str(orderTotal)) &
                 (responseOrderDetails.result.purchase_units[0].amount.currency_code == "USD")):
@@ -40,7 +40,7 @@ class Get_Order(PayPalClient):
                 try:
                     user_profile = UserProfile.objects.create(
                         user=order.user,
-                        email=responseOrderDetails.result.purchase_units[0].payee.email_address,
+                        email=responseOrderDetails.result.payer.email_address,
                         provincia=responseOrderDetails.result.purchase_units[0].shipping.address.admin_area_1,
                         canton=responseOrderDetails.result.purchase_units[0].shipping.address.admin_area_2,
                         address=responseOrderDetails.result.purchase_units[0].shipping.address.address_line_1,
@@ -48,7 +48,7 @@ class Get_Order(PayPalClient):
                 except AttributeError:
                     user_profile = UserProfile.objects.create(
                         user=order.user,
-                        email=responseOrderDetails.result.purchase_units[0].payee.email_address,
+                        email=responseOrderDetails.result.payer.email_address,
                         provincia=responseOrderDetails.result.purchase_units[0].shipping.address.admin_area_1,
                         canton=responseOrderDetails.result.purchase_units[0].shipping.address.admin_area_2,
                         address=responseOrderDetails.result.purchase_units[0].shipping.address.address_line_1)
@@ -94,7 +94,7 @@ class OrderSummaryView(View):
             }
             OrderSummaryView.sendmail(context)
             return render(request, 'resume.html', context)
-        return render(request, 'resume.html', context)
+        return render(request, 'resume.html', {})
 
 
     def pay(request, orderID, authorizationID):
@@ -227,5 +227,5 @@ class OrderSummaryView(View):
         html_message=render_to_string('resume.html', context)
         plain_message = strip_tags(html_message)
         email_from = settings.EMAIL_HOST_USER
-        recipient_list = ['sergioajm2909@gmail.com',]
+        recipient_list = [context['email']]
         send_mail( subject, plain_message, email_from, recipient_list, html_message=html_message)
