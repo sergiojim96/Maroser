@@ -1,11 +1,12 @@
 from django.conf import settings
 from django.db import models
 from .OrderItem import OrderItem
+from .UserProfile import UserProfile
 from django.contrib.sessions.models import Session
 
 class Order(models.Model):
     user = models.CharField(max_length=40)
-    ref_code = models.CharField(max_length=20, blank=True, null=True)
+    ref_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
@@ -22,6 +23,7 @@ class Order(models.Model):
     received = models.BooleanField(default=False)
     refund_requested = models.BooleanField(default=False)
     refund_granted = models.BooleanField(default=False)
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, related_name='orders', blank=True, null=True)
     
     '''
     1. Item added to cart
@@ -42,7 +44,7 @@ class Order(models.Model):
         tax = 1
         iva = 0.13
         for order_item in self.items.all():
-            total += order_item.get_final_price()
+            total += round(order_item.get_final_price(), 2)
         if self.coupon:
             total -= self.coupon.amount
         tax = round(total * iva, 2)

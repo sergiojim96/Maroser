@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.sessions.models import Session
 from django.http.response import JsonResponse
+from .PayPalClient import PayPalClient
 from django.views.generic import View
 from django.shortcuts import redirect
 from django.contrib import messages
@@ -12,6 +13,12 @@ from ..forms import CouponForm
 from ..models import Address
 from ..models import Order
 from ..models import Item
+import string 
+import random
+
+
+def create_ref_code():
+        return ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -181,7 +188,7 @@ class CheckoutView(View):
         except ObjectDoesNotExist:
             messages.warning(self.request, "Aun no tienes una orden activa")
             return redirect("core:order-summary")
-            
+    
     def add_to_cart(request, slug, quantity):
         item = get_object_or_404(Item, slug=slug)
         stock = item.stockQuantity
@@ -189,7 +196,7 @@ class CheckoutView(View):
             if request.session.session_key == None:
                 print("created")
                 request.session.create()
-                request.session.set_expiry(30)
+                request.session.set_expiry(200)
             order_item, created = OrderItem.objects.get_or_create(
                 item=item,
                 user=request.session.session_key,
@@ -212,7 +219,7 @@ class CheckoutView(View):
                 order_item.quantity = quantity
                 ordered_date = timezone.now()
                 order = Order.objects.create(
-                    user=request.session.session_key, ordered_date=ordered_date)
+                    user=request.session.session_key, ref_code=create_ref_code(), ordered_date=ordered_date)
                 order_item.save()
                 order.items.add(order_item)
                 return redirect("core:order-summary")
@@ -226,7 +233,6 @@ class CheckoutView(View):
 
     def remove_single_item_from_cart(request, slug):
         if request.is_ajax() and request.method == "GET":
-            print(slug)
             item = get_object_or_404(Item, slug=slug)
             order_qs = Order.objects.filter(
                 user=request.session.session_key,
@@ -253,7 +259,8 @@ class CheckoutView(View):
                 return JsonResponse({"scc": "false"}, status=400)
         else:
             return JsonResponse({}, status=400)
-    
+
+
     def is_valid_form(self, values):
         valid = True
         for field in values:
