@@ -133,6 +133,8 @@ class OrderSummaryView(View):
             return False
 
     def add_single_item_to_cart(request, slug):
+        # Import the Secret Manager client library.
+
         item = get_object_or_404(Item, slug=slug)
         if request.is_ajax() and request.method == "GET":
             order_qs = Order.objects.filter(
