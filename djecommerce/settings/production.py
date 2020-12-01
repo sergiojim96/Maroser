@@ -1,5 +1,6 @@
 from .base import *
 
+
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
@@ -12,10 +13,10 @@ AUTH_PASSWORD_VALIDATORS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database2',
-        'USER': 'usuario2',
-        'PASSWORD': 'holamundo',
-        'HOST': '/cloudsql/test3363:us-central1:instancia2',
+        'ENGINE': DBEngine,
+        'NAME': DBName,
+        'USER': DBUser,
+        'PASSWORD': BBPassword,
+        'HOST': DBHost,
     }
 }
