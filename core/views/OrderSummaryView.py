@@ -156,11 +156,11 @@ class OrderSummaryView(View):
                     itemPrice = order_item.get_total_item_price()
                     dataBundle = {"total": total, "tax": tax, "itemPrice": itemPrice, "slug": slug,
                                   "shipping": shipping}
-                    return JsonResponse({"scc": "true", "dataBundle": dataBundle}, status=200)
+                    return JsonResponse({"scc": "Ok", "dataBundle": dataBundle}, status=200)
                 else:
-                    return JsonResponse({"scc": "false"}, status=200)
+                    return JsonResponse({"scc": "NotInOrder"}, status=200)
             else:
-                return JsonResponse({"scc": "false"}, status=200)
+                return JsonResponse({"scc": "OrderNotExists"}, status=200)
         else:
             return JsonResponse({}, status=400)
 
@@ -173,6 +173,7 @@ class OrderSummaryView(View):
                 ordered=False
             )
             if order_qs.exists():
+                print("exists")
                 order = order_qs[0]
                 # check if the order item is in the order
                 if order.items.filter(item__slug=item.slug).exists():
@@ -183,11 +184,12 @@ class OrderSummaryView(View):
                     )[0]
                     order.items.remove(order_item)
                     order_item.delete()
-                    return JsonResponse({"scc": "true"}, status=200)
+                    return JsonResponse({"scc": "Ok"}, status=200)
                 else:
-                    return JsonResponse({"scc": "false"}, status=200)
+                    return JsonResponse({"scc": "NotInOrder"}, status=200)
             else:
-                return JsonResponse({"scc": "false"}, status=200)
+                print("notexists")
+                return JsonResponse({"scc": "OrderNotExists"}, status=200)
         else:
             return JsonResponse({}, status=400)
 
@@ -216,11 +218,11 @@ class OrderSummaryView(View):
                     itemPrice = order_item.get_total_item_price()
                     dataBundle = {"total": total, "tax": tax, "itemPrice": itemPrice, "slug": slug,
                                   "shipping": shipping}
-                    return JsonResponse({"scc": "true", "dataBundle": dataBundle}, status=200)
+                    return JsonResponse({"scc": "Ok", "dataBundle": dataBundle}, status=200)
                 else:
-                    return JsonResponse({"scc": "false"}, status=400)
+                    return JsonResponse({"scc": "NotInOrder"}, status=200)
             else:
-                return JsonResponse({"scc": "false"}, status=400)
+                return JsonResponse({"scc": "OrderNotExists"}, status=200)
         else:
             return JsonResponse({}, status=400)
 

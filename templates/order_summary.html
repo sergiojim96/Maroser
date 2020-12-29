@@ -554,16 +554,62 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Ya casi</h4>
+                    <h4 class="modal-title">Pago</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Solo 6 segundos</p>
+                    <p>Un momento, mientras realizamos el pago</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <div id="OrderNotExists" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Actualmente no cuenta con una orden activa</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'core:catalog' %}">
+                        <button type="button" class="btn btn-primary">Volver al
+                            catalogo</button>
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="NotInOrder" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>El item no se encuentra en la orden</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'core:catalog' %}">
+                        <button type="button" class="btn btn-primary">Volver al
+                            catalogo</button>
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 

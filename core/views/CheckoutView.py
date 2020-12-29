@@ -191,74 +191,47 @@ class CheckoutView(View):
     
     def add_to_cart(request, slug, quantity):
         item = get_object_or_404(Item, slug=slug)
-        stock = item.stockQuantity
-        if(quantity < stock):
-            if request.session.session_key == None:
-                print("created")
-                request.session.create()
-                request.session.set_expiry(200)
-            order_item, created = OrderItem.objects.get_or_create(
-                item=item,
-                user=request.session.session_key,
-                ordered=False
-            )
-            order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
-            if order_qs.exists():
-                order = order_qs[0]
-                # check if the order item is in the order
-                if order.items.filter(item__slug=item.slug).exists():
-                    order_item.quantity += quantity
-                    order_item.save()
-                    return redirect("core:order-summary")
+        try:
+            stock = item.stockQuantity
+            if(quantity < stock):
+                if request.session.session_key == None:
+                    request.session.create()
+                    request.session.set_expiry(150)
+                order_item, created = OrderItem.objects.get_or_create(
+                    item=item,
+                    user=request.session.session_key,
+                    ordered=False
+                )
+                order_qs = Order.objects.filter(user=request.session.session_key, ordered=False)
+                if order_qs.exists():
+                    order = order_qs[0]
+                    # check if the order item is in the order
+                    if order.items.filter(item__slug=item.slug).exists():
+                        order_item.quantity += quantity
+                        order_item.save()
+                        return redirect("core:order-summary")
+                    else:
+                        order_item.quantity = quantity
+                        order_item.save()
+                        order.items.add(order_item)
+                        return redirect("core:order-summary")
                 else:
                     order_item.quantity = quantity
+                    ordered_date = timezone.now()
+                    order = Order.objects.create(
+                        user=request.session.session_key, ref_code=create_ref_code(), ordered_date=ordered_date)
                     order_item.save()
                     order.items.add(order_item)
                     return redirect("core:order-summary")
+            elif (item.stockQuantity == 0):
+                messages.info(request, "Este producto se acaba de agotar")
+                return redirect("core:product", slug=slug)
             else:
-                order_item.quantity = quantity
-                ordered_date = timezone.now()
-                order = Order.objects.create(
-                    user=request.session.session_key, ref_code=create_ref_code(), ordered_date=ordered_date)
-                order_item.save()
-                order.items.add(order_item)
-                return redirect("core:order-summary")
-        elif (item.stockQuantity == 0):
-            messages.info(request, "Este producto se acaba de agotar")
-            return redirect("core:product", slug=slug)
-        else:
+                messages.info(request, "No hay en existencia la cantidad seleccionada")
+                return redirect("core:product", slug=slug)
+        except:
             messages.info(request, "No hay en existencia la cantidad seleccionada")
             return redirect("core:product", slug=slug)
-
-
-    def remove_single_item_from_cart(request, slug):
-        if request.is_ajax() and request.method == "GET":
-            item = get_object_or_404(Item, slug=slug)
-            order_qs = Order.objects.filter(
-                user=request.session.session_key,
-                ordered=False
-            )
-            if order_qs.exists():
-                order = order_qs[0]
-                # check if the order item is in the order
-                if order.items.filter(item__slug=slug).exists():
-                    order_item = OrderItem.objects.filter(
-                        item=item,
-                        user=request.session.session_key,
-                        ordered=False
-                    )[0]
-                    if order_item.quantity > 1:
-                        order_item.quantity -= 1
-                        order_item.save()
-                    else:
-                        order.items.remove(order_item)
-                    return JsonResponse({"scc": "true"}, status=200)
-                else:
-                    return JsonResponse({"scc": "false"}, status=400)
-            else:
-                return JsonResponse({"scc": "false"}, status=400)
-        else:
-            return JsonResponse({}, status=400)
 
 
     def is_valid_form(self, values):
