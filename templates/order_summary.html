@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="{% static 'css/cart/cuerpocart.css' %}">
     <link rel="stylesheet" href="{% static 'css/cart/plusminus.css' %}">
     <link rel="stylesheet" href="{% static 'css/cart/quizasteint.css' %}">
-    <link rel="stylesheet" href="{% static 'css/cart/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/teinterese.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 
     <script
         src="https://www.paypal.com/sdk/js?client-id=AT9MrrKnz-Ap6nKtesw7UWKFk5DgBNrytIa0Ea2_cjBAaKgU2g3_a-vUNZ-KArTt4CWf6fVsj8D2HBpP&intent=authorize"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
@@ -368,181 +369,96 @@
         </section>
 
 
-        <section class="quizasteint">
+        <section style="background-color: #f2f2f2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12"><h1 class="titlesection">Quizás también te intere</h1></div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-8">
-                        <h2 class="tituloqt">Quizas tambien te interese</h2>
+
+                <div class="col-12 col-md-3 ">
+                    <div class="boxbase">
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="imgteint" src="{% static 'img/producto2.jpg' %}">
+                            </div>
+
+                            <div class="col-6">
+                                <h1 class="titleteint">Vibrador de silicon
+                                    y punto G</h1>
+                                <p class="textteint">Juguete inteligente</p>
+                            </div>
+
+                            <div class="col-3">
+                                <h1 class="priceteint">$35</h1>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
 
-            </div>
-
-            <div class="container">
-                <div class="row">
-
-                    {% comment %}
-                    <div class="col-md-1 col-6">
-
-                        <img class="controlerleft" src="{% static 'img/left.png' %}">
-                    </div>{% endcomment %}
-                    {% for item in maybeObjects %}
-                    <div class="col-md-2 col-6">
-                        <div class="productobg">
-                            <img class="fotoproducto" src="{{ item.image.url }}">
-                            <div class="row">
-                                <div class="col-md-8 col-10">
-                                    <h2 class="titupro">{{ item.title }}</h2>
-                                </div>
-                                <div class="col-md-4 col-1">
-                                    <img class="carritobtn" src="{% static 'img/carritobtn.png' %}">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4 col-12">
-                                    <h2 class="pricepro">{{ item.price }}</h2>
-                                </div>
-
-                                <div class="col-md-8 col-12 bemb">
-                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                </div>
+                <div class="col-12 col-md-3 ">
+                    <div class="boxbase">
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="imgteint" src="{% static 'img/modelojuguete2.jpg' %}">
                             </div>
 
+                            <div class="col-6">
+                                <h1 class="titleteint">Vibrador de silicon
+                                    y punto G</h1>
+                                <p class="textteint">Juguete inteligente</p>
+                            </div>
+
+                            <div class="col-3">
+                                <h1 class="priceteint">$35</h1>
+                            </div>
                         </div>
                     </div>
-                    {% endfor %}
-
-                    {% comment %}
-                    <div class="col-md-2 col-6">
-                        <div class="productobg">
-
-                            <img class="fotoproducto" src="{% static 'img/producto3.jpg' %}">
-
-
-                            <div class="row">
-                                <div class="col-md-8 col-10">
-                                    <h2 class="titupro">Rabbit vibrador</h2>
-                                </div>
-
-                                <div class="col-md-4 col-1">
-                                    <img class="carritobtn" src="{% static 'img/carritobtn.png' %}">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4 col-12">
-                                    <h2 class="pricepro">$135</h2>
-                                </div>
-
-                                <div class="col-md-8 col-12 bemb">
-                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 col-6">
-                        <div class="productobg">
-
-                            <img class="fotoproducto" src="{% static 'img/producto3.jpg' %}">
-
-
-                            <div class="row">
-                                <div class="col-md-8 col-10">
-                                    <h2 class="titupro">Clit sucker</h2>
-                                </div>
-
-                                <div class="col-md-4 col-1">
-                                    <img class="carritobtn" src="{% static 'img/carritobtn.png' %}">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4 col-12">
-                                    <h2 class="pricepro">$135</h2>
-                                </div>
-
-                                <div class="col-md-8 col-12 bemb">
-                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 col-6">
-                        <div class="productobg">
-
-                            <img class="fotoproducto" src="{% static 'img/producto3.jpg' %}">
-
-
-                            <div class="row">
-                                <div class="col-md-8 col-10">
-                                    <h2 class="titupro">Vibrator simple</h2>
-                                </div>
-
-                                <div class="col-md-4 col-1">
-                                    <img class="carritobtn" src="{% static 'img/carritobtn.png' %}">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4 col-12">
-                                    <h2 class="pricepro">$135</h2>
-                                </div>
-
-                                <div class="col-md-8 col-12 bemb">
-                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-2 col-6">
-                        <div class="productobg">
-
-                            <img class="fotoproducto" src="{% static 'img/producto3.jpg' %}">
-
-
-                            <div class="row">
-                                <div class="col-md-8 col-10">
-                                    <h2 class="titupro">Rabbit vibrador</h2>
-                                </div>
-
-                                <div class="col-md-4 col-1">
-                                    <img class="carritobtn" src="{% static 'img/carritobtn.png' %}">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-4 col-12">
-                                    <h2 class="pricepro">$135</h2>
-                                </div>
-
-                                <div class="col-md-8 col-12 bemb">
-                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-md-1 col-6">
-
-                        <img class="controlerright" src="{% static 'img/right.png' %}">
-                    </div>{% endcomment %}
-
-
                 </div>
 
+                <div class="col-12 col-md-3 ">
+                    <div class="boxbase">
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="imgteint" src="{% static 'img/producto3.jpg' %}">
+                            </div>
+
+                            <div class="col-6">
+                                <h1 class="titleteint">Vibrador de silicon
+                                    y punto G</h1>
+                                <p class="textteint">Juguete inteligente</p>
+                            </div>
+
+                            <div class="col-3">
+                                <h1 class="priceteint">$35</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-3 ">
+                    <div class="boxbase">
+                        <div class="row">
+                            <div class="col-3">
+                                <img class="imgteint" src="{% static 'img/producto4.jpg' %}">
+                            </div>
+
+                            <div class="col-6">
+                                <h1 class="titleteint">Vibrador de silicon
+                                    y punto G</h1>
+                                <p class="textteint">Juguete inteligente</p>
+                            </div>
+
+                            <div class="col-3">
+                                <h1 class="priceteint">$35</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
-
-
-        </section>
+        </div>
+    </section>
 
 
     </section>
@@ -612,75 +528,77 @@
         </div>
     </div>
 
+<footer style="background-color: #2f4555;">
 
-    <footer>
+    <div class="">
+        <div class="container">
 
-        <div class="bgfooter">
-            <div class="container">
+            <div class="row">
 
-                <div class="row">
+                <div class="col-md-3 col-6">
+                    <img class="logomf" src="{% static 'img/logoblanco.png' %}">
+                    <h5 class="Contactomf">info@elnombre.com</h5>
+                    <h5 class="Contactomf">+506 6039 8858</h5>
+                </div>
 
-                    <div class="col-md-3 col-6">
-                        <img class="logomf" src="{% static 'img/logowhite.png' %}">
-                        <h5 class="Contactomf">info@elnombre.com</h5>
-                    </div>
+                <div class="col-md-2 col-6 menufl">
+                    <nav>
+                        <ul>
+                            <li class="menufooter">Inicio</li>
+                            <li class="menufooter">Categoria</li>
+                            <li class="menufooter">Mas vendido</li>
+                            <li class="menufooter">Contacto</li>
+                        </ul>
+                    </nav>
+                </div>
 
-                    <div class="col-md-2 col-6 menufl">
-                        <nav>
-                            <ul>
-                                <li class="menufooter">Inicio</li>
-                                <li class="menufooter">Categoria</li>
-                                <li class="menufooter">Mas vendido</li>
-                                <li class="menufooter">Contacto</li>
-                            </ul>
-                        </nav>
-                    </div>
+                <div class="col-md-3 col-6 menufl2">
+                    <nav>
+                        <ul>
+                            <li class="menufooter">For Her</li>
+                            <li class="menufooter">For Him</li>
+                            <li class="menufooter">Smart Toys</li>
+                        </ul>
+                    </nav>
+                    <img class="instaimf" src="{% static 'img/instagram.png' %}">
+                    <img class="faceimf" src="{% static 'img/facebook.png' %}">
+                </div>
 
-                    <div class="col-md-3 col-6 menufl2">
-                        <nav>
-                            <ul>
-                                <li class="menufooter">For Her</li>
-                                <li class="menufooter">For Him</li>
-                                <li class="menufooter">Smart Toys</li>
-                            </ul>
-                        </nav>
-                        <img class="instaimf" src="{% static 'img/instagram.png' %}">
-                        <img class="faceimf" src="{% static 'img/facebook.png' %}">
-                    </div>
-
-                    <div class="col-md-4 col-12 menufl3">
-                        <form class="formfooter">
-                            <div class="form-row">
-                                <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
-                                    te contactamos</small>
-                                <div class="col-12 form-group">
-                                    <input type="text" class="form-control textinfc" placeholder="E-mail">
-                                </div>
+                <div class="col-md-4 col-12 menufl3">
+                    <form class="formfooter">
+                        <div class="form-row">
+                            <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
+                                te contactamos</small>
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control textinfc" placeholder="E-mail">
                             </div>
-                        </form>
-                        <button type="button" class="btn btn-outline-light">Enviar</button>
-                    </div>
-
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-outline-light">Enviar</button>
                 </div>
-            </div>
 
-        </div>
-
-
-        <div class="bffooter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-1"></div>
-                    <div class="col-md-4 col-10">
-                        <h6 class="derechosr">&copy; Derechos Reservados</h6>
-                    </div>
-                    <div class="col-md-4 col-1"></div>
-                </div>
             </div>
         </div>
 
+    </div>
 
-    </footer>
+
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-1"></div>
+                <div class="col-md-4 col-10">
+                    <h6 class="derechosr" style="color: white">&copy; Derechos Reservados</h6>
+                </div>
+                <div class="col-md-4 col-1"></div>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+
+
 
 
 
