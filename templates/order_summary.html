@@ -369,13 +369,13 @@
         </section>
 
 
-        <section style="background-color: #f2f2f2">
+    <section style="background-color: #f2f2f2">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12"><h1 class="titlesection">Quizás también te intere</h1></div>
 
 
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -395,7 +395,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -415,7 +415,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -435,7 +435,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-3 ">
+                <div class="col-12 col-md-6 col-lg-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -544,10 +544,10 @@
                 <div class="col-md-2 col-6 menufl">
                     <nav>
                         <ul>
-                            <li class="menufooter">Inicio</li>
-                            <li class="menufooter">Categoria</li>
-                            <li class="menufooter">Mas vendido</li>
-                            <li class="menufooter">Contacto</li>
+                            <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="{% url 'core:catalog' %}">Productos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="#Qs">Favoritos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="#qs">Contacto</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -555,9 +555,9 @@
                 <div class="col-md-3 col-6 menufl2">
                     <nav>
                         <ul>
-                            <li class="menufooter">For Her</li>
-                            <li class="menufooter">For Him</li>
-                            <li class="menufooter">Smart Toys</li>
+                            <a class="linkmenufooter"  href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'men')" class="menufooter">For Him</li></a>
+                            <a class="linkmenufooter"  href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'women')" class="menufooter">For Her</li></a>
+                            <a class="linkmenufooter" href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'smart')" class="menufooter">Smart Toys</li></a>
                         </ul>
                     </nav>
                     <img class="instaimf" src="{% static 'img/instagram.png' %}">
