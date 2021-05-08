@@ -11,4 +11,4 @@ class CatalogView(ListView):
         return super().get(request, *args, **kwargs)
     
     def checkSessions(self):
-        print("hola")
+        pass

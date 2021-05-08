@@ -26,7 +26,6 @@ urlpatterns = [
     path('order-summary/async-remove-from-cart/', OrderSummaryView.async_remove_from_cart, name='async-remove-from-cart'),
     path('order-summary/pay/<orderID>/<authorizationID>', OrderSummaryView.pay, name='pay-transaction'),
     path('order-summary/resume', OrderSummaryView.resume, name='pay-resume'),
-    path('remove-item-from-cart/<slug>/', CheckoutView.remove_single_item_from_cart, name='remove-item-from-cart'),
     path('remove-item-from-cart-summary/<slug>/', OrderSummaryView.remove_single_item_from_cart, name='remove-item-from-cart-summary'),
     path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
     path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
