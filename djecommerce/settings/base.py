@@ -84,7 +84,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = 'https://storage.googleapis.com/test3363/static/'
+STATIC_URL = '/static_in_env/'
 MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
@@ -107,10 +107,10 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = client.access_secret_version(request = {
-    "name": 'projects/' + projectId + '/secrets/EmailUser/versions/1'}) \
+    "name": 'projects/' + projectId + '/secrets/EmailUser/versions/2'}) \
     .payload.data.decode("UTF-8")
 EMAIL_HOST_PASSWORD = client.access_secret_version(request = {
-    'name': 'projects/' + projectId + '/secrets/EmailPassword/versions/1'}) \
+    'name': 'projects/' + projectId + '/secrets/EmailPassword/versions/2'}) \
     .payload.data.decode("UTF-8")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True

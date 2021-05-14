@@ -12,12 +12,12 @@
     <!-- Links para CSS -->
     <link rel="stylesheet" href="{% static 'css/product/cssgenerales.css'%}">
     <link rel="stylesheet" href="{% static 'css/product/Menu.css'%}">
-    <link rel="stylesheet" href="{% static 'css/product/infoitem.css'%}">
+    <link rel="stylesheet" href="{% static 'css/product/informacionitem.css'%}">
     <link rel="stylesheet" href="{% static 'css/product/plusminus.css'%}">
     <link rel="stylesheet" href="{% static 'css/product/iconsinformativos.css'%}">
     <link rel="stylesheet" href="{% static 'css/product/descproducto.css'%}">
     <link rel="stylesheet" href="{% static 'css/product/fotosproduct.css'%}">
-    <link rel="stylesheet" href="{% static 'css/product/footer.css'%}">
+    <link rel="stylesheet" href="{% static 'css/footer.css'%}">
 
 
 
@@ -53,12 +53,11 @@
 </head>
 
 <body>
-
     <header class="banner">
         <div>
             <div class="menu_section">
                 <nav>
-                    <img src="{% static 'img/Logo.png'%}" id="Logo">
+                    <a href="/" id="Logo"><img style="width: 100%" src="{% static 'img/logoblanco.png'%}" ></a>
                     <ul class="MenuNave">
                         <li><a class="Btm" href="/">Inicio</a></li>
                         <li><a class="Btm" href="{% url 'core:catalog'%}">Productos</a></li>
@@ -68,7 +67,7 @@
                 </nav>
             </div>
 
-            <img class="logo-mobile" src="{% static 'img/logofullcolor.png'%}">
+            <a  href="/"><img class="logo-mobile" src="{% static 'img/Logo.png' %}"></a>
         </div>
 
 
@@ -217,7 +216,7 @@
                                         id="increase" onclick="increaseAmount('{{ item.stockQuantity }}')">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-lg-5 col-5">
+                            <div class="col-md-4 col-lg-5 col-5 mb-5">
                                 <a id="toCart" href="{{ object.get_add_to_cart_url }}1">
                                     <button type="button" class="btn btn-primary">
 
@@ -230,7 +229,7 @@
                                 </a>
                             </div>
 
-                            <div class="col-md-4 col-lg-6 col-6">
+                            <div class="col-md-4 col-lg-6 col-6 mb-5">
                                 <button type="button" class="btn btn-warning">Compralo Ya</button>
                             </div>
                         </div>
@@ -430,14 +429,21 @@
 
         <section>
 
-            <div class="foto1">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                       <img class="fotoproductodesc" src="{% static 'img/fotoproducto1.jpg'%}">
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                       <img class="fotoproductodesc" src="{% static 'img/fotoproducto2.jpg'%}">
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                       <img class="fotoproductodesc" src="{% static 'img/fotoproducto3.jpg'%}">
+                    </div>
+                </div>
             </div>
-
-
-            <div class="foto2">
-            </div>
-
-
 
 
         </section>
@@ -451,76 +457,75 @@
 
 
 
-    <footer>
+<footer style="background-color: #2f4555;">
 
-        <div class="bgfooter">
-            <div class="container">
+    <div class="">
+        <div class="container">
 
-                <div class="row">
+            <div class="row">
 
-                    <div class="col-md-3 col-6">
-                        <img class="logomf" src="{% static 'img/logowhite.png'%}">
-                        <h5 class="Contactomf">info@elnombre.com</h5>
-                    </div>
+                <div class="col-md-3 col-6">
+                    <img class="logomf" src="{% static 'img/logoblanco.png' %}">
+                    <h5 class="Contactomf">info@elnombre.com</h5>
+                    <h5 class="Contactomf">+506 6039 8858</h5>
+                </div>
 
-                    <div class="col-md-2 col-6 menufl">
-                        <nav>
-                            <ul>
-                                <li class="menufooter">Inicio</li>
-                                <li class="menufooter">Categoria</li>
-                                <li class="menufooter">Mas vendido</li>
-                                <li class="menufooter">Contacto</li>
-                            </ul>
-                        </nav>
-                    </div>
+                <div class="col-md-2 col-6 menufl">
+                    <nav>
+                        <ul>
+                            <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="{% url 'core:catalog' %}">Productos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="#Qs">Favoritos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="#qs">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-                    <div class="col-md-3 col-6 menufl2">
-                        <nav>
-                            <ul>
-                                <li class="menufooter">For Her</li>
-                                <li class="menufooter">For Him</li>
-                                <li class="menufooter">Smart Toys</li>
-                            </ul>
-                        </nav>
-                        <img class="instaimf" src="{% static 'img/instagram.png'%}">
-                        <img class="faceimf" src="{% static 'img/facebook.png'%}">
-                    </div>
+                <div class="col-md-3 col-6 menufl2">
+                    <nav>
+                        <ul>
+                            <a class="linkmenufooter"  href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'men')" class="menufooter">For Him</li></a>
+                            <a class="linkmenufooter"  href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'women')" class="menufooter">For Her</li></a>
+                            <a class="linkmenufooter" href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'smart')" class="menufooter">Smart Toys</li></a>
+                        </ul>
+                    </nav>
+                    <img class="instaimf" src="{% static 'img/instagram.png' %}">
+                    <img class="faceimf" src="{% static 'img/facebook.png' %}">
+                </div>
 
-                    <div class="col-md-4 col-12 menufl3">
-                        <form class="formfooter">
-                            <div class="form-row">
-                                <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
-                                    te contactamos</small>
-                                <div class="col-12 form-group">
-                                    <input type="text" class="form-control textinfc" placeholder="E-mail">
-                                </div>
+                <div class="col-md-4 col-12 menufl3">
+                    <form class="formfooter">
+                        <div class="form-row">
+                            <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
+                                te contactamos</small>
+                            <div class="col-12 form-group">
+                                <input type="text" class="form-control textinfc" placeholder="E-mail">
                             </div>
-                        </form>
-                        <button type="button" class="btn btn-outline-light">Enviar</button>
-                    </div>
-
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-outline-light">Enviar</button>
                 </div>
-            </div>
 
-        </div>
-
-
-
-        <div class="bffooter">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-1"></div>
-                    <div class="col-md-4 col-10">
-                        <h6 class="derechosr">&copy; Derechos Reservados</h6>
-                    </div>
-                    <div class="col-md-4 col-1"></div>
-                </div>
             </div>
         </div>
 
+    </div>
 
 
-    </footer>
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-1"></div>
+                <div class="col-md-4 col-10">
+                    <h6 class="derechosr" style="color: white">&copy; Derechos Reservados</h6>
+                </div>
+                <div class="col-md-4 col-1"></div>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
 
 
 
