@@ -18,7 +18,13 @@ import random
 
 
 def create_ref_code():
-        return ''.join(random.choices(string.ascii_lowercase + string.digits, k=10))
+    while True:
+        ref_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        order = Order.objects.filter(ref_code=ref_code)
+        if not order.exists():
+            return ref_code
+
+
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -230,6 +236,7 @@ class CheckoutView(View):
                 messages.info(request, "No hay en existencia la cantidad seleccionada")
                 return redirect("core:product", slug=slug)
         except:
+            print('exc')
             messages.info(request, "No hay en existencia la cantidad seleccionada")
             return redirect("core:product", slug=slug)
 

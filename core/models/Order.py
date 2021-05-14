@@ -6,7 +6,7 @@ from django.contrib.sessions.models import Session
 
 class Order(models.Model):
     user = models.CharField(max_length=40)
-    ref_code = models.CharField(max_length=10, blank=True, null=True, unique=True)
+    ref_code = models.CharField(max_length=15, blank=True, null=True, unique=True)
     items = models.ManyToManyField(OrderItem)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
@@ -41,18 +41,9 @@ class Order(models.Model):
 
     def get_total(self):
         total = 0
-        tax = 1
-        iva = 0.13
         for order_item in self.items.all():
             total += round(order_item.get_final_price(), 2)
         if self.coupon:
             total -= self.coupon.amount
-        tax = round(total * iva, 2)
-        shipping = self.get_shipping()
-        total += tax
-        total += shipping
         total = round(total, 2)
-        return total, tax, shipping
-
-    def get_shipping(self):
-        return 8;
+        return total
