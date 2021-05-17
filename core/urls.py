@@ -4,7 +4,6 @@ from .views import (
     CheckoutView,
     HomeView,
     OrderSummaryView,
-    PaymentView,
     AddCouponView,
     RequestRefundView,
     CatalogView,
@@ -27,6 +26,5 @@ urlpatterns = [
     path('order-summary/pay/<orderID>/<authorizationID>', OrderSummaryView.pay, name='pay-transaction'),
     path('order-summary/resume', OrderSummaryView.resume, name='pay-resume'),
     path('remove-item-from-cart-summary/<slug>/', OrderSummaryView.remove_single_item_from_cart, name='remove-item-from-cart-summary'),
-    path('payment/<payment_option>/', PaymentView.as_view(), name='payment'),
     path('request-refund/', RequestRefundView.as_view(), name='request-refund'),
 ]
