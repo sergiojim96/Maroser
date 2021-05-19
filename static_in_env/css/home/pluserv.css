@@ -1,0 +1,122 @@
+
+.fotoplus {
+    width: 100%;
+    margin-top: 18%;
+    margin-bottom: 15%;
+}
+
+
+.topserv {
+    margin-top: 35%;
+}
+
+.iconpluserv {
+    width: 150%;
+    margin-left: 5%;
+}
+
+.titlepluserv {
+    font-family: 'Volkhov', serif;
+    color: #2f4555;
+    font-size: 120%;
+    text-shadow: none;
+    margin-top: 5%;
+}
+
+
+.titlepluservtext {
+    font-family: 'Volkhov', serif;
+    color: #2f4555;
+    font-size: 200%;
+    text-shadow: none;
+    margin-top: 15%;
+    margin-left: 5%;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.textpluservtext {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #2f4555;
+    font-size: 110%;
+    margin-left: 5%;
+}
+
+.titlesmartoys {
+    font-family: 'Volkhov', serif;
+    color: #2f4555;
+    font-size: 200%;
+    text-shadow: none;
+    margin-top: 15%;
+    margin-left: 5%;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+
+.tagbackcontacto {
+    background-color: #2f4555;
+    margin-top: 4%;
+    border-radius: 0px 49px 49px 0px;
+    -moz-border-radius: 0px 49px 49px 0px;
+    -webkit-border-radius: 0px 49px 49px 0px;
+}
+
+
+.contactosection {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    margin-left: 30%;
+    margin-top: 2%;
+    font-size: 130%;
+    text-shadow: none;
+}
+
+@media (min-width: 789px) and (max-width: 1028px) {
+
+}
+
+
+@media (min-width: 578px) and (max-width: 788px) {
+
+    .topserv {
+        margin-top: 0%;
+    }
+    .iconpluserv {
+        display: none;
+    }
+    .titlepluserv {
+        display: none;
+    }
+
+    .titlepluserv {
+        font-size: 100%;
+    }
+
+    .btnipad {
+        margin-bottom: 20%;
+    }
+
+}
+
+@media (min-width: 1px) and (max-width: 576px) {
+
+    .topserv {
+        margin-top: 2%;
+    }
+
+    .iconpluserv {
+        width: 80%;
+        margin-left: 25%;
+    }
+
+    .titlepluserv {
+        font-size: 130%;
+    }
+
+    .textpluservtext {
+        margin-bottom: 20%;
+    }
+
+
+}

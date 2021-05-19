@@ -17,13 +17,17 @@
     <link rel="stylesheet" href="{% static 'css/products/infoservicios.css' %}">
     <link rel="stylesheet" href="{% static 'css/teinterese.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-
-    <!-- Codigo de bootstrap -->
-
-
+    <script type="text/javascript" src="{% static 'js/home/top3juguetes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/universal-parallax.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/variables/variables.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/products/catalog.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/products/item.js' %}"></script>
+
+    <script>
+        new universalParallax().init({
+            speed: 4
+        });
+    </script>
     <script type="text/javascript" src="{% static 'js/products/cart_functions.js' %}"></script>
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"

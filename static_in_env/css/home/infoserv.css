@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+.iconsinfoserv {
+    background-color: #2f4555;
+}
+
+.iconinfserv {
+    width: 140%;
+    margin-top: 55%;
+}
+
+.titleinfoserv {
+    font-family: 'Volkhov', serif;
+    font-size: 105%;
+    color: white;
+    margin-top: 15%;
+    line-height: 1;
+}
+
+.textinfoserv {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 85%;
+    margin-bottom: 15%;
+    color: white;
+}
+
+
+@media (min-width: 578px) and (max-width: 768px) {
+
+  .iconinfserv {
+        width: 110%;
+        margin-left: 15%;
+        margin-top: 30%;
+    }
+    .titleinfoserv {
+        font-size: 105%;
+        margin-top: 10%;
+        text-align: left;
+    }
+
+}
+
+@media (min-width: 1px) and (max-width: 576px) {
+
+    .iconinfserv {
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 8%;
+    }
+
+    .titleinfoserv {
+        font-size: 105%;
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    .textinfoserv {
+        margin-bottom: 10%;
+        text-align: center;
+    }
+
+
+}
+
+
+
+

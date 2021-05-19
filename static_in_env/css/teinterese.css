@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+.titlesection {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 180%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 3%;
+}
+
+
+.boxbase {
+    background-color: white;
+    margin-bottom: 10%;
+    cursor: pointer;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -webkit-box-shadow: 6px 6px 12px -10px rgba(0, 0, 0, 0.36);
+    -moz-box-shadow: 6px 6px 12px -10px rgba(0, 0, 0, 0.36);
+    box-shadow: 6px 6px 12px -10px rgba(0, 0, 0, 0.36);
+}
+
+
+.imgteint {
+    width: 100%;
+    margin-top: 30%;
+    margin-bottom: 30%;
+    margin-left: 10%;
+}
+
+.titleteint {
+    font-family: 'Volkhov', serif;
+    font-size: 100%;
+    margin-top: 10%;
+    line-height: 1;
+}
+
+.textteint {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 90%;
+}
+
+.priceteint {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 120%;
+    font-weight: bolder;
+    margin-top: 25%;
+}
+
+
+.primerac {
+    margin-top: 8%;
+}
+
+
+.iconcorreoblue {
+    width: 20%;
+    margin-top: 30%;
+}
+
+
+.correoc {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 140%;
+    margin-bottom: 1%;
+}
+
+.instc {
+    width: 20%;
+    margin-top: 10%;
+}
+
+.facec {
+    width: 20%;
+    margin-top: 10%;
+}
+
+
+.mensajec {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 90%;
+    margin-bottom: 1%;
+}
+
+.textinfc {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.btncenviar {
+    width: 20%;
+    float: right;
+    margin-bottom: 10%;
+}
+
+@media (min-width: 789px) and (max-width: 1028px) {
+    .titleteint {
+        font-size: 150%;
+    }
+
+    .priceteint {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 180%;
+    }
+
+    .textteint {
+        font-size: 140%;
+    }
+}
+
+@media (min-width: 1px) and (max-width: 576px) {
+
+    .titlesection {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 180%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        margin-left: 3%;
+    }
+}
+

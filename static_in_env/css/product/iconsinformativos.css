@@ -1,0 +1,134 @@
+
+.iconssect {
+    background-color: #2f4555;
+}
+
+
+/*-- Cuadro izquierdo */
+
+
+.cuadroinfizq {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+
+.bi-check2-circle {
+    width: 50%;
+    color: white;
+}
+
+
+.tiicf {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 110%;
+    color: white;
+    margin-left: -15%;
+}
+
+
+.bi-truck {
+    width: 18%;
+    color: white;
+}
+
+.bi-credit-card-2-back {
+    width: 18%;
+    color: white;
+}
+
+.bi-clock {
+    width: 18%;
+    color: white;
+}
+
+/*-- Cuadro derecho */
+
+.cuadroinfder {
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.iconinfitem {
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 5%;
+}
+
+.texticoninf {
+    font-family: 'Volkhov', serif;
+    font-size: 90%;
+    color: white;
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+
+@media (min-width: 1px) and (max-width: 576px) {
+
+
+    /*-- Cuadro izquierdo */
+    .cuadroinfizq {
+        margin-top: 11%;
+        margin-bottom: 6%;
+    }
+
+    .bi-check2-circle {
+        width: 80%;
+        color: white;
+        margin-left: 20%;
+    }
+
+    .tiicf {
+        font-size: 120%;
+        margin-left: -10%;
+        line-height: 1.5rem;
+
+    }
+
+    .bi-truck {
+        width: 30%;
+        color: white;
+    }
+
+    .bi-credit-card-2-back {
+        width: 30%;
+        color: white;
+    }
+
+    .bi-clock {
+        width: 30%;
+        color: white;
+    }
+
+    /*-- Cuadro derecho */
+    .cuadroinfder {
+        margin-top: 1%;
+        margin-bottom: 8%;
+    }
+
+    .iconinfitem {
+        width: 80%;
+        margin-left: 15%;
+        margin-bottom: 5%;
+    }
+
+    .texticoninf {
+        font-family: 'Volkhov', serif;
+        font-size: 80%;
+        color: white;
+        text-align: center;
+        margin-bottom: 15%;
+    }
+
+    .iconssect {
+        border-radius: 25px 25px 0px 0px;
+        -moz-border-radius: 25px 25px 0px 0px;
+        -webkit-border-radius: 25px 25px 0px 0px;
+    }
+
+}
+
+
+
+

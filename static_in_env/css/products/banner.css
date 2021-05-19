@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+.banner {
+    background-image: url(../../img/portada.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.logobanner {
+    width: 50%;
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+.tjuguetes {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-size: 160%;
+    text-align: end;
+    text-shadow: none;
+    letter-spacing: 4px;
+    margin-top: 30%;
+    line-height: 0.5em;
+}
+
+.pellas {
+    font-family: 'Volkhov', serif;
+    font-size: 220%;
+    text-align: end;
+    color: white;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    text-shadow: none;
+}
+
+
+@media (min-width: 1px) and (max-width: 576px) {
+
+    .logobanner {
+        width: 60%;
+        margin-top: 0%;
+        margin-left: 20%;
+    }
+
+
+
+    .pellas {
+        font-family: 'Volkhov', serif;
+        font-size: 180%;
+        text-align: end;
+        color: white;
+        margin-top: 3%;
+        margin-bottom: 10%;
+        text-shadow: none;
+    }
+}

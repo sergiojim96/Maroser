@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+
+#newportada {
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+
+.titlepn {
+    font-family: 'Volkhov', serif;
+    color: #2f4555;
+    margin-top: 50%;
+    margin-left: 10%;
+    text-shadow: none;
+    line-height: 1.05em;
+    font-size: 220%;
+}
+
+
+.frasepn {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #2f4555;
+    text-shadow: none;
+    line-height: 1.05em;
+    font-size: 130%;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.rrss {
+    margin-left: 8%;
+}
+
+.iconcover {
+    width: 8%;
+    margin-left: 2%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+
+
+.decorcover {
+    font-family: 'Volkhov', serif;
+    color: #2f4555;
+    font-size: 120%;
+    background-color: #efc4c0;
+    padding: 2%;
+    margin-left: 9%;
+}
+
+
+.piccover {
+    background-image: url("/test3363/static/img/cover.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+@media (min-width: 576px) and (max-width: 768px) {
+
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+}
+@media (min-width: 992px) and (max-width: 1400px) {
+
+
+}
+@media (min-width: 1px) and (max-width: 576px) {
+
+
+    #newportada {
+    height: 110vh;
+    background-color: #f2f2f2;
+}
+
+
+    .infocover {
+        height: 55vh;
+    }
+
+    .piccover {
+    background-image: url("/test3363/static/img/mobilecover.jpg");
+    height: 55vh;
+}
+
+
+    .titlepn {
+    margin-top: 35%;
+    margin-left: 0%;
+    font-size: 200%;
+}
+
+    .frasepn {
+    font-size: 110%;
+    margin-top: 5%;
+    margin-left: 0%;
+}
+
+
+.rrss {
+    margin-left: 0%;
+}
+
+.decorcover {
+    margin-left: 0%;
+}
+
+
+
+}
+
+
+
+
+
+
+
+

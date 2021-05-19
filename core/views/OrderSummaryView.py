@@ -164,10 +164,10 @@ class OrderSummaryView(View):
                     )[0]
                     order_item.quantity += 1
                     order_item.save()
-                    total, tax, shipping = order.get_total()
+                    total = order.get_total()
                     itemPrice = order_item.get_total_item_price()
-                    dataBundle = {"total": total, "tax": tax, "itemPrice": itemPrice, "slug": slug,
-                                  "shipping": shipping}
+                    dataBundle = {"total": total, "tax": 0, "itemPrice": itemPrice, "slug": slug,
+                                  "shipping": 0}
                     return JsonResponse({"scc": "Ok", "dataBundle": dataBundle}, status=200)
                 else:
                     return JsonResponse({"scc": "NotInOrder"}, status=200)

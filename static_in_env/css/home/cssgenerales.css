@@ -1,0 +1,41 @@
+.html {
+
+}
+
+.todo {
+    background-color: white;
+    margin-bottom: 50vh;
+    z-index: 1;
+}
+
+body {
+    color: white;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 789px) and (max-width: 1028px) {
+    .todo {
+        margin-bottom: 25vh;
+    }
+
+}
+
+@media (min-width: 578px) and (max-width: 788px) {
+    .todo {
+        margin-bottom: 40vh;
+    }
+}
+
+@media (min-width: 1px) and (max-width: 576px) {
+
+    .todo {
+        margin-bottom: 68vh;
+
+
+    }
+
+}
+    
