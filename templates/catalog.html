@@ -62,22 +62,18 @@
             </nav>
         </div>
 
-        <a  href="/"><img class="logo-mobile" src="{% static 'img/Logo.png' %}"></a>
+        <a href="/"><img class="logo-mobile" src="{% static 'img/Logo.png' %}"></a>
     </div>
 
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4 col-3">
-
+            <div class="col-xl-8 col-lg-6 col-md-3  col-1">
             </div>
 
-            <div class="col-md-4 col-3">
-            </div>
-
-            <div class="col-md-4 col-6">
-                <h4 class="tjuguetes">Juguetes para</h4>
-                <h1 class="pellas">Ellas</h1>
+            <div class="col-xl-4 col-lg-6 col-md-9 col-11">
+                <h4 class="tjuguetes">Seguro encontraras </h4>
+                <h1 class="pellas">El juguete indicado</h1>
             </div>
 
         </div>
@@ -87,57 +83,66 @@
 </header>
 
 <section>
-    <img class="logoicon" src="{% static 'img/LogoIcon.png' %}">
     <div class="menu-mobile">
-
+        <img class="logoicon" src="{% static 'img/LogoIcon.png' %}">
         <div class="container-fluid barramenu">
             <div class="row">
 
 
                 <div class="col-3">
-                    <svg id="svgH" class="bi bi-house-fill" onclick="window.scrollTo({top:0, behavior: 'smooth'})"
-                         viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                        <path fill-rule="evenodd"
-                              d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                    </svg>
-                    <h5 id="tituloH" class="textmbH">Inicio</h5>
+                    <a href="/">
+                        <svg id="svgH" class="bi bi-house-fill"
+                             viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                             style="color: #2f4555;">
+                            <path fill-rule="evenodd"
+                                  d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                            <path fill-rule="evenodd"
+                                  d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                        </svg>
+                    </a>
+                    <a href="home.html"><h5 id="tituloH" class="textmbH" style="color: #2f4555;">Inicio</h5></a>
                 </div>
 
                 <div class="col-3">
-                    <svg id="svgC" class="bi bi-layers-fill"
-                         onclick="window.scrollTo({top:739, behavior: 'smooth'})" viewBox="0 0 16 16"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z"/>
-                        <path fill-rule="evenodd"
-                              d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z"/>
-                    </svg>
-                    <h5 id="tituloC" class="textmb">Categorias</h5>
+                    <a href="/..#categoriamenu">
+                        <svg id="svgC" class="bi bi-layers-fill" viewBox="0 0 16 16" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z"/>
+                            <path fill-rule="evenodd"
+                                  d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z"/>
+                        </svg>
+                    </a>
+                    <a href="/..#categoriamenu"><h5 id="tituloC" class="textmb">Categorias</h5></a>
                 </div>
 
                 <div class="col-3">
-                    <svg id="svgL" class="bi bi-trophy" onclick="window.scrollTo({top:1611, behavior: 'smooth'})"
-                         viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
-                        <path fill-rule="evenodd"
-                              d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
-                        <path d="M7 10h2v4H7v-4z"/>
-                        <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
-                    </svg>
-                    <h5 id="tituloL" class="textmb">Favoritos</h5>
+                    <a href="/..#favoritomenu">
+                        <svg id="svgL" class="bi bi-trophy" viewBox="0 0 16 16" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
+                            <path fill-rule="evenodd"
+                                  d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
+                            <path d="M7 10h2v4H7v-4z"/>
+                            <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
+                        </svg>
+                    </a>
+                    <a href="/..#favoritomenu"><h5 id="tituloL" class="textmb">Favoritos</h5></a>
                 </div>
 
                 <div class="col-3">
-                    <svg class="bi bi-cart-fill" viewBox="0 0 16 16" fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                    </svg>
-                    <h5 class="textmb">Carrito</h5>
+
+                    <a href="{% url 'core:order-summary' %}">
+                        <svg class="bi bi-cart-fill" viewBox="0 0 16 16" fill="currentColor"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                        </svg>
+                    </a>
+                    <a href="{% url 'core:order-summary' %}"><h5 class="textmb">Carrito</h5></a>
                 </div>
+
             </div>
         </div>
     </div>
@@ -145,6 +150,7 @@
 
 
 <section class="todo">
+
 
     <section>
 
@@ -188,38 +194,45 @@
                                 <img class="fotoproducto" src="{{ item.image.url }}">
                             </a>
                             <div class="row">
-                                <div class="col-md-8 col-10">
-                                    <a href="{{ item.get_absolute_url }}">
+                                <div class="col-xl-8 col-lg-7 col-md-12 col-10">
+                                    <a href="{{ item.get_absolute_url }}" style="text-decoration: none;">
                                         <h2 class="titupro">{{ item.title }}</h2>
-                                        <h4 class="descpro">{{ item.description }}</h4>
-                                    </a>
-                                </div>
-                                <div class="col-md-4 col-1">
-                                    <a href="{{ item.get_add_to_cart_url }}1">
-                                        <img class="carritobtn" src="{% static 'img/carritobtn.png' %}">
 
                                     </a>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 col-12">
-                                    <a href="{{ item.get_absolute_url }}">
+
+                                <div class="col-xl-4 col-lg-5 col-md-12 col-12">
+                                    <a href="{{ item.get_absolute_url }}" style="text-decoration: none;">
                                         <h2 class="pricepro"
-                                                {% if item.get_category_display == 'Inteligente' or item.get_category_display == 'Hombre' %}
-                                            style="color:#ffffff;" {% endif %}>
+                                                {% if item.get_category_display == 'Inteligente' or item.get_category_display == 'Hombre' %} {% endif %}>
                                             ${{ item.price }}
                                         </h2>
                                     </a>
-                                </div>
 
-                                <div class="col-md-6 col-12 bemb">
-                                    <button type="button" class="btn btn-warning bcy">Comprar Ya</button>
                                 </div>
                             </div>
+
+                            <div class="col-12">
+                                <h4 class="descpro">{{ item.description }}</h4>
+                            </div>
+
+
+                            <div class="col-12">
+                                <button type="button" class="btn btn-light btn-block btn-sm">Comprar Ya</button>
+                            </div>
+
+                            <div class="col-12">
+                                <span style="display: block; height: 20px; width: 10%; color: transparent;"></span>
+                            </div>
+
 
                         </div>
                     </div>
                 {% endfor %}
+
+
+
+
                 {% comment %}
                     <div class="col-md-3 col-6">
                         <div class="productobg">
@@ -317,13 +330,60 @@
     </section>
 
 
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalcarrito">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalcarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content modal-md" style="background-color: #d1a2a3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-9"></div>
+                        <div class="col-3">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12"><h3 class="mensage-carrito mt-4">Aún no has agregado productos a tu
+                                carrito</h3></div>
+                            <div class="col-12"><h3 class="mensage-carrito-2 mb-4">Primero agrega productos a tu carrito
+                                para acceder</h3></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark btn-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                             class="bi bi-eyeglasses" viewBox="0 0 16 16">
+                            <path d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                        </svg>
+                        Ver Productos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <section style="background-color: #f2f2f2">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12"><h1 class="titlesection">Quizás también te intere</h1></div>
 
 
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -343,7 +403,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -363,7 +423,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -383,7 +443,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3">
                     <div class="boxbase">
                         <div class="row">
                             <div class="col-3">
@@ -410,6 +470,8 @@
 
 
 </section>
+
+<!-- Button trigger modal -->
 
 
 <footer style="background-color: #2f4555;">
@@ -488,6 +550,7 @@
 
 
 </footer>
+
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 <script type="text/javascript" src="{% static 'js/home/top3juguetes.js' %}"></script>

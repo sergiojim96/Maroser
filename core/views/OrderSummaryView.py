@@ -126,7 +126,7 @@ class OrderSummaryView(View):
             return render(self.request, 'order_summary.html', context)
         except ObjectDoesNotExist:
             messages.warning(self.request, "You do not have an active order")
-            return redirect("/")
+            return redirect("/catalog/")
 
     def is_maybe_object(self, item):
         if item.label == 'M':
