@@ -113,6 +113,16 @@ class OrderSummaryView(View):
         else:
             return JsonResponse({"scc": "false"}, status=400)
 
+    def hasActiveOrder(request):
+        order_qs = Order.objects.filter(
+            user=request.session.session_key,
+            ordered=False
+        )
+        if order_qs.exists():
+            return JsonResponse({"scc": "true"}, status=200)
+        else:
+            return JsonResponse({"scc": "false"}, status=400)
+
     def get(self, *args, **kwargs):
         try:
             order = Order.objects.get(user=self.request.session.session_key, ordered=False)
