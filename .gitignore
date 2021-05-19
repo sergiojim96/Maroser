@@ -10,7 +10,7 @@ venv/
 db.sqlite3
 *.sqlite3
 *.sqlite
-.vscode/
+.vscode/*
 core/migrations/
 test/
 .test\*
