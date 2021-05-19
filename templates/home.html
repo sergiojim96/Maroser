@@ -7,9 +7,9 @@
 <head>
     <meta charset="UFT-8">
     <title>Juguetes Sexuales</title>
-    <meta name="description" content="----------"/>
+    <meta name="description" content="----------" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{% static 'img/LogoIcon.png' %}"/>
+    <link rel="shortcut icon" href="{% static 'img/LogoIcon.png' %}" />
 
     <!-- Links para CSS -->
     <link rel="stylesheet" href="{% static 'css/home/cssgenerales.css' %}">
@@ -25,11 +25,25 @@
     <link rel="stylesheet" href="{% static 'css/home/infortiempo.css' %}">
     <link rel="stylesheet" href="{% static 'css/teinterese.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <script type="text/javascript" src="{% static 'js/home/top3juguetes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/variables/variables.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/universal-parallax.js' %}"></script>
 
+    <!-- Codigo JS de bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" 
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" 
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 
     <!-- Codigo de bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 
     <!-- Links para JS -->
@@ -108,263 +122,263 @@
 </head>
 
 <body
-        onload="document.getElementById('bSItemLink').setAttribute('href', document.getElementsByClassName('slide active')[0].getAttribute('data-url'));">
+    onload="document.getElementById('bSItemLink').setAttribute('href', document.getElementsByClassName('slide active')[0].getAttribute('data-url'));">
 
 
-<header>
-    <div class="menu_section">
-        <nav>
-            <a id="logohomenav" href="/"><img style="width: 90%" src="{% static 'img/Logo.png' %}" ></a>
-            <ul class="MenuNave">
-                <li><a class="Btm" href="/">Inicio</a></li>
-                <li><a class="Btm" href="{% url 'core:catalog' %}">Productos</a></li>
-                <li><a class="Btm" href="#Qs">Favoritos</a></li>
-                <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <a  href="/"><img class="logo-mobile" src="{% static 'img/Logo.png' %}"></a>
-
-
-</header>
-<section>
-    <img class="logoicon" src="{% static 'img/LogoIcon.png' %}">
-    <div class="menu-mobile">
-
-        <div class="container-fluid barramenu">
-            <div class="row">
-
-
-                <div class="col-3">
-                    <svg id="svgH" class="bi bi-house-fill" onclick="window.scrollTo({top:0, behavior: 'smooth'})"
-                         viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                        <path fill-rule="evenodd"
-                              d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                    </svg>
-                    <h5 id="tituloH" class="textmbH">Inicio</h5>
-                </div>
-
-                <div class="col-3">
-                    <svg id="svgC" class="bi bi-layers-fill"
-                         onclick="window.scrollTo({top:739, behavior: 'smooth'})" viewBox="0 0 16 16"
-                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z"/>
-                        <path fill-rule="evenodd"
-                              d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z"/>
-                    </svg>
-                    <h5 id="tituloC" class="textmb">Categorias</h5>
-                </div>
-
-                <div class="col-3">
-                    <svg id="svgL" class="bi bi-trophy" onclick="window.scrollTo({top:1611, behavior: 'smooth'})"
-                         viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                                d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z"/>
-                        <path fill-rule="evenodd"
-                              d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z"/>
-                        <path d="M7 10h2v4H7v-4z"/>
-                        <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
-                    </svg>
-                    <h5 id="tituloL" class="textmb">Favoritos</h5>
-                </div>
-
-                <div class="col-3">
-                    <svg class="bi bi-cart-fill" viewBox="0 0 16 16" fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                    </svg>
-                    <h5 class="textmb">Carrito</h5>
-                </div>
-            </div>
+    <header>
+        <div class="menu_section">
+            <nav>
+                <a id="logohomenav" href="/"><img style="width: 90%" src="{% static 'img/Logo.png' %}"></a>
+                <ul class="MenuNave">
+                    <li><a class="Btm" href="/">Inicio</a></li>
+                    <li><a class="Btm" href="{% url 'core:catalog' %}">Productos</a></li>
+                    <li><a class="Btm" href="#slider-content">Favoritos</a></li>
+                    <li class="Btborder"><a class="Btcontacto" href="#qs">Contacto</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
-</section>
+
+        <a href="/"><img class="logo-mobile" src="{% static 'img/Logo.png' %}"></a>
 
 
-<section id="newportada">
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-0 col-md-4 infocover">
-
-                <h1 class="titlepn">Que esta vez sea
-                    <br>por placer</h1>
-                <h2 class="frasepn">Nos encargamos de hacer la seleccion por ti y te ofrecemos lo mejor del
-                    mercado.</h2>
-                <div class="rrss">
-                    <img class="iconcover" src="{% static 'img/instagramblue.png' %}">
-                    <img class="iconcover" src="{% static 'img/facebookblue.png' %}">
-                </div>
-
-
-                <span class="decorcover">Sasha Selection</span>
-            </div>
-
-            <div class="col-0 col-md-8 piccover">
-
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<section class="todo">
-
-
+    </header>
     <section>
+        <img class="logoicon" src="{% static 'img/LogoIcon.png' %}">
+        <div class="menu-mobile">
 
-        <div class="container-fluid">
-            <div class="row">
-
-                <div class="col-md-3 col-6  tagbackg">
-                    <h2 class="" style="color: white;">Categorias</h2><!-- Se sale del hancho en el mobile-->
-                </div>
-
-                <div class="col-md-9 col-6">
-                </div>
-
-            </div>
-        </div>
-
-
-        <section>
-            <div class="container">
+            <div class="container-fluid barramenu">
                 <div class="row">
 
-                    <div class=" col-12 col-lg-6 smarttoy">
-                        <div class="row contenidocatgsmart">
-                            <div class="col-md-6 col-8">
-                                <h2 class="titulocatgsmart">Juguetes Inteligentes para</h2>
-                                <h3 class="toysmart">Vos</h3>
-                                <a href="{% url 'core:catalog' %}">
-                                    <button type="button" onclick="SaveCategory('category', 'smart')" class=" btn
-                                            btn-outline-secondary btnsmart">Ver
-                                        Juguetes
-                                    </button>
-                                </a>
-                            </div>
-                            <div class="col-md-6 col-4">
-                                <img class="fotocatg" src="{% static 'img/modelojuguete3.png' %}">
-                            </div>
-                        </div>
+
+                    <div class="col-3">
+                        <svg id="svgH" class="bi bi-house-fill" onclick="window.scrollTo({top:0, behavior: 'smooth'})"
+                            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                            <path fill-rule="evenodd"
+                                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                        </svg>
+                        <h5 id="tituloH" class="textmbH">Inicio</h5>
                     </div>
 
-                    <div class=" col-12 col-lg-6">
-                        <div class="row">
-                            <div class="col-md-12 col-12 forher">
-                                <div class="row contenidocatgher">
-
-                                    <div class="col-md-5 col-4">
-                                        <img class="fotocatg" src="{% static 'img/modelojuguete2.jpg' %}">
-                                    </div>
-                                    <div class="col-md-7 col-8">
-                                        <h2 class="titulocatgher">Juguetes para</h2>
-                                        <!-- Se sale del hancho en el mobile-->
-                                        <h3 class="her">Ellas</h3>
-                                        <a href="{% url 'core:catalog' %}">
-                                            <button type="button" onclick="SaveCategory('category', 'women')"
-                                                    class="btn btn-outline-secondary btnher">Ver
-                                                Juguetes
-                                            </button>
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 col-12 forhim">
-                                <div class="row contenidocatghim">
-                                    <div class="col-md-7 col-8">
-                                        <h2 class="titulocatghim">Juguetes para</h2>
-                                        <h3 class="him">Ellos</h3>
-                                        <a href="{% url 'core:catalog' %}">
-                                            <button type="button" onclick="SaveCategory('category', 'men')"
-                                                    class="btn btn-outline-secondary">Ver Juguete
-                                            </button>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-5 col-4">
-                                        <img class="fotocatg" src="{% static 'img/modelojuguete.jpg' %}">
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
+                    <div class="col-3">
+                        <svg id="svgC" class="bi bi-layers-fill"
+                            onclick="window.scrollTo({top:739, behavior: 'smooth'})" viewBox="0 0 16 16"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M7.765 1.559a.5.5 0 0 1 .47 0l7.5 4a.5.5 0 0 1 0 .882l-7.5 4a.5.5 0 0 1-.47 0l-7.5-4a.5.5 0 0 1 0-.882l7.5-4z" />
+                            <path fill-rule="evenodd"
+                                d="M2.125 8.567l-1.86.992a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882l-1.86-.992-5.17 2.756a1.5 1.5 0 0 1-1.41 0l.418-.785-.419.785-5.169-2.756z" />
+                        </svg>
+                        <h5 id="tituloC" class="textmb">Categorias</h5>
                     </div>
 
+                    <div class="col-3">
+                        <svg id="svgL" class="bi bi-trophy" onclick="window.scrollTo({top:1611, behavior: 'smooth'})"
+                            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3 1h10c-.495 3.467-.5 10-5 10S3.495 4.467 3 1zm0 15a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1H3zm2-1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1H5z" />
+                            <path fill-rule="evenodd"
+                                d="M12.5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm-6-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3 2a3 3 0 1 1 6 0 3 3 0 0 1-6 0z" />
+                            <path d="M7 10h2v4H7v-4z" />
+                            <path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z" />
+                        </svg>
+                        <h5 id="tituloL" class="textmb">Favoritos</h5>
+                    </div>
+
+                    <div class="col-3">
+                        <svg class="bi bi-cart-fill" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                        </svg>
+                        <h5 class="textmb">Carrito</h5>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-12 col-12">
-                    <a href="{% url 'core:catalog' %}">
-                        <button type="button" onclick="SaveCategory('category','all')"
-                                class="btn btn-secondary btnproductos">Ver todos
-                        </button>
-                    </a>
-                </div>
-
             </div>
         </div>
-
     </section>
 
 
-    <section>
+    <section id="newportada">
 
-        <svg id="icons" class="hide">
-            <symbol id="arrow" viewBox="0 0 451.846 451.847">
-                <path fill="#FFF"
-                      d="M345.44 248.292l-194.286 194.28c-12.36 12.366-32.397 12.366-44.75 0-12.354-12.353-12.354-32.39 0-44.743l171.914-171.91-171.91-171.905c-12.353-12.36-12.353-32.394 0-44.748 12.355-12.36 32.392-12.36 44.75 0L345.446 203.55c6.177 6.18 9.262 14.27 9.262 22.367 0 8.098-3.09 16.195-9.267 22.372z"/>
-            </symbol>
-        </svg>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-0 col-md-4 infocover">
 
-
-        <div class="slider-content">
-
-            <div class="slider-wrapper">
-
-                <div class="slider-container">
-
-
-                    <div class="control-nav">
-                        <ul></ul>
+                    <h1 class="titlepn">Que esta vez sea
+                        <br>por placer
+                    </h1>
+                    <h2 class="frasepn">Nos encargamos de hacer la seleccion por ti y te ofrecemos lo mejor del
+                        mercado.</h2>
+                    <div class="rrss">
+                        <img class="iconcover" src="{% static 'img/instagramblue.png' %}">
+                        <img class="iconcover" src="{% static 'img/facebookblue.png' %}">
                     </div>
 
-                    <div class="nav-wrapper">
-                        <div class="next">
-                            <div class="next-color">
-                                <span>Siguiente posicion</span>
-                                <span class="color">N. 2</span>
-                            </div>
-                            <div class="next-button" onclick="">
-                                <svg>
-                                    <use xlink:href="#arrow"></use>
-                                </svg>
+
+                    <span class="decorcover">Sasha Selection</span>
+                </div>
+
+                <div class="col-0 col-md-8 piccover">
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="todo">
+
+
+        <section>
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-md-3 col-6  tagbackg">
+                        <h2 class="" style="color: white;">Categorias</h2><!-- Se sale del hancho en el mobile-->
+                    </div>
+
+                    <div class="col-md-9 col-6">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <section>
+                <div class="container">
+                    <div class="row">
+
+                        <div class=" col-12 col-lg-6 smarttoy">
+                            <div class="row contenidocatgsmart">
+                                <div class="col-md-6 col-8">
+                                    <h2 class="titulocatgsmart">Juguetes Inteligentes para</h2>
+                                    <h3 class="toysmart">Vos</h3>
+                                    <a href="{% url 'core:catalog' %}">
+                                        <button type="button" onclick="SaveCategory('category', 'smart')" class=" btn
+                                            btn-outline-secondary btnsmart">Ver
+                                            Juguetes
+                                        </button>
+                                    </a>
+                                </div>
+                                <div class="col-md-6 col-4">
+                                    <img class="fotocatg" src="{% static 'img/modelojuguete3.png' %}">
+                                </div>
                             </div>
                         </div>
+
+                        <div class=" col-12 col-lg-6">
+                            <div class="row">
+                                <div class="col-md-12 col-12 forher">
+                                    <div class="row contenidocatgher">
+
+                                        <div class="col-md-5 col-4">
+                                            <img class="fotocatg" src="{% static 'img/modelojuguete2.jpg' %}">
+                                        </div>
+                                        <div class="col-md-7 col-8">
+                                            <h2 class="titulocatgher">Juguetes para</h2>
+                                            <!-- Se sale del hancho en el mobile-->
+                                            <h3 class="her">Ellas</h3>
+                                            <a href="{% url 'core:catalog' %}">
+                                                <button type="button" onclick="SaveCategory('category', 'women')"
+                                                    class="btn btn-outline-secondary btnher">Ver
+                                                    Juguetes
+                                                </button>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-12 forhim">
+                                    <div class="row contenidocatghim">
+                                        <div class="col-md-7 col-8">
+                                            <h2 class="titulocatghim">Juguetes para</h2>
+                                            <h3 class="him">Ellos</h3>
+                                            <a href="{% url 'core:catalog' %}">
+                                                <button type="button" onclick="SaveCategory('category', 'men')"
+                                                    class="btn btn-outline-secondary">Ver Juguete
+                                                </button>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-5 col-4">
+                                            <img class="fotocatg" src="{% static 'img/modelojuguete.jpg' %}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-12">
+                        <a href="{% url 'core:catalog' %}">
+                            <button type="button" onclick="SaveCategory('category','all')"
+                                class="btn btn-secondary btnproductos">Ver todos
+                            </button>
+                        </a>
                     </div>
 
+                </div>
+            </div>
 
-                    {% for item in  best_seller_c %}
+        </section>
+
+
+        <section>
+
+            <svg id="icons" class="hide">
+                <symbol id="arrow" viewBox="0 0 451.846 451.847">
+                    <path fill="#FFF"
+                        d="M345.44 248.292l-194.286 194.28c-12.36 12.366-32.397 12.366-44.75 0-12.354-12.353-12.354-32.39 0-44.743l171.914-171.91-171.91-171.905c-12.353-12.36-12.353-32.394 0-44.748 12.355-12.36 32.392-12.36 44.75 0L345.446 203.55c6.177 6.18 9.262 14.27 9.262 22.367 0 8.098-3.09 16.195-9.267 22.372z" />
+                </symbol>
+            </svg>
+
+
+            <div class="slider-content", id="slider-content">
+
+                <div class="slider-wrapper">
+
+                    <div class="slider-container">
+
+
+                        <div class="control-nav">
+                            <ul></ul>
+                        </div>
+
+                        <div class="nav-wrapper">
+                            <div class="next">
+                                <div class="next-color">
+                                    <span>Siguiente posicion</span>
+                                    <span class="color">N. 2</span>
+                                </div>
+                                <div class="next-button" onclick="">
+                                    <svg>
+                                        <use xlink:href="#arrow"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        {% for item in best_seller_c %}
                         <div {% if forloop.counter == 1 %} class="slide active" {% else %} class="slide" {% endif %}
-                                                           data-order="{{ forloop.counter }}"
-                                                           data-color="#{% if forloop.counter == 1 %}ff384b{% elif forloop.counter == 2 %}f59600{% else %}0028f2{% endif %}"
-                                                           data-name="N. {{ forloop.counter }}"
-                                                           data-url="{{ item.get_absolute_url }}">
+                            data-order="{{ forloop.counter }}"
+                            data-color="#{% if forloop.counter == 1 %}ff384b{% elif forloop.counter == 2 %}f59600{% else %}0028f2{% endif %}"
+                            data-name="N. {{ forloop.counter }}" data-url="{{ item.get_absolute_url }}">
                             <div class="slide-content ">
                                 <div class="clip-svg">
-                                    <img class="top{{ forloop.counter }}" src="{{ item.largeImage.url }}" alt=""/>
+                                    <img class="top{{ forloop.counter }}" src="{{ item.largeImage.url }}" alt="" />
                                     <div class="title-wrapper {% if forloop.counter != 1 %}bigger{% endif %}">
                                         <h1 class="frase1tj">{{ item.title }}</h1>
                                         <h2 class="frase2tj">{{ item.description }} </h2>
@@ -372,352 +386,376 @@
                                 </div>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <div class="footer-wrapper">
-                <ul class="tjrs">
-                    <a id="bSItemLink">
-                        <li class="rstj">
-                            <button type="button" class="btn btn-light">Ver Juguete</button>
-                        </li>
-                    </a>
-                    <li class="rstj">
-                        <button type="button" class="btn btn-warning">Comprarlo YA</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="iconsinfoserv">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/calidad.png' %}">
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <h3 class="titleinfoserv">Productos de Calidad</h3>
-                            <p class="textinfoserv">Seleccionamos los mejores juguetes del mercado. </p>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
 
-                <div class="col-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/envios.png' %}"></div>
-                        <div class="col-12 col-md-9">
-                            <h3 class="titleinfoserv">Envíos a todo el País</h3>
-                            <p class="textinfoserv">Tenemos envíos a todo el país. </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/empaque.png' %}">
-                        </div>
-                        <div class="col-12 col-md-9">
-                            <h3 class="titleinfoserv">Empaque Discreto</h3>
-                            <p class="textinfoserv">Empacamos tus juguetes de manera discreta.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 col-lg-3">
-                    <div class="row">
-                        <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/placer.png' %}"></div>
-                        <div class="col-12 col-md-9">
-                            <h3 class="titleinfoserv">Placer Garantizado</h3>
-                            <p class="textinfoserv">El placer esta garantizado con nuestra selección. Atrevete! </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-
-    <section class="pluserv" style="background-color: #f7f7f7">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <img class="fotoplus" src="{% static 'img/fototime.jpg' %}">
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <div class="row topserv">
-                                <div class="col-3">
-                                    <img class="iconpluserv" src="{% static 'img/seleccion_1.png' %}">
-                                </div>
-
-                                <div class="col-9">
-                                    <h2 class="titlepluserv">Buscamos la ecxelencia</h2>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6">
-                            <div class="row topserv">
-                                <div class="col-3">
-                                    <img class="iconpluserv" src="{% static 'img/tiempo_1.png' %}">
-                                </div>
-
-                                <div class="col-9">
-                                    <h2 class="titlepluserv">Reducimos la espera</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-10">
-                            <h1 class="titlepluservtext">Que significa juguetes <br>seleccionados?</h1>
-                            <p class="textpluservtext">Todos nuestros juguetes están hechos de silicon quirurjico, son
-                                100% resistentes al agua
-                                (WaterProof) ,
-                                recargables, con una bateria de alta duración y con alta potencia para hacerte disfrutar
-                                al
-                                maximo.</p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-
-
-        </div>
-
-    </section>
-
-    <section class="mt-5">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-12 col-md-6">
-
-                    <div class="col-10">
-                        <h1 class="titlesmartoys">Tenemos los juguetes<br>
-                            inteligentes más<br>
-                            potentes</h1>
-                        <p class="textpluservtext">Disfruta a solas o en pareja deberia ser siempre una prioridad.
-                            Tenemos los jugetes inteligentes mas poderosos del mercado. Podes conectarlos a tu celular y
-                            disfrutas a solas o en pareja.</p>
-
-                        <a href="{% url 'core:catalog' %}">
-                            <button type="button" onclick="SaveCategory('category', 'smart')" style="margin-left: 5%"
-                                    class="btn btn-dark btnipad">Ver Jueguetes
-                            </button>
+                <div class="footer-wrapper">
+                    <ul class="tjrs">
+                        <a id="bSItemLink">
+                            <li class="rstj">
+                                <button type="button" class="btn btn-light">Ver Juguete</button>
+                            </li>
                         </a>
+                        <li class="rstj">
+                            <button type="button" class="btn btn-warning">Comprarlo YA</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="iconsinfoserv">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="row">
+                            <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/calidad.png' %}">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <h3 class="titleinfoserv">Productos de Calidad</h3>
+                                <p class="textinfoserv">Seleccionamos los mejores juguetes del mercado. </p>
+                            </div>
+                        </div>
                     </div>
 
+                    <div class="col-6 col-lg-3">
+                        <div class="row">
+                            <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/envios.png' %}">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <h3 class="titleinfoserv">Envíos a todo el País</h3>
+                                <p class="textinfoserv">Tenemos envíos a todo el país. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-lg-3">
+                        <div class="row">
+                            <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/empaque.png' %}">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <h3 class="titleinfoserv">Empaque Discreto</h3>
+                                <p class="textinfoserv">Empacamos tus juguetes de manera discreta.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-lg-3">
+                        <div class="row">
+                            <div class="col-12 col-md-3"><img class="iconinfserv" src="{% static 'img/placer.png' %}">
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <h3 class="titleinfoserv">Placer Garantizado</h3>
+                                <p class="textinfoserv">El placer esta garantizado con nuestra selección. Atrevete! </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="pluserv" style="background-color: #f7f7f7">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <img class="fotoplus" src="{% static 'img/fototime.jpg' %}">
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <div class="row topserv">
+                                    <div class="col-3">
+                                        <img class="iconpluserv" src="{% static 'img/seleccion_1.png' %}">
+                                    </div>
+
+                                    <div class="col-9">
+                                        <h2 class="titlepluserv">Buscamos la ecxelencia</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <div class="row topserv">
+                                    <div class="col-3">
+                                        <img class="iconpluserv" src="{% static 'img/tiempo_1.png' %}">
+                                    </div>
+
+                                    <div class="col-9">
+                                        <h2 class="titlepluserv">Reducimos la espera</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-10">
+                                <h1 class="titlepluservtext">Que significa juguetes <br>seleccionados?</h1>
+                                <p class="textpluservtext">Todos nuestros juguetes están hechos de silicon quirurjico,
+                                    son
+                                    100% resistentes al agua
+                                    (WaterProof) ,
+                                    recargables, con una bateria de alta duración y con alta potencia para hacerte
+                                    disfrutar
+                                    al
+                                    maximo.</p>
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
 
-                <div class="col-12 col-md-6">
-                    <img class="fotoplus" src="{% static 'img/fototime.jpg' %}">
+
+            </div>
+
+        </section>
+
+        <section class="mt-5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 col-md-6">
+
+                        <div class="col-10">
+                            <h1 class="titlesmartoys">Tenemos los juguetes<br>
+                                inteligentes más<br>
+                                potentes</h1>
+                            <p class="textpluservtext">Disfruta a solas o en pareja deberia ser siempre una prioridad.
+                                Tenemos los jugetes inteligentes mas poderosos del mercado. Podes conectarlos a tu
+                                celular y
+                                disfrutas a solas o en pareja.</p>
+
+                            <a href="{% url 'core:catalog' %}">
+                                <button type="button" onclick="SaveCategory('category', 'smart')"
+                                    style="margin-left: 5%" class="btn btn-dark btnipad">Ver Jueguetes
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <img class="fotoplus" src="{% static 'img/fototime.jpg' %}">
+                    </div>
+
+
                 </div>
+            </div>
+        </section>
+
+        <section style="background-color: #f2f2f2">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="titlesection">Quizás también te intere</h1>
+                    </div>
 
 
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="boxbase">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="imgteint" src="{% static 'img/producto2.jpg' %}">
+                                </div>
+
+                                <div class="col-6">
+                                    <h1 class="titleteint">Vibrador de silicon
+                                        y punto G</h1>
+                                    <p class="textteint">Juguete inteligente</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <h1 class="priceteint">$35</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="boxbase">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="imgteint" src="{% static 'img/modelojuguete2.jpg' %}">
+                                </div>
+
+                                <div class="col-6">
+                                    <h1 class="titleteint">Vibrador de silicon
+                                        y punto G</h1>
+                                    <p class="textteint">Juguete inteligente</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <h1 class="priceteint">$35</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="boxbase">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="imgteint" src="{% static 'img/producto3.jpg' %}">
+                                </div>
+
+                                <div class="col-6">
+                                    <h1 class="titleteint">Vibrador de silicon
+                                        y punto G</h1>
+                                    <p class="textteint">Juguete inteligente</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <h1 class="priceteint">$35</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="boxbase">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img class="imgteint" src="{% static 'img/producto4.jpg' %}">
+                                </div>
+
+                                <div class="col-6">
+                                    <h1 class="titleteint">Vibrador de silicon
+                                        y punto G</h1>
+                                    <p class="textteint">Juguete inteligente</p>
+                                </div>
+
+                                <div class="col-3">
+                                    <h1 class="priceteint">$35</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <div id="MailSended" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Contacto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>El correo ha sido enviado satisfactoriamente, pronto te contactaremos</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="MailNotSended" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Contacto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Ha ocurrido un error, nos puedes contactar a sashacollectioncr@gmail.com</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section style="background-color: #f2f2f2">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12"><h1 class="titlesection">Quizás también te intere</h1></div>
 
 
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="boxbase">
-                        <div class="row">
-                            <div class="col-3">
-                                <img class="imgteint" src="{% static 'img/producto2.jpg' %}">
-                            </div>
+    <footer style="background-color: #2f4555;">
 
-                            <div class="col-6">
-                                <h1 class="titleteint">Vibrador de silicon
-                                    y punto G</h1>
-                                <p class="textteint">Juguete inteligente</p>
-                            </div>
+        <div class="">
+            <div class="container">
 
-                            <div class="col-3">
-                                <h1 class="priceteint">$35</h1>
-                            </div>
-                        </div>
+                <div class="row">
+
+                    <div class="col-md-3 col-6">
+                        <img class="logomf" src="{% static 'img/logoblanco.png' %}">
+                        <h5 class="Contactomf">sashacollectioncr@gmail.com</h5>
                     </div>
-                </div>
 
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="boxbase">
-                        <div class="row">
-                            <div class="col-3">
-                                <img class="imgteint" src="{% static 'img/modelojuguete2.jpg' %}">
-                            </div>
-
-                            <div class="col-6">
-                                <h1 class="titleteint">Vibrador de silicon
-                                    y punto G</h1>
-                                <p class="textteint">Juguete inteligente</p>
-                            </div>
-
-                            <div class="col-3">
-                                <h1 class="priceteint">$35</h1>
-                            </div>
-                        </div>
+                    <div class="col-md-2 col-6 menufl">
+                        <nav>
+                            <ul>
+                                <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
+                                <li class="menufooter"><a class="linkmenufooter"
+                                        href="{% url 'core:catalog' %}">Productos</a></li>
+                                <li class="menufooter"><a class="linkmenufooter" href="#slider-content">Favoritos</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                </div>
 
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="boxbase">
-                        <div class="row">
-                            <div class="col-3">
-                                <img class="imgteint" src="{% static 'img/producto3.jpg' %}">
-                            </div>
-
-                            <div class="col-6">
-                                <h1 class="titleteint">Vibrador de silicon
-                                    y punto G</h1>
-                                <p class="textteint">Juguete inteligente</p>
-                            </div>
-
-                            <div class="col-3">
-                                <h1 class="priceteint">$35</h1>
-                            </div>
-                        </div>
+                    <div class="col-md-3 col-6 menufl2">
+                        <nav>
+                            <ul>
+                                <a class="linkmenufooter" href="{% url 'core:catalog' %}">
+                                    <li onclick="SaveCategory('category', 'men')" class="menufooter">For Him</li>
+                                </a>
+                                <a class="linkmenufooter" href="{% url 'core:catalog' %}">
+                                    <li onclick="SaveCategory('category', 'women')" class="menufooter">For Her</li>
+                                </a>
+                                <a class="linkmenufooter" href="{% url 'core:catalog' %}">
+                                    <li onclick="SaveCategory('category', 'smart')" class="menufooter">Smart Toys</li>
+                                </a>
+                            </ul>
+                        </nav>
+                        <img class="instaimf" src="{% static 'img/instagram.png' %}">
+                        <img class="faceimf" src="{% static 'img/facebook.png' %}">
                     </div>
-                </div>
 
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="boxbase">
-                        <div class="row">
-                            <div class="col-3">
-                                <img class="imgteint" src="{% static 'img/producto4.jpg' %}">
+                    <div class="col-md-4 col-12 menufl3">
+                        <form class="formfooter">
+                            <div class="form-row">
+                                <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
+                                    te contactamos</small>
+                                <div class="col-12 form-group">
+                                    <input type="text" class="form-control textinfc" placeholder="E-mail">
+                                </div>
                             </div>
-
-                            <div class="col-6">
-                                <h1 class="titleteint">Vibrador de silicon
-                                    y punto G</h1>
-                                <p class="textteint">Juguete inteligente</p>
-                            </div>
-
-                            <div class="col-3">
-                                <h1 class="priceteint">$35</h1>
-                            </div>
-                        </div>
+                        </form>
+                        <button type="button" onclick="SendUserMail()" class="btn btn-outline-light">Enviar</button>
                     </div>
+
                 </div>
-
-
             </div>
+
         </div>
-    </section>
 
 
-</section>
-
-
-
-
-<footer style="background-color: #2f4555;">
-
-    <div class="">
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-3 col-6">
-                    <img class="logomf" src="{% static 'img/logoblanco.png' %}">
-                    <h5 class="Contactomf">info@elnombre.com</h5>
-                    <h5 class="Contactomf">+506 6039 8858</h5>
+        <div class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-1"></div>
+                    <div class="col-md-4 col-10">
+                        <h6 class="derechosr" style="color: white">&copy; Derechos Reservados</h6>
+                    </div>
+                    <div class="col-md-4 col-1"></div>
                 </div>
-
-                <div class="col-md-2 col-6 menufl">
-                    <nav>
-                        <ul>
-                            <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="{% url 'core:catalog' %}">Productos</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="#Qs">Favoritos</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="#qs">Contacto</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="col-md-3 col-6 menufl2">
-                    <nav>
-                        <ul>
-                            <a class="linkmenufooter"  href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'men')" class="menufooter">For Him</li></a>
-                            <a class="linkmenufooter"  href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'women')" class="menufooter">For Her</li></a>
-                            <a class="linkmenufooter" href="{% url 'core:catalog' %}"><li onclick="SaveCategory('category', 'smart')" class="menufooter">Smart Toys</li></a>
-                        </ul>
-                    </nav>
-                    <img class="instaimf" src="{% static 'img/instagram.png' %}">
-                    <img class="faceimf" src="{% static 'img/facebook.png' %}">
-                </div>
-
-                <div class="col-md-4 col-12 menufl3">
-                    <form class="formfooter">
-                        <div class="form-row">
-                            <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
-                                te contactamos</small>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control textinfc" placeholder="E-mail">
-                            </div>
-                        </div>
-                    </form>
-                    <button type="button" class="btn btn-outline-light">Enviar</button>
-                </div>
-
             </div>
         </div>
 
-    </div>
 
-
-    <div class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-1"></div>
-                <div class="col-md-4 col-10">
-                    <h6 class="derechosr" style="color: white">&copy; Derechos Reservados</h6>
-                </div>
-                <div class="col-md-4 col-1"></div>
-            </div>
-        </div>
-    </div>
-
-
-</footer>
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<script type="text/javascript" src="{% static 'js/home/top3juguetes.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/variables/variables.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/home/universal-parallax.js' %}"></script>
-<script>
-    new universalParallax().init({
-        speed: 4
-    });
-</script>
-
-
-<!-- Codigo JS de bootstrap -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+    </footer>
 
 </body>

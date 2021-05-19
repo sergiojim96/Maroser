@@ -19,9 +19,6 @@
     <link rel="stylesheet" href="{% static 'css/product/fotosproduct.css'%}">
     <link rel="stylesheet" href="{% static 'css/footer.css'%}">
 
-
-
-
     <!-- Codigo de bootstrap -->
     <link rel="stylesheet" href="{% static 'css/product/bt/bootstrap.css'%}">
 
@@ -33,6 +30,24 @@
 
 
     <script type="text/javascript" src="{% static 'js/product/item.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/home/top3juguetes.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/home/universal-parallax.js'%}"></script>
+    <!-- Codigo JS de bootstrap -->
+    <script type="text/javascript" src="{% static 'js/product/js.bt/bootstrap.js'%}"></script>
+
+    <script type="text/javascript" src="{% static 'js/product/js.bt/bootstrap.bundle.js'%}"></script>
+    <script>
+        new universalParallax().init({
+            speed: 4
+        });
+    </script>
+    <script>
+        $('#increase').tooltip({
+
+            disabled: true,
+            close: function (event, ui) { $(this).tooltip('disable'); }
+        });
+    </script>
 
     <!-- Fuentes usadas en todos los textos
 
@@ -526,28 +541,5 @@
 
 
 </footer>
-
-
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-    <script type="text/javascript" src="{% static 'js/home/top3juguetes.js'%}"></script>
-    <script type="text/javascript" src="{% static 'js/home/universal-parallax.js'%}"></script>
-    <script>
-        new universalParallax().init({
-            speed: 4
-        });
-    </script>
-    <script>
-        $('#increase').tooltip({
-
-            disabled: true,
-            close: function (event, ui) { $(this).tooltip('disable'); }
-        });
-    </script>
-
-    <!-- Codigo JS de bootstrap -->
-    <script type="text/javascript" src="{% static 'js/product/js.bt/bootstrap.js'%}"></script>
-
-    <script type="text/javascript" src="{% static 'js/product/js.bt/bootstrap.bundle.js'%}"></script>
 
 </body>
