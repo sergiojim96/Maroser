@@ -457,25 +457,24 @@
 
             <div class="row">
 
-                <div class="col-md-3 col-6">
+                <div class="col-md-6 col-lg-3 col-12">
                     <img class="logomf" src="{% static 'img/logoblanco.png' %}">
-                    <h5 class="Contactomf">info@elnombre.com</h5>
-                    <h5 class="Contactomf">+506 6039 8858</h5>
+                    <h5 class="Contactomf">sashacollectioncr@gmail.com</h5>
                 </div>
 
-                <div class="col-md-2 col-6 menufl">
+
+                <div class="col-md-2 col-12 menufl">
                     <nav>
                         <ul>
                             <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
-                            <li class="menufooter"><a class="linkmenufooter"
-                                                      href="{% url 'core:catalog' %}">Productos</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="#Qs">Favoritos</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="#qs">Contacto</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="{% url 'core:catalog' %}">Productos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="#favoritomenu">Favoritos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="#seleccionamos">Seleccionamos</a></li>
                         </ul>
                     </nav>
                 </div>
 
-                <div class="col-md-3 col-6 menufl2">
+                <div class="col-md-6 col-lg-3 col-12 menufl2">
                     <nav>
                         <ul>
                             <a class="linkmenufooter" href="{% url 'core:catalog' %}">
@@ -493,7 +492,7 @@
                     <img class="faceimf" src="{% static 'img/facebook.png' %}">
                 </div>
 
-                <div class="col-md-4 col-12 menufl3">
+                <div class="col-md-6 col-lg-4 col-12 menufl3">
                     <form class="formfooter">
                         <div class="form-row">
                             <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
@@ -503,7 +502,7 @@
                             </div>
                         </div>
                     </form>
-                    <button type="button" class="btn btn-outline-light">Enviar</button>
+                    <button type="button" onclick="SendUserMail()" class="btn btn-outline-light">Enviar</button>
                 </div>
 
             </div>
@@ -524,8 +523,12 @@
         </div>
     </div>
 
-
 </footer>
+
+    <!-- Boton Carrito Desktop - los estilos estan en footer.css-->
+
+      <a onclick="toCard()" href="javascript:void(0)" style="width: 100%"><img class="carrito-desktop" src="{% static 'img/carritobtn.png' %}" style=""></a>
+
 
 <!-- Modal carrito empty -->
 <div class="modal fade" id="modalcarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
