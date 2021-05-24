@@ -1,7 +1,6 @@
 from .base import *
 
-DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1', 'test3363.uc.r.appspot.com']
+DEBUG = False
 
 INSTALLED_APPS += [
     'debug_toolbar'
@@ -26,6 +25,16 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.redirects.RedirectsPanel',
 ]
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sasha',
+	'USER': 'maroser',
+	'PASSWORD': 'Sasha#1mrs',
+	'HOST': '',
+	'PORT': '',
+    }
+}
 
 def show_toolbar(request):
     return True
@@ -34,13 +43,6 @@ def show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
     'SHOW_TOOLBAR_CALLBACK': show_toolbar
-}
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
 }
 
 STRIPE_PUBLIC_KEY = ''

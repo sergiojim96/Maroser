@@ -20,7 +20,6 @@ class Migration(migrations.Migration):
                 ('user', models.CharField(max_length=40)),
                 ('street_address', models.CharField(max_length=100)),
                 ('apartment_address', models.CharField(max_length=100)),
-                ('country', django_countries.fields.CountryField(max_length=2)),
                 ('zip', models.CharField(max_length=100)),
                 ('address_type', models.CharField(choices=[('B', 'Billing'), ('S', 'Shipping')], max_length=1)),
                 ('default', models.BooleanField(default=False)),
