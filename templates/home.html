@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UFT-8">
-    <title>Juguetes Sexuales</title>
+    <title>Sasha Shop</title>
     <meta name="description" content="----------"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{% static 'img/LogoIcon.png' %}"/>
@@ -25,9 +25,7 @@
     <link rel="stylesheet" href="{% static 'css/home/infortiempo.css' %}">
     <link rel="stylesheet" href="{% static 'css/teinterese.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <script type="text/javascript" src="{% static 'js/home/top3juguetes.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/variables/variables.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>
+
 
     <!-- Codigo JS de bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -47,6 +45,9 @@
 
 
     <!-- Links para JS -->
+    <script type="text/javascript" src="{% static 'js/home/top3juguetes.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/variables/variables.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/home/home.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/products/cart_functions.js' %}"></script>
 
 
@@ -132,7 +133,7 @@
             <ul class="MenuNave">
 
                 <li><a class="Btm" href="/">Inicio</a></li>
-                <li><a class="Btm" href="{% url 'core:catalog' %}">Productos</a></li>
+                <li><a class="Btm" href="{% url 'core:catalog' %}">Juguetes</a></li>
                 <li><a class="Btm" href="#favoritomenu">Favoritos</a></li>
                 <li><a class="Btm" href="#seleccionamos">Seleccionamos
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
@@ -262,8 +263,8 @@
                     <div class=" col-12 col-lg-6 smarttoy">
                         <div class="row contenidocatgsmart">
                             <div class="col-md-6 col-8">
-                                <h2 class="titulocatgsmart">Juguetes Inteligentes para</h2>
-                                <h3 class="toysmart">Vos</h3>
+                                <h2 class="titulocatgsmart">Juguetes Inteligentes</h2>
+                                <h3 class="toysmart mb-2">Para ti</h3>
                                 <a href="{% url 'core:catalog' %}">
                                     <button type="button" onclick="SaveCategory('category', 'smart')" class=" btn
                                             btn-outline-secondary btnsmart">Ver
@@ -307,7 +308,7 @@
                                         <h3 class="him">Ellos</h3>
                                         <a href="{% url 'core:catalog' %}">
                                             <button type="button" onclick="SaveCategory('category', 'men')"
-                                                    class="btn btn-outline-secondary">Ver Juguete
+                                                    class="btn btn-outline-secondary">Ver Juguetes
                                             </button>
                                         </a>
                                     </div>
@@ -472,7 +473,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <img class="fotoplus" src="{% static 'img/fototime.jpg' %}">
+                    <img class="fotoplus" src="{% static 'img/jugueteseleccionados.png' %}">
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="row">
@@ -503,15 +504,13 @@
 
                     <div class="row">
                         <div class="col-10">
-                            <h1 class="titlepluservtext">Que significa juguetes <br>seleccionados?</h1>
-                            <p class="textpluservtext">Todos nuestros juguetes están hechos de silicon quirurjico,
-                                son
-                                100% resistentes al agua
-                                (WaterProof) ,
-                                recargables, con una bateria de alta duración y con alta potencia para hacerte
-                                disfrutar
-                                al
-                                maximo.</p>
+                            <h1 class="titlepluservtext">¿Que significa juguetes <br>seleccionados?</h1>
+                            <p class="textpluservtext">Nos hacemos cargo de la búsqueda y la selección de los mejores juguetes del mercado.
+                                Todos nuestros juguetes están hechos de silicón quirúrgico, son
+                                100% resistentes al agua, recargables, con una batería de alta duración y
+                                con diferentes velocidades y modalidades de vibración o movimiento para disfrutar al
+                                máximo.
+                            </p>
                         </div>
                     </div>
 
@@ -534,10 +533,8 @@
                         <h1 class="titlesmartoys">Tenemos los juguetes<br>
                             inteligentes más<br>
                             potentes</h1>
-                        <p class="textpluservtext">Disfruta a solas o en pareja deberia ser siempre una prioridad.
-                            Tenemos los jugetes inteligentes mas poderosos del mercado. Podes conectarlos a tu
-                            celular y
-                            disfrutas a solas o en pareja.</p>
+                        <p class="textpluservtext">Disfrutar a solas o en pareja debería ser siempre una prioridad.
+                            Los juguetes inteligentes te permiten conectarlos a tu celular a través de bluetooth y disfrutar a solas o en parejas incluso cuando no estén cerca.</p>
 
                         <a href="{% url 'core:catalog' %}">
                             <button type="button" onclick="SaveCategory('category', 'smart')"
@@ -549,7 +546,7 @@
                 </div>
 
                 <div class="col-12 col-md-6">
-                    <img class="fotoplus" src="{% static 'img/fototime.jpg' %}">
+                    <img class="fotoplus" src="{% static 'img/juguetesmart.jpg' %}">
                 </div>
 
 
@@ -710,9 +707,11 @@
                     <nav>
                         <ul>
                             <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="{% url 'core:catalog' %}">Productos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter"
+                                                      href="{% url 'core:catalog' %}">Juguetes</a></li>
                             <li class="menufooter"><a class="linkmenufooter" href="#favoritomenu">Favoritos</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="#seleccionamos">Seleccionamos</a></li>
+                            <li class="menufooter"><a class="linkmenufooter" href="#seleccionamos">Seleccionamos</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -768,55 +767,54 @@
 
 </footer>
 
-    <!-- Boton Carrito Desktop - los estilos estan en footer.css-->
+<!-- Boton Carrito Desktop - los estilos estan en footer.css-->
 
 
-    <a onclick="toCard()" href="javascript:void(0)" style="width: 100%"><img class="carrito-desktop" src="{% static 'img/carritobtn.png' %}" style=""></a>
+<a onclick="toCard()" href="javascript:void(0)" style="width: 100%"><img class="carrito-desktop"
+                                                                         src="{% static 'img/carritobtn.png' %}"
+                                                                         style=""></a>
 
 
+<!-- Modal carrito empty -->
+<div class="modal fade" id="modalcarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md" style="background-color: #d1a2a3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <!-- Modal carrito empty -->
-    <div class="modal fade" id="modalcarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content modal-md" style="background-color: #d1a2a3">
+            <div class="modal-body">
+
                 <div class="container">
                     <div class="row">
-                        <div class="col-9"></div>
-                        <div class="col-3">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
+                        <div class="col-12"><h3 class="mensage-carrito mt-4">Aún no has agregado tu nuevo juguete al carrito</h3></div>
+                        <div class="col-12"><h3 class="mensage-carrito-2 mb-4">Primero agrega alguno para acceder</h3></div>
                     </div>
                 </div>
 
-                <div class="modal-body">
 
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12"><h3 class="mensage-carrito mt-4">Aún no has agregado productos a tu
-                                carrito</h3></div>
-                            <div class="col-12"><h3 class="mensage-carrito-2 mb-4">Primero agrega productos a tu carrito
-                                para acceder</h3></div>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="modal-footer">
-                    <a href="{% url 'core:catalog' %}" style="width: 100%;text-decoration: none;">
-                        <button type="button" onclick="SaveCategory('category','all')" class="btn btn-dark btn-block"
-                                style="text-decoration: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
-                                 class="bi bi-eyeglasses" viewBox="0 0 16 16">
-                                <path d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
-                            </svg>
-                            Ver Productos
-                        </button>
-                    </a>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="{% url 'core:catalog' %}" style="width: 100%;text-decoration: none;">
+                    <button type="button" onclick="SaveCategory('category','all')" class="btn btn-dark btn-block"
+                            style="text-decoration: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                             class="bi bi-eyeglasses" viewBox="0 0 16 16">
+                            <path d="M4 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm2.625.547a3 3 0 0 0-5.584.953H.5a.5.5 0 0 0 0 1h.541A3 3 0 0 0 7 8a1 1 0 0 1 2 0 3 3 0 0 0 5.959.5h.541a.5.5 0 0 0 0-1h-.541a3 3 0 0 0-5.584-.953A1.993 1.993 0 0 0 8 6c-.532 0-1.016.208-1.375.547zM14 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                        </svg>
+                        Ver Juguetes
+                    </button>
+                </a>
             </div>
         </div>
     </div>
+</div>
 
 </body>

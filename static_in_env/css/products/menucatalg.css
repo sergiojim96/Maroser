@@ -6,8 +6,6 @@
 header {
     width:100%;
     z-index: 1000;
-    background-color:;
-    border-bottom: 1.2px #2f4555; solid;
     -webkit-transition: background-color .5s;
 }
 
@@ -85,7 +83,7 @@ header nav ul li {
 }
 
 .Btm {
-  color: #2f4555;;
+  color: white;
   text-decoration: none;
   
   display: inline-block;
@@ -115,7 +113,7 @@ header nav ul li {
 .Btm:hover, .Btm:visited, .Btm:link, .Btm:active
 {
 text-decoration: none;
-color: #2f4555;;
+color: white;
 }
 
 .logo-mobile {
