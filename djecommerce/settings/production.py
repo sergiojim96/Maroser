@@ -1,8 +1,8 @@
 from .base import *
 
 
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['209.97.157.199', '127.0.0.1', 'localhost', 'sashashop.cr', 'www.sashashop.cr']
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
@@ -13,10 +13,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 DATABASES = {
     'default': {
-        'ENGINE': DBEngine,
-        'NAME': DBName,
-        'USER': DBUser,
-        'PASSWORD': BBPassword,
-        'HOST': DBHost,
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sasha',
+        'USER': 'maroser',
+        'PASSWORD': 'Sasha#1mrs',
+        'HOST': '',
+        'PORT': '',
     }
 }

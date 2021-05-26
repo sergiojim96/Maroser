@@ -1,11 +1,9 @@
 import os
 
-SECRET_KEY = 'lldtg$9(wi49j_hpv8nnqlh!cj7kmbwq0$rj7vy(b(b30vlyzj'
+SECRET_KEY='lldtg$9(wi49j_hpv8nnqlh*cj7kmbwq0$rj7vy(b(b30vlyzj'
 
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
-
-ALLOWED_HOSTS = ['209.97.157.199', '127.0.0.1', 'localhost', 'sashashop.cr', 'sashashop']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -78,8 +76,26 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 # CRISPY FORMS
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 # gmail_send/settings.py
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

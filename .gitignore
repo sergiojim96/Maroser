@@ -20,3 +20,4 @@ Lib/
 cloud_sql_proxy.exe
 *.whl
 pyenv.cfg
+wsgi.py
