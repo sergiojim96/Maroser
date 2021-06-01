@@ -6,9 +6,9 @@ INSTALLED_APPS += [
     'debug_toolbar'
 ]
 
-#MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
+MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 
-DEBUG TOOLBAR SETTINGS
+#DEBUG TOOLBAR SETTINGS
 
 DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.versions.VersionsPanel',
@@ -29,10 +29,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sasha',
-	'USER': 'maroser',
-	'PASSWORD': 'Sasha#1mrs',
+	'USER': 'root',
+	'PASSWORD': 'root',
 	'HOST': '',
-	'PORT': '',
+	'PORT': '3306',
     }
 }
 

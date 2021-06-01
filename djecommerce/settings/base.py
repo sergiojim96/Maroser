@@ -1,7 +1,6 @@
 import os
 
 SECRET_KEY=os.getenv('SECRET_KEY')
-print(os.getenv('SECRET_KEY'))
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
 
