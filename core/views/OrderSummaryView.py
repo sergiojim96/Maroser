@@ -26,7 +26,7 @@ from ..views.PayPalClient import PayPalClient
 from paypalcheckoutsdk.orders import OrdersGetRequest
 from paypalcheckoutsdk.payments import AuthorizationsGetRequest, AuthorizationsVoidRequest, AuthorizationsCaptureRequest
 import operator
-
+import platform
 
 class Get_Order(PayPalClient):
 
@@ -263,7 +263,7 @@ Sasha colelctions'''
     def creatInvoice(context):
         data = OrderSummaryView.getData(context["object"])
         size = len(data)
-        pdfDirName = f"Facturas\{context['object'].ref_code}.pdf"
+        pdfDirName = f"Facturas\{context['object'].ref_code}.pdf" if platform.system() == 'Windows' else f"Facturas/{context['object'].ref_code}.pdf"
         c = canvas.Canvas(pdfDirName,pagesize=(200,250),bottomup=0)
         c.setFont("ZapfDingbats",8)
         c.setFillColor(colors.salmon)
