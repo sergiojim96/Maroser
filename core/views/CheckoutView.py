@@ -13,18 +13,6 @@ from ..forms import CouponForm
 from ..models import Address
 from ..models import Order
 from ..models import Item
-import string 
-import random
-
-
-def create_ref_code():
-    while True:
-        ref_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
-        order = Order.objects.filter(ref_code=ref_code)
-        if not order.exists():
-            return ref_code
-
-
 
 class CheckoutView(View):
     def get(self, *args, **kwargs):
@@ -225,7 +213,7 @@ class CheckoutView(View):
                     order_item.quantity = quantity
                     ordered_date = timezone.now()
                     order = Order.objects.create(
-                        user=request.session.session_key, ref_code=create_ref_code(), ordered_date=ordered_date)
+                        user=request.session.session_key, ordered_date=ordered_date)
                     order_item.save()
                     order.items.add(order_item)
                     return redirect("core:order-summary")

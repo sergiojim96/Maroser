@@ -5,7 +5,6 @@ from reportlab.platypus import Table, TableStyle
 from django.http.response import JsonResponse
 from reportlab.lib.colors import HexColor
 from django.core.mail import EmailMessage
-from django.utils.html import strip_tags
 from django.core.mail import send_mail
 from django.shortcuts import redirect
 from django.views.generic import View
@@ -17,7 +16,6 @@ from django.conf import settings
 from ..models import UserProfile
 from reportlab.lib import colors
 from reportlab.lib import colors
-from ..forms import CouponForm
 from ..models import OrderItem
 from ..models import Order
 from ..models import Item
@@ -25,7 +23,6 @@ from django.core.exceptions import ObjectDoesNotExist
 from ..views.PayPalClient import PayPalClient
 from paypalcheckoutsdk.orders import OrdersGetRequest
 from paypalcheckoutsdk.payments import AuthorizationsGetRequest, AuthorizationsVoidRequest, AuthorizationsCaptureRequest
-import operator
 import platform
 
 class Get_Order(PayPalClient):
@@ -109,6 +106,7 @@ class OrderSummaryView(View):
         )
         if order_qs.exists():
             order = order_qs[0]
+            order.create_ref_code()
             return paypalOrder.pay(orderID, authorizationID, order)
         else:
             return JsonResponse({"scc": "false"}, status=400)

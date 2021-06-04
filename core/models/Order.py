@@ -3,6 +3,8 @@ from django.db import models
 from .OrderItem import OrderItem
 from .UserProfile import UserProfile
 from django.contrib.sessions.models import Session
+import string 
+import random
 
 class Order(models.Model):
     user = models.CharField(max_length=40)
@@ -47,3 +49,8 @@ class Order(models.Model):
             total -= self.coupon.amount
         total = round(total, 2)
         return total
+
+    def create_ref_code(self):
+        ref_code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=10))
+        self.ref_code = ref_code
+        self.save(update_fields=['ref_code'])
