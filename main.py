@@ -20,6 +20,7 @@ from djecommerce.wsgi import application
  #   pass
 
 #import logging
+
 #logging.basicConfig(level=logging.INFO)
 
 

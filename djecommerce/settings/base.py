@@ -1,31 +1,6 @@
 import os
-from google.cloud import secretmanager
 
-# Create the Secret Manager client.
-client = secretmanager.SecretManagerServiceClient()
-
-projectId = '583793981505'
-
-secretSecretKeyId = str(os.environ.get('secretSecretKeyId'))
-BBPassword = client.access_secret_version(request = {
-    "name": 'projects/' + projectId + '/secrets/DBPassword/versions/1'}) \
-    .payload.data.decode("UTF-8")
-DBUser = client.access_secret_version(request = {
-    'name': 'projects/' + projectId + '/secrets/DBUser/versions/1'}) \
-    .payload.data.decode("UTF-8")
-DBName = client.access_secret_version(request = {
-    "name": 'projects/' + projectId + '/secrets/DBName/versions/1'}) \
-    .payload.data.decode("UTF-8")
-DBHost = client.access_secret_version(request = {
-    "name": 'projects/' + projectId + '/secrets/DBHost/versions/1'}) \
-    .payload.data.decode("UTF-8")
-DBEngine = client.access_secret_version(request = {
-    "name": 'projects/' + projectId + '/secrets/DBEngine/versions/1'}) \
-    .payload.data.decode("UTF-8")
-SECRET_KEY = client.access_secret_version(request = {
-    "name": 'projects/' + projectId + '/secrets/SecretKey/versions/1'}) \
-    .payload.data.decode("UTF-8")
-
+SECRET_KEY=os.getenv('SECRET_KEY')
 BASE_DIR = os.path.dirname(os.path.dirname(
     os.path.dirname(os.path.abspath(__file__))))
 
@@ -100,17 +75,31 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 
 # CRISPY FORMS
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
+
 # gmail_send/settings.py
+EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = client.access_secret_version(request = {
-    "name": 'projects/' + projectId + '/secrets/EmailUser/versions/2'}) \
-    .payload.data.decode("UTF-8")
-EMAIL_HOST_PASSWORD = client.access_secret_version(request = {
-    'name': 'projects/' + projectId + '/secrets/EmailPassword/versions/2'}) \
-    .payload.data.decode("UTF-8")
+EMAIL_HOST_USER = 'sashashopcr@gmail.com'
+EMAIL_HOST_PASSWORD = 'littasabzshwesgo'
 EMAIL_PORT = 587
-EMAIL_USE_TLS = True
