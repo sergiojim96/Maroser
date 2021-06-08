@@ -129,7 +129,9 @@ class OrderSummaryView(View):
             context = {
                 'object': order,
                 'total': total,
-                'maybeObjects': maybeObjects
+                'maybeObjects': maybeObjects,
+                'tax': 0,
+                'shipping': 0
             }
             return render(self.request, 'order_summary.html', context)
         except ObjectDoesNotExist:
@@ -163,9 +165,11 @@ class OrderSummaryView(View):
                     order_item.quantity += 1
                     order_item.save()
                     total = order.get_total()
+                    tax = 0
+                    shipping = 0
                     itemPrice = order_item.get_total_item_price()
-                    dataBundle = {"total": total, "tax": 0, "itemPrice": itemPrice, "slug": slug,
-                                  "shipping": 0}
+                    dataBundle = {"total": total, "tax": tax, "itemPrice": itemPrice, "slug": slug,
+                                  "shipping": shipping}
                     return JsonResponse({"scc": "Ok", "dataBundle": dataBundle}, status=200)
                 else:
                     return JsonResponse({"scc": "NotInOrder"}, status=200)
@@ -223,7 +227,9 @@ class OrderSummaryView(View):
                         order_item.save()
                     else:
                         order.items.remove(order_item)
-                    total, tax, shipping = order.get_total()
+                    total= order.get_total()
+                    tax = 0
+                    shipping = 0
                     itemPrice = order_item.get_total_item_price()
                     dataBundle = {"total": total, "tax": tax, "itemPrice": itemPrice, "slug": slug,
                                   "shipping": shipping}
