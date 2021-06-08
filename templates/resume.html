@@ -153,26 +153,19 @@
             <div class="col-12 col-md-6">
                 <h1 class="titleorderdone">¡Gracias por tu compra!</h1>
 
-                <p class="textorderdone">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                    ad minim veniam </p>
+                <p class="textorderdone">Te haremos llegar tu(s) juguete(s) tan pronto sea posible a la siguiente dirección. Por favor, revisa que los datos estén correctos. </p>
 
                 <ul>
-                    <li class="infoorderdone"><strong>Número de tracking:</strong> 20156-54926-6584-8562</li>
-                    <li class="infoorderdone"><strong>Telf:</strong> 60398858</li>
-                    <li class="infoorderdone"><strong>E-mail:</strong> ariasch@sashashop.cr</li>
-                    <li class="infoorderdone"><strong>Dirección:</strong> Alajuela, Poás, Carrillos Altos,
-                        costado norte iglesia catolica
-                    </li>
-
+                    <li class="infoorderdone"><strong>E-mail:</strong> {{ email }}</li>
+                    <li class="infoorderdone"><strong>Dirección:</strong> {{ provincia }}, {{ canton }}, {{ distrito }}, {{ address }}</li>
                 </ul>
 
                 <ul>
-                    <li class="infoorderdone"><strong>Producto(s):</strong> Nombre del juguete ($69), Nombre del juguete ($73)</li>
+                    <li class="infoorderdone"><strong>Producto(s):</strong> {{ product_names }}</li>
                 </ul>
 
 
-                <h2 class="totalorderdone"><strong>Total pagado:</strong> $369</h2>
+                <h2 class="totalorderdone"><strong>Total pagado:</strong> $ {{ total }}</h2>
 
             </div>
 
@@ -183,128 +176,27 @@
                         <div class="row">
                             <div class="col-12"><h1 class="titlesection">Quizás también te intere</h1></div>
 
+                            {% for item in maybeObjects %}
+                                <div class="col-12 col-xl-6">
+                                    <div class="boxbase">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img class="imgteint" src="{{ item.image.url }}">
+                                            </div>
 
-                            <div class="col-12 col-xl-6">
-                                <div class="boxbase">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="imgteint" src="{% static 'img/producto2.jpg' %}">
-                                        </div>
+                                            <div class="col-6">
+                                                <h1 class="titleteint"> {{ item.title  }}</h1>
+                                                <p class="textteint"> {% if item.smart  %} Juguete Inteligente {% else %} {% if item.category.title == 'H' %}
+                             Juguete para ellos {% else %} Juguete para ellas {% endif %} {% endif %} </p>
+                                            </div>
 
-                                        <div class="col-6">
-                                            <h1 class="titleteint">Vibrador de silicon
-                                                y punto G</h1>
-                                            <p class="textteint">Juguete inteligente</p>
-                                        </div>
-
-                                        <div class="col-3">
-                                            <h1 class="priceteint">$35</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-6">
-                                <div class="boxbase">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="imgteint" src="{% static 'img/modelojuguete2.jpg' %}">
-                                        </div>
-
-                                        <div class="col-6">
-                                            <h1 class="titleteint">Vibrador de silicon
-                                                y punto G</h1>
-                                            <p class="textteint">Juguete inteligente</p>
-                                        </div>
-
-                                        <div class="col-3">
-                                            <h1 class="priceteint">$35</h1>
+                                            <div class="col-3">
+                                                <h1 class="priceteint">$ {{ item.price }}</h1>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="col-12 col-xl-6">
-                                <div class="boxbase">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="imgteint" src="{% static 'img/producto3.jpg' %}">
-                                        </div>
-
-                                        <div class="col-6">
-                                            <h1 class="titleteint">Vibrador de silicon
-                                                y punto G</h1>
-                                            <p class="textteint">Juguete inteligente</p>
-                                        </div>
-
-                                        <div class="col-3">
-                                            <h1 class="priceteint">$35</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-6">
-                                <div class="boxbase">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="imgteint" src="{% static 'img/producto4.jpg' %}">
-                                        </div>
-
-                                        <div class="col-6">
-                                            <h1 class="titleteint">Vibrador de silicon
-                                                y punto G</h1>
-                                            <p class="textteint">Juguete inteligente</p>
-                                        </div>
-
-                                        <div class="col-3">
-                                            <h1 class="priceteint">$35</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-6">
-                                <div class="boxbase">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="imgteint" src="{% static 'img/producto3.jpg' %}">
-                                        </div>
-
-                                        <div class="col-6">
-                                            <h1 class="titleteint">Vibrador de silicon
-                                                y punto G</h1>
-                                            <p class="textteint">Juguete inteligente</p>
-                                        </div>
-
-                                        <div class="col-3">
-                                            <h1 class="priceteint">$35</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-xl-6">
-                                <div class="boxbase">
-                                    <div class="row">
-                                        <div class="col-3">
-                                            <img class="imgteint" src="{% static 'img/producto4.jpg' %}">
-                                        </div>
-
-                                        <div class="col-6">
-                                            <h1 class="titleteint">Vibrador de silicon
-                                                y punto G</h1>
-                                            <p class="textteint">Juguete inteligente</p>
-                                        </div>
-
-                                        <div class="col-3">
-                                            <h1 class="priceteint">$35</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
+                            {% endfor %}
                         </div>
                     </div>
                 </section>

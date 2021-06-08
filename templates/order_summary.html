@@ -478,20 +478,58 @@
 
 </section>
 
-<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Pago</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md" style="background-color: #d1a2a3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
             </div>
+
             <div class="modal-body">
-                <p>Un momento mientras realizamos el pago</p>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12"><h3 class="mensage-carrito mt-4">Procesando tu compra...</h3></div>
+                        <div class="col-12"><h3 class="mensage-carrito-2 mb-4">Podría tardar unos segundos</h3></div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModalError" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md" style="background-color: #d1a2a3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12"><h3 class="mensage-carrito mt-4">Error en el pago</h3></div>
+                        <div class="col-12"><h3 class="mensage-carrito-2 mb-4">Intenta de nuevo más tarde</h3></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
             </div>
         </div>
     </div>

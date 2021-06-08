@@ -11,14 +11,13 @@ function initPayment(total) {
             });
         },
         onApprove: function (data, actions) {
-
+            $('#myModal').modal('show');
             // Authorize the transaction
             actions.order.authorize().then(function (authorization) {
 
                 // Get the authorization id
                 var authorizationID = authorization.purchase_units[0]
                     .payments.authorizations[0].id;
-                $('#myModal').modal('show');
                 // Call your server to validate and capture the transaction
                 $.ajax({
                     type: 'GET',
@@ -31,6 +30,8 @@ function initPayment(total) {
                         }
                     },
                     error: function (response) {
+                        $('#myModal').modal('hide');
+                        $('#myModalError').modal('show');
                         var oldQ = "h"
                     }
                 });
