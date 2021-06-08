@@ -82,11 +82,20 @@ class OrderSummaryView(View):
         if order_qs.exists():
             order = order_qs[0]
             total = order.get_total()
+            product_names = ''
+            nose = OrderSummaryView.getData(order)
+            size = len(nose)
+
+            for i in range(0, size):
+                product_names = product_names + nose[i][1] + ' '
+
             maybeObjects = filter(lambda x: x.label == 'M', Item.objects.all())
             context = {
                 'object': order,
                 'total': total,
                 'maybeObjects': maybeObjects,
+                'product_names': product_names,
+                'name': order.user,
                 'email': order.user_profile.email,
                 'provincia': order.user_profile.provincia,
                 'canton': order.user_profile.canton,
