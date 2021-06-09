@@ -442,15 +442,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <img class="fotoproductodesc" src="{% static 'img/fotoproducto1.jpg' %}">
+                    <img class="fotoproductodesc" src="{{ item.footerImage.url }}">
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img class="fotoproductodesc" src="{% static 'img/fotoproducto2.jpg' %}">
+                    <img class="fotoproductodesc" src="{{ item.footerImage2.url }}">
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img class="fotoproductodesc" src="{% static 'img/fotoproducto3.jpg' %}">
+                    <img class="fotoproductodesc" src="{{ item.footerImage3.url }}">
                 </div>
             </div>
         </div>
