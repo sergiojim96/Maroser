@@ -53,7 +53,7 @@
 
 
 .piccover {
-    background-image: url("/test3363/static/img/cover.jpg");
+    background-image: url("/static_in_env/img/cover.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
