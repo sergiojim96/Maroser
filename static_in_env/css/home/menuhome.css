@@ -6,6 +6,7 @@ header {
     position: absolute;
     width: 100%;
     z-index: 1000;
+    background-color:;
     border-bottom: 1.2px white solid;
     -webkit-transition: background-color .5s;
 }
@@ -62,7 +63,7 @@ header nav {
 header nav ul {
     overflow: hidden;
     list-style: none;
-    margin-left: 34%;
+    margin-left: 37%;
 
 
 }
@@ -126,9 +127,6 @@ header nav ul li {
     display: none;
 }
 
-.carritobtn {
-    width: 30%;
-}
 
 @media (min-width: 993px) and (max-width: 1400px) {
 
@@ -138,7 +136,7 @@ header nav ul li {
     }
 
     header nav ul {
-        margin-left: 20%;
+        margin-left: 25%;
     }
 
     header nav ul li {
@@ -161,7 +159,7 @@ header nav ul li {
     }
 
     header nav ul {
-        margin-left: 2%;
+        margin-left: 5%;
     }
 
     header nav ul li {
@@ -183,12 +181,11 @@ header nav ul li {
 @media (min-width: 577px) and (max-width: 768px) {
 
     #logohomenav {
-        width: 17%;
-        margin-top: 5%;
+    width: 20%;
 }
 
     header nav ul {
-        margin-left: 1%;
+        margin-left: 3%;
 
     }
 
@@ -225,7 +222,6 @@ header nav ul li {
         position: fixed;
         width: 100%;
         bottom: 0;
-        margin-bottom: -9px;
         z-index: 2000;
     }
 

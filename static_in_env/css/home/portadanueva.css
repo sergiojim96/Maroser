@@ -53,30 +53,23 @@
 
 
 .piccover {
-    background-image: url("/test3363/static/img/cover.jpg");
+    background-image: url("/static_in_env/img/cover.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 100vh;
 }
-@media (min-width: 992px) and (max-width: 1400px) {
-
-
-}
-
-@media (min-width: 768px) and (max-width: 992px) {
-
-}
-
-
-
 @media (min-width: 576px) and (max-width: 768px) {
 
 }
 
 
+@media (min-width: 768px) and (max-width: 992px) {
+}
+@media (min-width: 992px) and (max-width: 1400px) {
 
 
+}
 @media (min-width: 1px) and (max-width: 576px) {
 
 

@@ -6,6 +6,8 @@
 header {
     width:100%;
     z-index: 1000;
+    background-color:;
+    border-bottom: 1.2px #2f4555; solid;
     -webkit-transition: background-color .5s;
 }
 
@@ -62,7 +64,7 @@ header nav {
 header nav ul {
 	overflow:hidden;
 	list-style:none;
-    margin-left: 30%;
+    margin-left: 37%;
     
     
    
@@ -83,7 +85,7 @@ header nav ul li {
 }
 
 .Btm {
-  color: white;
+  color: #2f4555;;
   text-decoration: none;
   
   display: inline-block;
@@ -113,7 +115,7 @@ header nav ul li {
 .Btm:hover, .Btm:visited, .Btm:link, .Btm:active
 {
 text-decoration: none;
-color: white;
+color: #2f4555;;
 }
 
 .logo-mobile {
@@ -138,7 +140,7 @@ color: white;
     }
 
     header nav ul {
-        margin-left: 20%;
+        margin-left: 25%;
     }
 
     header nav ul li {
@@ -183,7 +185,7 @@ color: white;
 @media (min-width: 577px) and (max-width: 769px) {
 
     #Logo {
-    width: 50%;
+    width: 20%;
 }
 
     header nav ul {
@@ -207,7 +209,7 @@ color: white;
 
     .logo-mobile {
         display: block;
-        width: 50%;
+        width: 40%;
         margin-left: 2%;
         margin-top: 0%;
         margin-bottom: 1%;
@@ -224,7 +226,6 @@ color: white;
         position: fixed;
         width: 100%;
         bottom: 0;
-        margin-bottom: -8px;
         z-index: 2000;
     }
 
