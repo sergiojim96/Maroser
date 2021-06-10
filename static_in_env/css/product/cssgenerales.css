@@ -31,10 +31,9 @@ body {
 
 @media (min-width: 1px) and (max-width: 576px) {
 
-    .todo {
-        margin-bottom: 80vh;
+   .todo {
+        margin-bottom: 76vh;
 
 
     }
-
 }

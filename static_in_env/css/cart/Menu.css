@@ -64,10 +64,8 @@ header nav {
 header nav ul {
 	overflow:hidden;
 	list-style:none;
-    margin-left: 37%;
-    
-    
-   
+    margin-left: 34%;
+
 }
 
 header nav ul li {
@@ -79,7 +77,8 @@ header nav ul li {
     display: table-cell; 
     position: relative;
     font-size: 105%;
-    
+    cursor: pointer;
+    color: white;
       
 }
 
@@ -225,6 +224,7 @@ color: white;
         position: fixed;
         width: 100%;
         bottom: 0;
+        margin-bottom: -8px;
         z-index: 2000;
     }
 
