@@ -1,16 +1,17 @@
-function getBSUrl(slug) {
-    $.ajax({
+function SendUserMail(){
+	var mail = document.getElementsByClassName("form-control textinfc")[0].value;
+	console.log(mail)
+	 $.ajax({
         type: 'GET',
-        url: "async-remove-from-cart",
-        data: { "slug": slug },
+        url: "send-mail",
+		data: {"mail":mail},
         success: function (response) {
-            // if not valid user, alert the user
             if (response["scc"]) {
-                location.reload();
+                $('#MailSended').modal('show');
             }
         },
         error: function (response) {
-            console.log(response)
+            $('#MailNotSended').modal('show');
         }
     })
 }

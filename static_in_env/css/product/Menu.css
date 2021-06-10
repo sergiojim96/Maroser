@@ -79,9 +79,8 @@ header nav ul li {
     display: table-cell; 
     position: relative;
     font-size: 105%;
-    color: white;
-    cursor: pointer;
-
+    
+      
 }
 
 .Btm {
@@ -226,7 +225,6 @@ color: white;
         position: fixed;
         width: 100%;
         bottom: 0;
-        margin-bottom: -8px;
         z-index: 2000;
     }
 

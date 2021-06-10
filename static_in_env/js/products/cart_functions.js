@@ -90,20 +90,3 @@ function sendMail() {
         }
     })
 }
-
-function toCard() {
-    // Call your server to validate and capture the transaction
-    $.ajax({
-        type: 'GET',
-        url: "/order-summary/has-active-order/",
-        success: function (response) {
-            // if not valid user, alert the user
-            if (response["scc"]) {
-                window.location = "/order-summary"
-            }
-        },
-        error: function (response) {
-            $('#modalcarrito').modal('show');
-        }
-    })
-}
