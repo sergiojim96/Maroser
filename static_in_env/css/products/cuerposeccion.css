@@ -24,32 +24,38 @@
     width: 100%;
 }
 
+.carritobtn {
+    width: 70%;
+    margin-top: 20%;
 
+}
 
 .titupro {
     font-family: 'Volkhov', serif;
-    font-size: 120%;
+    font-size: 160%;
     color: white;
-    margin-top: 10%;
+    margin-top: 20%;
     margin-left: 10%;
     line-height: 1em;
 }
 
 
 
+
 .descpro {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 90%;
+    font-size: 110%;
     color: white;
-
+    margin-left: 10%;
 }
 
 
 
 .pricepro {
     font-family: 'Volkhov', serif;
-    font-size: 130%;
-    color: white;
+    font-size: 170%;
+    color: #2f4555;
+    margin-left: 20%;
     margin-top: 15%;
     margin-bottom: 20%;
 
@@ -89,10 +95,10 @@
 
     .pricepro {
         font-family: 'Volkhov', serif;
-        font-size: 120%;
-        color: white;
+        font-size: 160%;
+        color: #2f4555;
         margin-left: 8%;
-        margin-top: 15%;
+        margin-top: 0%;
         margin-bottom: 5%;
 
     }
@@ -121,7 +127,7 @@
 
     .titupro {
         font-family: 'Volkhov', serif;
-        font-size: 120%;
+        font-size: 110%;
         color: white;
         margin-top: 10%;
         margin-left: 10%;
@@ -131,8 +137,8 @@
 
     .pricepro {
         font-family: 'Volkhov', serif;
-        font-size: 130%;
-        color: white;
+        font-size: 160%;
+        color: #2f4555;
         margin-left: 8%;
         margin-top: 0%;
         margin-bottom: 5%;
@@ -172,9 +178,9 @@
 
 
     .pricepro {
-        font-family: 'Roboto Condensed', sans-serif;
-        font-size: 120%;
-        color: white;
+        font-family: 'Volkhov', serif;
+        font-size: 160%;
+        color: #2f4555;
         margin-left: 8%;
         margin-top: 0%;
         margin-bottom: 5%;
