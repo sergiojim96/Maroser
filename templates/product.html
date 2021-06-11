@@ -442,15 +442,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <img class="fotoproductodesc" src="{{ item.footerImage.url }}">
+                    <img class="fotoproductodesc" {% if item.footerImage  %} src="{{ item.footerImage.url }}" {% endif %}>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img class="fotoproductodesc" src="{{ item.footerImage2.url }}">
+                    <img class="fotoproductodesc" {% if item.footerImage2  %} src="{{ item.footerImage2.url }}" {% endif %}>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <img class="fotoproductodesc" src="{{ item.footerImage3.url }}">
+                    <img class="fotoproductodesc" {% if item.footerImage3  %} src="{{ item.footerImage3.url }}" {% endif %}>
                 </div>
             </div>
         </div>
