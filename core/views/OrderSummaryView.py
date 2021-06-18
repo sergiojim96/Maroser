@@ -28,6 +28,14 @@ import platform
 class Get_Order(PayPalClient):
 
     def pay(self, orderID, authorizationID, order):
+        for order_item in order.items.all():
+            item_qs = Item.objects.filter(
+                title = order_item.get_title()
+            )
+            if (not ( item_qs.exists() & (item_qs[0].stockQuantity >= order_item.quantity))):
+                dabaBundle = {'status': 'ErrorStock'}
+                return JsonResponse({"scc": "false", "dataBundle": dabaBundle}, status = 400)
+
         orderTotal  = order.get_total()
         payPalOrder = OrdersGetRequest(orderID)
 
@@ -40,6 +48,18 @@ class Get_Order(PayPalClient):
             if (status == 200)|(status == 201):
                 dabaBundle = {'status': 'Nice'}
                 order.ordered = True
+
+
+                for order_item in order.items.all():
+                    item_qs = Item.objects.filter(
+                        title = order_item.get_title()
+                    )
+                    if item_qs.exists():
+                        item = item_qs[0]
+                        item.stockQuantity = item.stockQuantity - order_item.quantity
+                        item.sales = item.sales + order_item.quantity
+                        item.save()
+
                 try:
                     user_profile = UserProfile.objects.create(
                         user=order.user,

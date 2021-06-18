@@ -6,6 +6,11 @@ class CatalogView(ListView):
     paginate_by = 10
     template_name = "catalog.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['maybeObjects'] = filter(lambda x: x.label == 'M', Item.objects.all())
+        return context
+
     def get(self, request, *args, **kwargs):
         self.checkSessions()
         return super().get(request, *args, **kwargs)

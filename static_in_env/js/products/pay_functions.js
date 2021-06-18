@@ -5,7 +5,7 @@ function initPayment(total) {
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: total
+                        value: parseInt(document.getElementById("finalPrice").innerHTML.replace('$', ''))
                     }
                 }]
             });

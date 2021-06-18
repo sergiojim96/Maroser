@@ -187,7 +187,7 @@ class CheckoutView(View):
         item = get_object_or_404(Item, slug=slug)
         try:
             stock = item.stockQuantity
-            if(quantity < stock):
+            if(quantity <= stock):
                 if request.session.session_key == None:
                     request.session.create()
                     request.session.set_expiry(150)

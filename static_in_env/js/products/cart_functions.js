@@ -30,7 +30,6 @@ function remove_single_item_from_cart_funtion(url, slug) {
                     document.getElementById("quantityField" + slug).stepDown(1);
                     document.getElementById("finalPrice").innerHTML = "$" + dataBundle["total"];
                     document.getElementById(dataBundle["slug"]).innerHTML = "$" + dataBundle["itemPrice"];
-                    document.getElementById("tax").innerHTML = "$" + dataBundle["tax"];
                 }
 				else if (response["scc"] === "OrderNotExists") {
 					$('#OrderNotExists').modal('show');
@@ -59,7 +58,6 @@ function add_single_item_to_cart_funtion(url, slug, stock) {
                     document.getElementById("quantityField" + slug).stepUp(1);
                     document.getElementById("finalPrice").innerHTML = "$" + dataBundle["total"];
                     document.getElementById(dataBundle["slug"]).innerHTML = "$" + dataBundle["itemPrice"];
-                    document.getElementById("tax").innerHTML = "$" + dataBundle["tax"];
                 }
 				else if (response["scc"] === "OrderNotExists") {
 					$('#OrderNotExists').modal('show');
