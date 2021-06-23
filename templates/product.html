@@ -38,6 +38,7 @@
 
 
     <script type="text/javascript" src="{% static 'js/products/cart_functions.js' %}"></script>
+
     <script type="text/javascript" src="{% static 'js/product/item.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/home/top3juguetes.js'%}"></script>
 
@@ -60,6 +61,45 @@
         col-xl-: Anchos de 1200px en adelante
 
 -->
+<!-- Global site tag (gtag.js) - Google Ads: 348792047 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-348792047"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-348792047');
+</script>
+
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-348792047/p-Y1CKff6scCEO_JqKYB',
+      'value': {{ item.price }},
+      'currency': 'USD'
+  });
+</script>
+
+    <!-- Event snippet for Añadir al carrito conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+
+function gtag_report_conversion() {
+    var url  = '{{ object.get_add_to_cart_url }}'+ Number(document.getElementById("productAmount").value);
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  var value = {{ item.price }} * 0.55 * Number(document.getElementById("productAmount").value);
+  gtag('event', 'conversion', {
+      'send_to': 'AW-348792047/VY2qCPO37MUCEO_JqKYB',
+      'value': value,
+      'currency': 'USD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
 
 
 </head>
@@ -243,7 +283,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-5 col-5 mb-5">
-                            <a id="toCart" href="{{ object.get_add_to_cart_url }}1">
+                            <a id="toCart" onclick="gtag_report_conversion()">
                                 <button type="button" class="btn btn-primary">
 
                                     <svg class="bi bi-cart-fill cbec" viewBox="0 0 16 16" fill="currentColor"

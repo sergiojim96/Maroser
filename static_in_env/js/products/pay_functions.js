@@ -1,11 +1,18 @@
 function initPayment(total) {
     paypal.Buttons({
         createOrder: function (data, actions) {
+            var totalValue = parseInt(document.getElementById("finalPrice").innerHTML.replace('$', ''));
+            var totalValueConvertion = totalValue * 0.8;
+            gtag('event', 'conversion', {
+                'send_to': 'AW-348792047/uRoRCOyOj8gCEO_JqKYB',
+                'value': totalValueConvertion,
+                'currency': 'USD'
+            });
             // This function sets up the details of the transaction, including the amount and line item details.
             return actions.order.create({
                 purchase_units: [{
                     amount: {
-                        value: parseInt(document.getElementById("finalPrice").innerHTML.replace('$', ''))
+                        value: totalValue
                     }
                 }]
             });
