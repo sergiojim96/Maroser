@@ -1,17 +1,13 @@
-function decreaseAmount(toCardUrl) {
+function decreaseAmount() {
     if (document.getElementById("productAmount").value != 1) {
         document.getElementById("productAmount").stepDown(1);
-        return getNewUrl(toCardUrl, document.getElementById("productAmount").value);
     }
-    return toCardUrl;
 }
 
-function increaseAmount(max, toCardUrl) {
+function increaseAmount(max) {
     if (document.getElementById("productAmount").value != max) {
         document.getElementById("productAmount").stepUp(1);
-        return getNewUrl(toCardUrl, document.getElementById("productAmount").value);
     }
-    return toCardUrl;
 }
 
 function getNewUrl(str, char) {
