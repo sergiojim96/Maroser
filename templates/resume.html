@@ -17,9 +17,7 @@
     <link rel="stylesheet" href="{% static 'css/teinterese.css' %}">
     <link rel="stylesheet" href="{% static 'css/resumestyle.css' %}">
 
-    <script
-            src="https://www.paypal.com/sdk/js?client-id=AT9MrrKnz-Ap6nKtesw7UWKFk5DgBNrytIa0Ea2_cjBAaKgU2g3_a-vUNZ-KArTt4CWf6fVsj8D2HBpP&intent=authorize"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-    </script>
+
 
     <script type="text/javascript" src="{% static 'js/products/cart_functions.js' %}"></script>
 
@@ -50,11 +48,30 @@
         col-xl-: Anchos de 1200px en adelante
 
 -->
+<!-- Global site tag (gtag.js) - Google Ads: 348792047 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-348792047"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-348792047');
+</script>
+
+    <!-- Event snippet for Compra conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-348792047/nfU2CKm71sUCEO_JqKYB',
+      'value': {{ total }},
+      'currency': 'USD',
+      'transaction_id': '{{ object.ref_code }}'
+  });
+</script>
 
 
 </head>
 
-<body onload="initPayment('{{ total }}')">
+<body>
 
 
 <header class="banner">

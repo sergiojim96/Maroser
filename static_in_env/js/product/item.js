@@ -1,25 +1,17 @@
-function decreaseAmount() {
+function decreaseAmount(toCardUrl) {
     if (document.getElementById("productAmount").value != 1) {
         document.getElementById("productAmount").stepDown(1);
-        document.getElementById("toCart").setAttribute('href',
-            getNewUrl(document.getElementById("toCart").getAttribute('href'),
-                document.getElementById("productAmount").value));
+        return getNewUrl(toCardUrl, document.getElementById("productAmount").value);
     }
+    return toCardUrl;
 }
 
-function increaseAmount(max) {
+function increaseAmount(max, toCardUrl) {
     if (document.getElementById("productAmount").value != max) {
         document.getElementById("productAmount").stepUp(1);
-        document.getElementById("toCart").setAttribute('href',
-            getNewUrl(document.getElementById("toCart").getAttribute('href'),
-                document.getElementById("productAmount").value));
+        return getNewUrl(toCardUrl, document.getElementById("productAmount").value);
     }
-    else {
-
-        $('increase').on('click', function () {
-            $(this).tooltip('enable').tooltip('open');
-        });
-    }
+    return toCardUrl;
 }
 
 function getNewUrl(str, char) {
