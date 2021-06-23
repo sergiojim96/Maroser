@@ -185,13 +185,13 @@
                                             </div>
 
                                             <div class="col-6">
-                                                <h1 class="titleteint"> {{ item.title  }}</h1>
-                                                <p class="textteint"> {% if item.smart  %} Juguete Inteligente {% else %} {% if item.category.title == 'H' %}
+                                                <h1 class="titleteint">{{ item.title  }}</h1>
+                                                <p class="textteint">{% if item.smart  %} Juguete Inteligente {% else %} {% if item.category.title == 'H' %}
                              Juguete para ellos {% else %} Juguete para ellas {% endif %} {% endif %} </p>
                                             </div>
 
                                             <div class="col-3">
-                                                <h1 class="priceteint">$ {{ item.price }}</h1>
+                                                <h1 class="priceteint">${{ item.price }}</h1>
                                             </div>
                                         </div>
                                     </div>

@@ -18,6 +18,7 @@ class HomeView(ListView):
         context = super().get_context_data(**kwargs)
         context['count'] = 0
         context['best_seller_c'] = filter(self.fudfd, Item.objects.all())
+        context['maybeObjects'] = filter(lambda x: x.label == 'M', Item.objects.all())
         return context
 
     def send_mail(request):
