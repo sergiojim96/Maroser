@@ -129,10 +129,28 @@
 
   gtag('config', 'AW-348792047');
 </script>
+<script>
+    function gtag_report_conversion(url, valueItem) {
+        var valueToCard = valueItem * 0.55;
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-348792047/VY2qCPO37MUCEO_JqKYB',
+          'value': valueToCard,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
+</script>
 
 </head>
 
-<body onload="document.getElementById('bSItemLink').setAttribute('href', document.getElementsByClassName('slide active')[0].getAttribute('data-url'));">
+<body onload="document.getElementById('bSItemLink').setAttribute('href', document.getElementsByClassName('slide active')[0].getAttribute('data-url'));
+document.getElementById('compraloYa').setAttribute('onclick', 'gtag_report_conversion('+ document.getElementsByClassName('slide active')[0].getAttribute('data-url-toCard') + ',' +  document.getElementsByClassName('slide active')[0].getAttribute('data-price') +')');" >
 
 
 <header>
@@ -393,7 +411,9 @@
                                                            data-order="{{ forloop.counter }}"
                                                            data-color="#{% if forloop.counter == 1 %}ff384b{% elif forloop.counter == 2 %}f59600{% else %}0028f2{% endif %}"
                                                            data-name="N. {{ forloop.counter }}"
-                                                           data-url="{{ item.get_absolute_url }}">
+                                                           data-url="{{ item.get_absolute_url }}"
+                                                           data-url-toCard="'{{ item.get_add_to_cart_url }}1'"
+                                                           data-price="{{ item.price }}">
                             <div class="slide-content ">
                                 <div class="clip-svg">
                                     <img class="top{{ forloop.counter }}" src="{{ item.largeImage.url }}" alt=""/>
@@ -416,7 +436,7 @@
                         </li>
                     </a>
                     <li class="rstj">
-                        <button type="button" class="btn btn-warning">Comprarlo YA</button>
+                        <button type="button" id="compraloYa"  class="btn btn-warning">Cómpralo YA</button>
                     </li>
                 </ul>
             </div>

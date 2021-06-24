@@ -91,7 +91,7 @@
     }
 
     .piccover {
-    background-image: url("/test3363/static/img/mobilecover.jpg");
+    background-image: url("/static_in_env/img/mobilecover.jpg");
     height: 55vh;
 }
 
