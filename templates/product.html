@@ -440,7 +440,7 @@ function gtag_report_conversion() {
                 <div class="col-md-6 col-12 cuadrocontenido">
                     <h3 class="tdp">Descripcion del producto</h3>
                     <p class="pdp">{{ item.description }}</p>
-                    <p class="pdp">{{ item.long_description }}</p>
+                    <p class="pdp">{{ item.long_description | linebreaks }}</p>
                 </div>
 
 
