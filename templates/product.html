@@ -268,7 +268,7 @@ function gtag_report_conversion() {
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-10 col-12">
-                            <h2 class="itemprice">{{ item.price }}</h2>
+                            <h2 class="itemprice">${{ item.price }}</h2>
                             <h5 class="itemtitle">{{ item.title }}</h5>
                             <p class="itemdescp">{{ item.description }}</p>
                         </div>
@@ -326,7 +326,7 @@ function gtag_report_conversion() {
                         </div>
 
                         <div class="col-6">
-                            <p class="tiicf">Trasporte a todo el país</p>
+                            <p class="tiicf">Transporte a todo el país</p>
                         </div>
 
                         <div class="col-4">
@@ -416,7 +416,7 @@ function gtag_report_conversion() {
 
                         <div class="col-md-3 col-3">
                             <img class="iconinfitem" src="{% static 'img/silicon.png' %}">
-                            <h6 class="texticoninf">Silicon<br>suave</h6>
+                            <h6 class="texticoninf">Silicón<br>suave</h6>
                         </div>
 
                     </div>
@@ -439,11 +439,8 @@ function gtag_report_conversion() {
 
                 <div class="col-md-6 col-12 cuadrocontenido">
                     <h3 class="tdp">Descripcion del producto</h3>
-                    <p class="pdp"><strong>Lorem ipsum: </strong>Lorem ipsum Lorem ipsum</p>
-                    <p class="pdp"><strong>Lorem ipsum: </strong> is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                        1500s, when an unknown printer took Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took</p>
+                    <p class="pdp">{{ item.description }}</p>
+                    <p class="pdp">{{ item.long_description }}</p>
                 </div>
 
 
