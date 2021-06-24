@@ -273,7 +273,7 @@ class OrderSummaryView(View):
     def sendmail(context):
         pdfDirName = OrderSummaryView.creatInvoice(context)
         email = EmailMessage(
-        'SashaCollections gracias por tu compra', OrderSummaryView.getMailMessage(), settings.EMAIL_HOST_USER, [context['email']])
+        'SashaShop gracias por tu compra', OrderSummaryView.getMailMessage(), settings.EMAIL_HOST_USER, [context['email']])
         email.attach_file(pdfDirName)
         email.send()
     
@@ -283,7 +283,7 @@ Adjunto a este correo encontraras un documento PDF con la factura de tu compra
 
 Atte,
 
-Sasha colelctions'''
+SashaShop'''
         return message
 
     def getXDifference(i):
@@ -305,7 +305,7 @@ Sasha colelctions'''
         c.drawString(65,20,"S")
         c.setFont("Courier-Bold",8)
         c.setFillColor(HexColor('#1e5262'))
-        c.drawCentredString(115,20,"SASHA'S COLLECTION")
+        c.drawCentredString(115,20,"SASHASHOP")
         c.translate(40,28)
         c.setFillColor(colors.salmon)
         c.setStrokeColor(colors.salmon)

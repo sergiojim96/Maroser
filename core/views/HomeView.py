@@ -26,7 +26,7 @@ class HomeView(ListView):
             if request.is_ajax() and request.method == "GET":
                 mail = request.GET.get("mail")
                 email = EmailMessage(
-                'SashaCollections contacto', HomeView.getMailMessage(), "sashacollectioncr@gmail.com", [mail])
+                'SashaShop contacto', HomeView.getMailMessage(), "sashacollectioncr@gmail.com", [mail])
                 email.send()
                 return JsonResponse({"scc": "true"}, status=200)
             else:
