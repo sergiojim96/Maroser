@@ -3,7 +3,7 @@ from ..models import Item
 
 class CatalogView(ListView):
     queryset = Item.objects.filter(stockQuantity__gt=0) #equivalent to stockQuantity > 0
-    paginate_by = 10
+    paginate_by = 30
     template_name = "catalog.html"
 
     def get_context_data(self, **kwargs):
