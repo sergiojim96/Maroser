@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from .views import (
     ItemDetailView,
     CheckoutView,
@@ -15,7 +15,7 @@ app_name = 'core'
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('catalog/', CatalogView.as_view(), name='catalog'),
-    path('send-mail/', HomeView.send_mail, name='send-mail'),
+    re_path('.send-mail/', HomeView.send_mail, name='send-mail'),
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
     path('product/<slug>/', ItemDetailView.as_view(), name='product'),
     path('add-to-cart/<slug>/<int:quantity>/', CheckoutView.add_to_cart, name='add-to-cart'),

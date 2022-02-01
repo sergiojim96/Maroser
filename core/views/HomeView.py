@@ -23,6 +23,7 @@ class HomeView(ListView):
 
     def send_mail(request):
         try:
+            print("enters")
             if request.is_ajax() and request.method == "GET":
                 mail = request.GET.get("mail")
                 email = EmailMessage(

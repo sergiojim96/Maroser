@@ -72,6 +72,10 @@ class Item(models.Model):
     def decreaseStock(self, quantity):
         self.stockQuantity -= quantity
         self.save(update_fields=['stockQuantity'])
+    
+    def get_dollar_price(self):
+        return f"${self.price}"
+
 
     #def increaseUnreserved(self, quantity):
      #   self.unreservedQuantity += quantity

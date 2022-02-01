@@ -1,48 +1,131 @@
-<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+{% load static %}
+<script type="text/javascript" src="{% static 'js/footer/footer.js' %}"></script>
+<footer style="background-color: #2f4555;">
+  <div class="">
+    <div class="container">
 
-    <hr class="my-4">
+      <div class="row">
 
-    <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
+        <div class="col-md-6 col-lg-3 col-12">
+          <img class="logomf" src="{% static 'img/logoblanco.png' %}">
+          <h5 class="Contactomf">sashashopcr@gmail.com</h5>
+        </div>
 
-      <a href="https://twitter.com/MDBootstrap" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
 
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
+        <div class="col-md-2 col-12 menufl">
+          <nav>
+            <ul>
+              <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
+              <li class="menufooter"><a class="linkmenufooter" href="{% url 'core:catalog' %}">Juguetes</a></li>
+              <li class="menufooter"><a class="linkmenufooter" href="/#favoritomenu">Favoritos</a></li>
+              <li class="menufooter"><a class="linkmenufooter" href="/#seleccionamos">Seleccionamos</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-        <i class="fab fa-google-plus-g mr-3"></i>
-      </a>
+        <div class="col-md-6 col-lg-3 col-12 menufl2">
+          <nav>
+            <ul>
+              <a class="linkmenufooter" href="{% url 'core:catalog' %}">
+                <li onclick="SaveCategory('category', 'men')" class="menufooter">For Him</li>
+              </a>
+              <a class="linkmenufooter" href="{% url 'core:catalog' %}">
+                <li onclick="SaveCategory('category', 'women')" class="menufooter">For Her</li>
+              </a>
+              <a class="linkmenufooter" href="{% url 'core:catalog' %}">
+                <li onclick="SaveCategory('category', 'smart')" class="menufooter">Smart Toys</li>
+              </a>
+            </ul>
+          </nav>
+          <a target="_blank" rel="noopener" href="https://www.instagram.com/sashashop.cr/" style="cursor: pointer">
+            <img class="instaimf" src="{% static 'img/instagram.png' %}">
+          </a>
+        </div>
 
-      <a href="https://dribbble.com/mdbootstrap" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
+        <div class="col-md-6 col-lg-4 col-12 menufl3">
+          <form class="formfooter">
+            <div class="form-row">
+              <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
+                te contactamos</small>
+              <div class="col-12 form-group">
+                <input type="text" id="mailfield" class="form-control textinfc" placeholder="E-mail">
+              </div>
+            </div>
+          </form>
+          <button type="button" onclick="sendMail()" class="btn btn-outline-light">Enviar</button>
+        </div>
 
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-      <a href="http://codepen.io/mdbootstrap/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
+      </div>
     </div>
-    <!-- Social icons -->
 
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+  </div>
+
+
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-1"></div>
+        <div class="col-md-4 col-10">
+          <h6 class="derechosr" style="color: white">&copy; Derechos Reservados</h6>
+        </div>
+        <div class="col-md-4 col-1"></div>
+      </div>
     </div>
-    <!--/.Copyright-->
+  </div>
 
-  </footer>
+</footer>
+
+<div class="modal fade" id="MailSended" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md" style="background-color: #d1a2a3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12"><h3 class="mensage-carrito mt-4">En breve te llegará un correo de parte de Sasha Shop, ¡Revísalo!</h3></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="MailNotSended" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-md" style="background-color: #d1a2a3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-9"></div>
+                    <div class="col-3">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12"><h3 class="mensage-carrito mt-4">Ocurrió un error al enviar el mensaje, ponte en contacto con nosotros a sashashopcr@gmail.com</h3></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

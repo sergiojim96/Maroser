@@ -4,6 +4,7 @@
 __pycache__/
 media_root
 Facturas/
+core/migrations
 static_root
 .env
 venv/

@@ -2,6 +2,7 @@
     
 }
 
+
 .todo {
     background-color: white;
     margin-bottom: 50vh;
@@ -14,6 +15,10 @@ body {
 	width: 100%;
     margin: 0;
     padding: 0;
+}
+
+.carousel-control-next, .carousel-control-prev /*, .carousel-indicators */ {
+  filter: invert(100%);
 }
 
 @media (min-width: 789px) and (max-width: 1028px) {

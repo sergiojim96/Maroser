@@ -248,8 +248,9 @@ document.getElementById('compraloYa').setAttribute('onclick', 'gtag_report_conve
                 <h2 class="frasepn">Nos encargamos de hacer la selección para ofrecerte lo mejor del
                     mercado.</h2>
                 <div class="rrss">
-                    <img class="iconcover" src="{% static 'img/instagramblue.png' %}">
-                    <img class="iconcover" src="{% static 'img/facebookblue.png' %}">
+                    <a target="_blank"  rel="noopener" href="https://www.instagram.com/sashashop.cr/" style="cursor: pointer">
+                        <img class="iconcover" src="{% static 'img/instagramblue.png' %}">
+                    </a>
                 </div>
 
                 <span class="decorcover">By Sasha Shop</span>
@@ -617,126 +618,12 @@ document.getElementById('compraloYa').setAttribute('onclick', 'gtag_report_conve
             </div>
         </div>
     </section>
-
-    <div id="MailSended" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Contacto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>El correo ha sido enviado satisfactoriamente, pronto te contactaremos</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="MailNotSended" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Contacto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Ha ocurrido un error, nos puedes contactar a sashashopcr@gmail.com</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 
 </section>
 
-
-<footer style="background-color: #2f4555;">
-
-    <div class="">
-        <div class="container">
-
-            <div class="row">
-
-                <div class="col-md-6 col-lg-3 col-12">
-                    <img class="logomf" src="{% static 'img/logoblanco.png' %}">
-                    <h5 class="Contactomf">sashashopcr@gmail.com</h5>
-                </div>
-
-
-                <div class="col-md-2 col-12 menufl">
-                    <nav>
-                        <ul>
-                            <li class="menufooter"><a class="linkmenufooter" href="/">Inicio</a></li>
-                            <li class="menufooter"><a class="linkmenufooter"
-                                                      href="{% url 'core:catalog' %}">Juguetes</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="#favoritomenu">Favoritos</a></li>
-                            <li class="menufooter"><a class="linkmenufooter" href="#seleccionamos">Seleccionamos</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div class="col-md-6 col-lg-3 col-12 menufl2">
-                    <nav>
-                        <ul>
-                            <a class="linkmenufooter" href="{% url 'core:catalog' %}">
-                                <li onclick="SaveCategory('category', 'men')" class="menufooter">For Him</li>
-                            </a>
-                            <a class="linkmenufooter" href="{% url 'core:catalog' %}">
-                                <li onclick="SaveCategory('category', 'women')" class="menufooter">For Her</li>
-                            </a>
-                            <a class="linkmenufooter" href="{% url 'core:catalog' %}">
-                                <li onclick="SaveCategory('category', 'smart')" class="menufooter">Smart Toys</li>
-                            </a>
-                        </ul>
-                    </nav>
-                    <img class="instaimf" src="{% static 'img/instagram.png' %}">
-                    <img class="faceimf" src="{% static 'img/facebook.png' %}">
-                </div>
-
-                <div class="col-md-6 col-lg-4 col-12 menufl3">
-                    <form class="formfooter">
-                        <div class="form-row">
-                            <small id="emailHelp" class="col-12 form-text text-muted mensajf">Mandanos tu correo y
-                                te contactamos</small>
-                            <div class="col-12 form-group">
-                                <input type="text" class="form-control textinfc" placeholder="E-mail">
-                            </div>
-                        </div>
-                    </form>
-                    <button type="button" onclick="SendUserMail()" class="btn btn-outline-light">Enviar</button>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-1"></div>
-                <div class="col-md-4 col-10">
-                    <h6 class="derechosr" style="color: white">&copy; Derechos Reservados</h6>
-                </div>
-                <div class="col-md-4 col-1"></div>
-            </div>
-        </div>
-    </div>
-
-</footer>
+{% include "./footer.html" %}
 
 <!-- Boton Carrito Desktop - los estilos estan en footer.css-->
 

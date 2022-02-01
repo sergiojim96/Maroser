@@ -164,7 +164,7 @@ class OrderSummaryView(View):
             }
             return render(self.request, 'order_summary.html', context)
         except ObjectDoesNotExist:
-            messages.warning(self.request, "You do not have an active order")
+            messages.warning(self.request, "No tienes una orden activa en este momento")
             return redirect("/catalog/")
 
     def is_maybe_object(self, item):
@@ -230,7 +230,6 @@ class OrderSummaryView(View):
                 else:
                     return JsonResponse({"scc": "NotInOrder"}, status=200)
             else:
-                print("notexists")
                 return JsonResponse({"scc": "OrderNotExists"}, status=200)
         else:
             return JsonResponse({}, status=400)

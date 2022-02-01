@@ -73,22 +73,6 @@ function add_single_item_to_cart_funtion(url, slug, stock) {
     }
 }
 
-function sendMail() {
-    $.ajax({
-        type: 'GET',
-        url: "send-mail",
-        success: function (response) {
-            // if not valid user, alert the user
-            if (response["scc"]) {
-                location.reload();
-            }
-        },
-        error: function (response) {
-            console.log(response)
-        }
-    })
-}
-
 function toCard() {
     // Call your server to validate and capture the transaction
     $.ajax({
